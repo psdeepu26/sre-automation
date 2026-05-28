@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Incident Response Flow</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#0f172a;color:#e2e8f0;padding:2rem;max-width:800px;margin:0 auto}
+h1{font-size:1.8rem;margin-bottom:0.5rem}
+.sub{color:#64748b;margin-bottom:2rem}
+.step{display:flex;gap:1rem;margin-bottom:1rem;padding:1rem;background:#1e293b;border-radius:12px;border-left:3px solid #fbbf24}
+.step-num{font-size:1.5rem;font-weight:700;color:#fbbf24;min-width:2rem}
+.step-tip{border-left-color:#34d399}.step-plan{border-left-color:#6366f1}.step-resolve{border-left-color:#a78bfa}.step-learn{border-left-color:#fb7185}
+.step h3{margin-bottom:0.25rem;color:white}.step p{color:#94a3b8;font-size:0.875rem;line-height:1.5}
+.tip{padding:1rem;margin:1.5rem 0;border-radius:12px}
+.tip-sre{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2)}
+.tip-sre h3{color:#34d399;margin-bottom:0.5rem}.tip-sre p{color:#94a3b8;font-size:0.875rem}
+.footer{text-align:center;color:#475569;font-size:0.75rem;margin-top:2rem;padding-top:1rem;border-top:1px solid #1e293b}
+</style>
+</head><body>
+<h1>🚨 Incident Response Flow</h1>
+<p class="sub">SRE · From alert to postmortem in 5 stages</p>
+<div class="step"><div class="step-num">01</div><div><h3>🔔 Detection</h3><p>Alert fires (Prometheus AlertManager, Grafana). Is it real or noise? First responder acknowledges within SLA.</p></div></div>
+<div class="step step-tip"><div class="step-num">02</div><div><h3>🔍 Triage</h3><p>Assess severity: SEV1 (users impacted), SEV2 (degraded), SEV3 (cosmetic). Declare incident, notify, open bridge.</p></div></div>
+<div class="step step-plan"><div class="step-num">03</div><div><h3>🛠️ Mitigation</h3><p>Fix the symptom first — rollback, scale up, redirect traffic. Restore service before debugging root cause.</p></div></div>
+<div class="step step-resolve"><div class="step-num">04</div><div><h3>📋 Resolution</h3><p>Service healthy, monitoring back to baseline. De-escalate, close bridge, notify stakeholders.</p></div></div>
+<div class="step step-learn"><div class="step-num">05</div><div><h3>📖 Postmortem</h3><p>Blameless postmortem within 48h. Timeline, root cause, action items. Fix the system, not the person.</p></div></div>
+<div class="tip tip-sre"><h3>💡 Key SRE Principle</h3><p>During an incident, the goal is NOT to find root cause — it's to restore service. Root cause analysis happens in stage 5 (postmortem), not stage 3 (mitigation).</p></div>
+<div class="footer">⚡ Micro-action: Does your team have a documented incident response runbook?</div>
+</body></html>
