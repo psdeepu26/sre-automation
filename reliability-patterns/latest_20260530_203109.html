@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insight #3 — SRE & Automation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #e0e0e0;
+  }
+  .card {
+    background: rgba(30, 30, 50, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 580px;
+    width: 100%;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .emoji { font-size: 32px; }
+  .topic { font-size: 14px; font-weight: 600; color: #8888cc; text-transform: uppercase; letter-spacing: 1px; }
+  .day { font-size: 12px; color: #666; margin-top: 2px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .streak { 
+    display: inline-block;
+    background: rgba(255, 200, 50, 0.15);
+    color: #ffcc33;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .insight {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d0d0e0;
+    margin-bottom: 24px;
+  }
+  .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+  .footer { font-size: 12px; color: #555; text-align: center; }
+  .micro-action {
+    background: rgba(50, 200, 120, 0.1);
+    border-left: 3px solid #32c878;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #a0e0c0;
+  }
+  .micro-action strong { color: #32c878; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <span class="emoji">⚡</span>
+    <div>
+      <div class="topic">SRE & Automation</div>
+      <div class="day">Day #3</div>
+    </div>
+  </div>
+  <div class="date">Sunday, 31 May 2026</div>
+  <div class="streak">✨ Day 2</div>
+  <div class="insight">In SRE, toil is the silent killer of innovation. Imagine having to manually restart the same server every time it crashes — that's toil: repetitive, manual, and doesn't scale. 
+
+But here’s the real deal: Google’s SRE team defines toil as any operational work that is manual, extensive, repetitive, and doesn’t scale. The rule? Anything you’ve done three times should be automated.
+
+This hit home during our NVCF observability overhaul — that weekly metrics cleanup script? Classic toil. Automating it freed up 4 hours/week.
+
+Now, the technical bit: use Infrastructure-as-Code (Terraform) + CronJobs (Kubernetes) or automation frameworks (Ansible), and measure toil reduction in time saved per week.
+</div>
+  <div class="micro-action"><strong>⚡ Today's micro-action:</strong> Identify one task you’ve done manually more than twice and draft an automation plan — even just a comment like 'terraform module needed'.</div>
+  <div class="divider"></div>
+  <div class="footer">💫 Small steps. Every day. 🚀</div>
+</div>
+</body>
+</html>
