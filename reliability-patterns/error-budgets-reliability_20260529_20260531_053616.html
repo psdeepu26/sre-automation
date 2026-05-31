@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insight #4 — SRE & Automation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #e0e0e0;
+  }
+  .card {
+    background: rgba(30, 30, 50, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 580px;
+    width: 100%;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .emoji { font-size: 32px; }
+  .topic { font-size: 14px; font-weight: 600; color: #8888cc; text-transform: uppercase; letter-spacing: 1px; }
+  .day { font-size: 12px; color: #666; margin-top: 2px; }
+  .date { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .streak { 
+    display: inline-block;
+    background: rgba(255, 200, 50, 0.15);
+    color: #ffcc33;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .insight {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #d0d0e0;
+    margin-bottom: 24px;
+  }
+  .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
+  .footer { font-size: 12px; color: #555; text-align: center; }
+  .micro-action {
+    background: rgba(50, 200, 120, 0.1);
+    border-left: 3px solid #32c878;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #a0e0c0;
+  }
+  .micro-action strong { color: #32c878; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <span class="emoji">⚡</span>
+    <div>
+      <div class="topic">SRE & Automation</div>
+      <div class="day">Day #4</div>
+    </div>
+  </div>
+  <div class="date">Thu, 29 May 2026</div>
+  <div class="streak">✨ Day 4</div>
+  <div class="insight">
+    SRE is like a tightrope walker who builds their own safety net. You're responsible for system reliability, but your real skill is in designing systems that catch themselves when they stumble.
+
+    Google's SRE philosophy centers on Error Budgets - the acceptable amount of downtime. When you exceed it, all feature work stops and 100% of effort goes to reliability. This creates powerful incentives to build robust systems from the start.
+
+    This directly applies to our work on NVCF - every reliability improvement we make extends our error budget, giving us more room for innovation.
+
+    The technical trio: SLOs (Service Level Objectives) define success, Error Budgets measure our risk allowance, and Postmortems capture lessons when we fail. Together, they form a feedback loop of continuous improvement.
+  </div>
+  <div class="micro-action"><strong>⚡ Today's micro-action:</strong> Identify one service where improving monitoring could recover 1+ hour of error budget weekly.</div>
+  <div class="divider"></div>
+  <div class="footer">💫 Small steps. Every day. 🚀</div>
+</div>
+</body>
+</html>
