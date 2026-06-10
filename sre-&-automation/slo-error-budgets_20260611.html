@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLOs & Error Budgets: The Reliability Contract</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #0f1117; color: #e2e8f0; line-height: 1.6; padding: 24px; }
+  .card { max-width: 820px; margin: 0 auto; background: #1a1d27; border-radius: 16px; overflow: hidden; border: 1px solid #2d3348; }
+  .header { background: linear-gradient(135deg, #2a1a3d 0%, #1a0d28 100%); padding: 28px 32px; border-bottom: 2px solid #7c3aed; }
+  .header h1 { font-size: 1.4rem; font-weight: 700; color: #c4b5fd; margin-bottom: 6px; }
+  .header .meta { font-size: 0.82rem; color: #8899b0; }
+  .section { padding: 24px 32px; border-bottom: 1px solid #2d3348; }
+  .section:last-child { border-bottom: none; }
+  .section-title { font-size: 1rem; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .emoji { font-size: 1.3rem; }
+  .eli5-text { font-size: 1rem; color: #c8d6e5; line-height: 1.75; }
+  .analogy-box { background: #1e1a2e; border-left: 4px solid #7c3aed; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 14px 0; font-size: 0.97rem; }
+  .bridge { text-align: center; font-size: 1.1rem; color: #5a7a9a; padding: 10px; margin: 10px 0; font-weight: 600; }
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .tech-card { background: #11141e; border: 1px solid #2d3348; border-radius: 10px; padding: 16px; }
+  .tech-card h3 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.8px; color: #c4b5fd; margin-bottom: 8px; }
+  .tech-card p, .tech-card li { font-size: 0.88rem; color: #a8b8cc; line-height: 1.6; }
+  .tech-card ul { list-style: none; padding: 0; }
+  .tech-card li::before { content: "→ "; color: #7c3aed; }
+  .code-block { background: #0a0c12; border-radius: 8px; padding: 14px 16px; font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.8rem; color: #7ee787; overflow-x: auto; margin: 12px 0; border: 1px solid #1e2a3a; line-height: 1.55; white-space: pre; }
+  .code-block .comment { color: #6a9955; }
+  .code-block .key { color: #9cdcfe; }
+  .code-block .str { color: #ce9178; }
+  .code-block .num { color: #b5cea8; }
+  .micro-action { background: linear-gradient(135deg, #1a2e1a 0%, #0d1a0d 100%); border: 1px solid #2d6a4f; border-radius: 10px; padding: 18px 22px; }
+  .micro-action p { font-size: 0.95rem; color: #a8d8a8; line-height: 1.65; }
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { background: #1e1a2e; color: #c4b5fd; font-size: 0.72rem; padding: 3px 10px; border-radius: 12px; font-weight: 600; letter-spacing: 0.3px; }
+  .budget-bar { background: #11141e; border-radius: 8px; padding: 16px; margin: 14px 0; border: 1px solid #2d3348; }
+  .budget-track { height: 24px; background: #1e1a2e; border-radius: 12px; overflow: hidden; margin: 10px 0; position: relative; }
+  .budget-fill { height: 100%; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fff; }
+  .budget-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: #8899b0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.85rem; }
+  th { background: #11141e; color: #c4b5fd; padding: 8px 12px; text-align: left; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 8px 12px; border-top: 1px solid #2d3348; color: #a8b8cc; }
+  .highlight { color: #ffd700; font-weight: 700; }
+  .footer { padding: 16px 32px; background: #11141e; font-size: 0.78rem; color: #5a7a9a; display: flex; justify-content: space-between; align-items: center; }
+  @media (max-width: 640px) { .tech-grid { grid-template-columns: 1fr; } body { padding: 12px; } .section { padding: 18px 16px; } }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>⚡ SLOs &amp; Error Budgets: The Reliability Contract</h1>
+    <div class="meta">SRE &amp; Automation &middot; Day #1 &middot; 11 Jun 2026</div>
+  </div>
+
+  <div class="section">
+    <div class="tag-row">
+      <span class="tag">SRE</span>
+      <span class="tag">SLO</span>
+      <span class="tag">Error Budget</span>
+      <span class="tag">Reliability</span>
+    </div>
+    <div class="section-title"><span class="emoji">🧒</span> Like You're 5</div>
+    <div class="analogy-box">
+      <p>Imagine your parents say you can have <strong>30 minutes of screen time</strong> every day. That's your "budget." Some days you use 20 minutes, some days you use all 30. As long as you don't go over, you're fine.</p>
+      <p style="margin-top:10px;">But what if you went over yesterday? Well, now you have <em>less</em> time today. And if you keep going over every day, your parents might say: "No more games this week — you need to fix your habits first."</p>
+      <p style="margin-top:10px;">That's exactly how <strong>error budgets</strong> work for websites and services. You get a small "budget" of allowed failures (say, 0.1% of requests can fail). As long as you stay within budget, you can keep shipping new features. But once you burn through it? <strong>Feature freezes</strong> — all hands on deck to improve reliability.</p>
+    </div>
+  </div>
+
+  <div class="bridge">↓ Now let's call it what it really is ↓</div>
+
+  <div class="section">
+    <div class="section-title"><span class="emoji">🔧</span> For the Engineer</div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h3>SLO (Service Level Objective)</h3>
+        <p>A <strong>measurable target</strong> for service reliability, expressed as a percentage over a time window.</p>
+        <ul>
+          <li><strong>Example:</strong> "99.9% of requests succeed over 30 days"</li>
+          <li>Derived from SLIs (what you measure)</li>
+          <li>Typically 99.9% ("three nines") = ~43m downtime/month</li>
+        </ul>
+      </div>
+      <div class="tech-card">
+        <h3>SLI (Service Level Indicator)</h3>
+        <p>The <strong>actual metric</strong> you measure — the raw data behind your SLO.</p>
+        <ul>
+          <li><strong>Availability SLI:</strong> good_requests / total_requests</li>
+          <li><strong>Latency SLI:</strong> % of requests under threshold (e.g., p99 &lt; 200ms)</li>
+          <li>Measured at the load balancer or edge</li>
+        </ul>
+      </div>
+      <div class="tech-card">
+        <h3>Error Budget</h3>
+        <p>The <strong>allowed amount of unreliability</strong> — the gap between your SLO and perfect reliability.</p>
+        <ul>
+          <li>99.9% SLO = 0.1% error budget</li>
+          <li>At 1M req/day = 1,000 allowed failures/day</li>
+          <li>Burn rate = how fast you're consuming it</li>
+        </ul>
+      </div>
+      <div class="tech-card">
+        <h3>Error Budget Policy</h3>
+        <p>The <strong>rules</strong> for what happens when the budget is burned.</p>
+        <ul>
+          <li><strong>Green:</strong> Budget healthy → ship features</li>
+          <li><strong>Yellow:</strong> Burning fast → alert, investigate</li>
+          <li><strong>Red:</strong> Budget exhausted → freeze releases, focus on reliability</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="budget-bar">
+      <p style="font-size:0.85rem; color:#c4b5fd; margin-bottom:6px;">📊 Error Budget Visualization (99.9% SLO, 30-day window)</p>
+      <div class="budget-track">
+        <div class="budget-fill" style="width:35%; background:linear-gradient(90deg,#2d6a4f,#40916c);">35% burned</div>
+      </div>
+      <div class="budget-labels">
+        <span>Day 1 (full budget)</span>
+        <span>Day 15</span>
+        <span>Day 30 (0% left = freeze)</span>
+      </div>
+    </div>
+
+    <div class="code-block"><span class="comment"># Example SLO definition (Prometheus + Pyrra)</span>
+<span class="key">apiVersion:</span> pyrra.dev/v1alpha1
+<span class="key">kind:</span> ServiceLevelObjective
+<span class="key">metadata:</span>
+  <span class="key">name:</span> <span class="str">api-availability</span>
+  <span class="key">namespace:</span> <span class="str">monitoring</span>
+<span class="key">spec:</span>
+  <span class="key">target:</span> <span class="str">"99.9"</span>
+  <span class="key">window:</span> <span class="str">30d</span>
+  <span class="key">indicator:</span>
+    <span class="key">ratio:</span>
+      <span class="key">errors:</span>
+        <span class="key">metric:</span> <span class="str">http_requests_total{status=~"5.."}</span>
+      <span class="key">total:</span>
+        <span class="key">metric:</span> <span class="str">http_requests_total</span></div>
+
+    <table>
+      <tr><th>SLO</th><th>Error Budget</th><th>Monthly Downtime</th><th>Use Case</th></tr>
+      <tr><td>99.9%</td><td>0.1%</td><td>~43 min</td><td>Standard production</td></tr>
+      <tr><td>99.95%</td><td>0.05%</td><td>~22 min</td><td>Critical services</td></tr>
+      <tr><td>99.99%</td><td>0.01%</td><td>~4.3 min</td><td>Tier-1 / revenue</td></tr>
+      <tr><td>99.999%</td><td>0.001%</td><td>~26 sec</td><td>Telecom / medical</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="emoji">💡</span> Why This Matters for You</div>
+    <p style="font-size:0.95rem; color:#c8d6e5; line-height:1.7;">
+      At NVCF, you're building observability for managed and self-managed clusters. SLOs are the <strong>bridge between raw metrics and business decisions</strong>. Instead of alerting on every spike, SLO-based alerting (using burn rates) tells you: "You're on track to exhaust your budget in 3 days" — giving you time to act <em>before</em> users are impacted.
+    </p>
+    <p style="font-size:0.95rem; color:#c8d6e5; line-height:1.7; margin-top:10px;">
+      Tools like <strong>Pyrra</strong> (open-source, Kubernetes-native) can auto-generate Prometheus recording rules from SLO definitions. Pair it with <strong>Sloth</strong> or <strong>OpenSLO</strong> for a full SLO-as-code workflow that fits right into your existing Prometheus + Thanos + Grafana stack.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="emoji">⚡</span> Micro-action</div>
+    <div class="micro-action">
+      <p>Pick <strong>one service</strong> you own or depend on. Write down: (1) What's a good SLI for it? (2) What SLO would you set — 99.9% or 99.99%? (3) How much error budget does that give you per month? Just the act of writing it down changes how you think about reliability.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>SRE &amp; Automation</span>
+    <span>💫 Small steps. Every day.</span>
+  </div>
+</div>
+</body>
+</html>
