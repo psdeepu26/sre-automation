@@ -1,5 +1,12 @@
 [
   {
+    "file": "sre-&-automation/autoscaling-policy-thresholds_20260625.html",
+    "category": "sre-&-automation",
+    "title": "autoscaling-policy-thresholds 20260625",
+    "emoji": "📚",
+    "timestamp": "20260624_203257"
+  },
+  {
     "file": "sre-&-automation/blameless-postmortems-incident-culture_20260618.html",
     "category": "sre-&-automation",
     "title": "blameless-postmortems-incident-culture 20260618",
