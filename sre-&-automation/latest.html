@@ -3,142 +3,197 @@ nightly-learning-insight skill
 Initializing agent...
 ────────────────────────────────────────
 
-  ┊ 📚 skill     nightly-learning-insight  0.0s
-  ┊ 📚 skill     caveman  0.0s
-  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A'  0.1s
-  ┊ 💻 $         jq '.[0:5]' /opt/data/insights/log.json  0.1s
+  ┊ 📚 skill     caveman  0.1s
+  ┊ 📚 skill     nightly-learning-insight  0.1s
+  ┊ 📚 skill     deepu-personalization  0.0s
+  ┊ 💻 $         printf 'IST=' + 6 commands  0.1s
+  ┊ 📋 plan      5 task(s)  0.0s
+  ┊ 🔎 find      *_20260717.html  0.1s
+  ┊ 🔎 find      *_2026-07-17.html  0.0s
   ┊ 💻 $         jq '[.[] | select(.topic == "Personal Growth") | .title]' /opt/data/insights/log.json  0.1s
-  ┊ ✍️  write     /opt/data/insights/stereotype-threat-impostor_20260628.html  0.1s
+  ┊ 📋 plan      update 1/5 ✓  0.0s
+  ┊ ✍️  write     /opt/data/insights/decision-journal_20260717.html  0.1s
   ┊ review diff
-a//opt/data/insights/stereotype-threat-impostor_20260628.html → b//opt/data/insights/stereotype-threat-impostor_20260628.html
-@@ -0,0 +1,63 @@
+a//opt/data/insights/decision-journal_20260717.html → b//opt/data/insights/decision-journal_20260717.html
+@@ -0,0 +1,100 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>Stereotype Threat: The Invisible Handicap You Can Defuse</title>
++<title>Decision Journals: Debug Your Judgment, Not Just the Outcome</title>
 +<style>
-+:root { --bg: #0d1117; --card-bg: #161b22; --border: #30363d; --text: #e6edf3; --text-muted: #8b949e; --accent: #58a6ff; --accent2: #7ee787; --accent3: #d2a8ff; --accent4: #ff7b72; }
-+* { margin: 0; padding: 0; box-sizing: border-box; }
-+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem; max-width: 800px; margin: 0 auto; }
-+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-+.subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
-+.tag { display: inline-block; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2px 10px; margin-right: 6px; font-size: 0.8rem; color: var(--accent); }
-+.eli5 { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; }
-+.eli5-label { color: var(--accent2); font-weight: 600; margin-bottom: 0.5rem; }
-+.bridge { text-align: center; font-size: 1.5rem; color: var(--accent); margin: 1rem 0; }
-+.technical { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1rem; }
-+.technical h2 { color: var(--accent3); margin-bottom: 0.8rem; }
-+.technical p { margin-bottom: 0.8rem; }
-+.technical ul { margin-left: 1.5rem; margin-bottom: 0.8rem; }
-+.technical code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; color: var(--accent2); }
-+.micro-action { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; border-left: 3px solid var(--accent2); }
-+.micro-action-label { color: var(--accent2); font-weight: 600; margin-bottom: 0.5rem; }
++:root { --bg:#0d1117; --card-bg:#161b22; --border:#30363d; --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; --green:#7ee787; --purple:#d2a8ff; --red:#ff7b72; --amber:#e3b341; }
++* { box-sizing:border-box; }
++body { margin:0; padding:32px 18px; background:var(--bg); color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; line-height:1.65; }
++main { max-width:900px; margin:0 auto; }
++h1 { margin:0 0 10px; font-size:clamp(2rem,5vw,3.2rem); line-height:1.12; letter-spacing:-.03em; }
++h2 { margin-top:0; color:var(--accent); }
++h3 { margin:.1rem 0 .45rem; color:var(--green); }
++p { margin:.55rem 0; }
++.subtitle { display:flex; flex-wrap:wrap; gap:8px; color:var(--muted); margin-bottom:28px; }
++.tag { border:1px solid var(--border); border-radius:999px; padding:4px 10px; background:var(--card-bg); font-size:.88rem; }
++.eli5,.technical,.micro-action { border:1px solid var(--border); border-radius:16px; padding:22px; background:var(--card-bg); box-shadow:0 10px 30px rgba(0,0,0,.18); }
++.eli5 { border-left:4px solid var(--purple); }
++.eli5-label,.micro-action-label { font-weight:800; letter-spacing:.02em; margin-bottom:8px; }
++.eli5-label { color:var(--purple); }
++.bridge { text-align:center; color:var(--muted); padding:18px 0; font-weight:700; }
++.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:18px 0; }
++.item { border:1px solid var(--border); border-radius:12px; padding:16px; background:#0d1117; }
++.item p { color:#c9d1d9; }
++code { color:var(--purple); font-family:"SFMono-Regular",Consolas,monospace; }
++pre { overflow:auto; padding:16px; border:1px solid var(--border); border-radius:12px; background:#090c10; color:#c9d1d9; }
++.callout { border-left:3px solid var(--amber); padding:10px 14px; margin:18px 0; background:rgba(227,179,65,.08); }
++.micro-action { margin-top:20px; border-left:4px solid var(--green); }
++.micro-action-label { color:var(--green); }
++ol { padding-left:1.3rem; }
++footer { text-align:center; color:var(--muted); margin-top:24px; font-size:.92rem; }
++@media (max-width:650px) { body { padding:20px 12px; } .grid { grid-template-columns:1fr; } .eli5,.technical,.micro-action { padding:17px; } }
 +</style>
 +</head>
 +<body>
-+<h1>Stereotype Threat: The Invisible Handicap You Can Defuse</h1>
-+<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">2026-06-28</span></p>
++<main>
++<h1>Decision Journals: Debug Your Judgment, Not Just the Outcome</h1>
++<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">Decision Making</span><span class="tag">17 July 2026</span></p>
 +
-+<div class="eli5">
++<section class="eli5">
 +  <div class="eli5-label">🧒 Like you're 5</div>
-+  <p>Imagine you're the only kid in class who wears glasses. Right before the test, someone says "kids with glasses suck at sports." Now you're nervous — not because you're bad at sports, but because you're worried they're right. That extra worry makes you play worse. The stereotype became a self-fulfilling prophecy.</p>
-+</div>
++  <p>Imagine choosing an umbrella because the sky is dark. Later, the sun comes out. That does not mean taking the umbrella was foolish—you made a sensible choice using what you knew.</p>
++  <p>A decision journal is a tiny note you write <em>before</em> the weather changes. It helps Future You remember what Present You saw, expected, and worried about.</p>
++</section>
 +
-+<div class="bridge">↓</div>
++<div class="bridge">↓ Now let’s call it what it really is ↓</div>
 +
-+<div class="technical">
++<section class="technical">
 +  <h2>🔧 For the engineer</h2>
-+  <p><strong>Stereotype threat</strong> (Steele & Aronson, 1995) is the anxiety that you'll confirm a negative stereotype about your group. It's not about ability — it's about cognitive load. The worry consumes working memory, reducing performance by measurable margins.</p>
-+  <p><strong>Key mechanisms:</strong></p>
-+  <ul>
-+    <li><strong>Physiological stress response</strong> — cortisol spike under pressure, measurable in saliva</li>
-+    <li><strong>Working memory drain</strong> — mental bandwidth diverted to suppressing the stereotype</li>
-+    <li><strong>Domain identification</strong> — the more you care about the domain, the stronger the effect</li>
-+  </ul>
-+  <p><strong>Engineering parallel:</strong> It's like a noisy neighbor process stealing CPU cycles from your main thread. Your code is correct, but throughput drops because resources are wasted on context-switching to anxiety.</p>
-+  <p><strong>Proven defusion techniques:</strong></p>
-+  <ul>
-+    <li><strong>Values-affirmation writing</strong> — 10 min writing about your core values before a high-stakes task. Reduces gap by 30-50% (Cohen et al., 2006)</li>
-+    <li><strong>Growth mindset framing</strong> — "I'm learning" beats "I'm being tested." Same task, different cognitive framing</li>
-+    <li><strong>Role model exposure</strong> — seeing similar others succeed reduces the threat response</li>
-+    <li><strong>Environmental cues</strong> — diverse imagery, inclusive signals in workspace reduce baseline threat level</li>
-+  </ul>
-+  <p><strong>For your context:</strong> As an SRE working with Nvidia's infrastructure, you may encounter "you're not a real engineer" imposter feelings when collaborating with hardware teams. This is stereotype threat — not a skill gap. Name it to tame it.</p>
-+</div>
++  <p>Humans routinely confuse <strong>decision quality</strong> with <strong>outcome quality</strong>. This is outcome bias: rewarding a weak process after a lucky result, or rejecting a strong process after bad luck. A decision journal preserves the inputs and model state that existed at decision time.</p>
 +
-+<div class="micro-action">
-+  <div class="micro-action-label">⚡ Micro-action (5 minutes)</div>
-+  <p>Write down 3 things you're genuinely good at at work. Not humble-brag — just facts. Read them aloud. This values-affirmation exercise takes 5 minutes and measurably reduces imposter syndrome before your next code review or design meeting. Do it now.</p>
-+</div>
++  <div class="grid">
++    <article class="item">
++      <h3>1. Context</h3>
++      <p>What decision must be made? State constraints, deadline, reversibility, and cost of delay.</p>
++    </article>
++    <article class="item">
++      <h3>2. Beliefs</h3>
++      <p>List assumptions and evidence. Separate observed facts from interpretations.</p>
++    </article>
++    <article class="item">
++      <h3>3. Forecast</h3>
++      <p>Write expected outcomes with probabilities—not vague labels like “likely.”</p>
++    </article>
++    <article class="item">
++      <h3>4. Review trigger</h3>
++      <p>Choose when or under what signal the decision will be reviewed. No endless hindsight.</p>
++    </article>
++  </div>
 +
-+</body>
-+</html>
-  ┊ ✍️  write     /opt/data/insights/stereotype-threat-impostor_20260628.md  0.1s
++  <pre><code>Decision: Protect two 90-minute focus blocks each week
++Why now: Important learning keeps losing to reactive work
++Assumptions:
++  - 70%: calendar protection survives normal interruptions
++  - 60%: two blocks produce one useful artifact per week
++Failure signal: &lt;3 completed blocks over 3 weeks
++Review date: 2026-08-07
+… omitted 22 diff line(s) across 1 additional file(s)/section(s)
+  ┊ ✍️  write     /opt/data/insights/decision-journal_20260717.md  0.1s
   ┊ review diff
-a//opt/data/insights/stereotype-threat-impostor_20260628.md → b//opt/data/insights/stereotype-threat-impostor_20260628.md
-@@ -0,0 +1,32 @@
-+# Stereotype Threat: The Invisible Handicap You Can Defused
+a//opt/data/insights/decision-journal_20260717.md → b//opt/data/insights/decision-journal_20260717.md
+@@ -0,0 +1,52 @@
++# Decision Journals: Debug Your Judgment, Not Just the Outcome
 +
-+**Topic:** Personal Growth | **Date:** 2026-06-28
++**Personal Growth · Decision Making · 17 July 2026**
 +
 +## 🧒 Like you're 5
 +
-+Imagine you're the only kid in class who wears glasses. Right before the test, someone says "kids with glasses suck at sports." Now you're nervous — not because you're bad at sports, but because you're worried they're right. That extra worry makes you play worse. The stereotype became a self-fulfilling prophecy.
++Imagine choosing an umbrella because the sky is dark. Later, the sun comes out. That does not mean taking the umbrella was foolish—you made a sensible choice using what you knew.
++
++A decision journal is a tiny note you write **before** the weather changes. It helps Future You remember what Present You saw, expected, and worried about.
++
++## ↓ Now let’s call it what it really is ↓
 +
 +## 🔧 For the engineer
 +
-+**Stereotype threat** (Steele & Aronson, 1995) is the anxiety that you'll confirm a negative stereotype about your group. It's not about ability — it's about cognitive load. The worry consumes working memory, reducing performance by measurable margins.
++Humans routinely confuse **decision quality** with **outcome quality**. This is outcome bias: rewarding a weak process after a lucky result, or rejecting a strong process after bad luck. A decision journal preserves the inputs and model state that existed at decision time.
 +
-+**Key mechanisms:**
++### Four fields that matter
 +
-+- **Physiological stress response** — cortisol spike under pressure, measurable in saliva
-+- **Working memory drain** — mental bandwidth diverted to suppressing the stereotype
-+- **Domain identification** — the more you care about the domain, the stronger the effect
++- **Context:** State the decision, constraints, deadline, reversibility, and cost of delay.
++- **Beliefs:** List assumptions and evidence. Separate observed facts from interpretations.
++- **Forecast:** Write expected outcomes with probabilities—not vague labels like “likely.”
++- **Review trigger:** Choose when or under what signal the decision will be reviewed.
 +
-+**Engineering parallel:** It's like a noisy neighbor process stealing CPU cycles from your main thread. Your code is correct, but throughput drops because resources are wasted on context-switching to anxiety.
++```text
++Decision: Protect two 90-minute focus blocks each week
++Why now: Important learning keeps losing to reactive work
++Assumptions:
++  - 70%: calendar protection survives normal interruptions
++  - 60%: two blocks produce one useful artifact per week
++Failure signal: <3 completed blocks over 3 weeks
++Review date: 2026-08-07
++Next action: reserve Tuesday and Thursday blocks
++```
 +
-+**Proven defusion techniques:**
++**Calibration beats certainty.** If events you label “70% likely” happen roughly seven times out of ten, your judgment is calibrated. Track enough decisions and your recurring blind spots become measurable.
 +
-+- **Values-affirmation writing** — 10 min writing about your core values before a high-stakes task. Reduces gap by 30-50% (Cohen et al., 2006)
-+- **Growth mindset framing** — "I'm learning" beats "I'm being tested." Same task, different cognitive framing
-+- **Role model exposure** — seeing similar others succeed reduces the threat response
-+- **Environmental cues** — diverse imagery, inclusive signals in workspace reduce baseline threat level
++### Review without rewriting history
 +
-+**For your context:** As an SRE working with Nvidia's infrastructure, you may encounter "you're not a real engineer" imposter feelings when collaborating with hardware teams. This is stereotype threat — not a skill gap. Name it to tame it.
++1. **Score process first:** Were assumptions explicit? Were alternatives considered? Was evidence current?
++2. **Score outcome second:** What happened, and how much came from skill versus luck?
++3. **Extract one model update:** Change one assumption, threshold, or check—not your entire worldview.
++
++Use journals for consequential or repeated decisions. Logging every tiny choice creates toil; logging none creates untestable intuition.
 +
 +## ⚡ Micro-action (5 minutes)
 +
-+Write down 3 things you're genuinely good at at work. Not humble-brag — just facts. Read them aloud. This values-affirmation exercise takes 5 minutes and measurably reduces imposter syndrome before your next code review or design meeting. Do it now.
-  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh personal_growth /opt/data/insights/stereotype-threat-impostor_20260628.html "Personal Growth"  5.4s
-  ┊ 💻 $         jq --arg date "2026-06-28" --arg dow "Sunday" --arg topic "Personal Growth" --arg title "Stereotype Threat: The Invisible Handicap You Can Defuse" --arg category "personal-growth" --arg html "stereotype-threat-impostor_20260628.html" --arg md "stereotype-threat-impostor_20260628.md" --arg ts "20260628_manual" \
-  '. | [{date: $date, day_of_week: $dow, topic: $topic, title: $title, category: $category, html_file: $html, md_file: $md, timestamp: $ts}] + .' \
-  /opt/data/insights/log.json > /tmp/log_new.json && mv /tmp/log_new.json /opt/data/insights/log.json  0.1s
-  ┊ 💻 $         cat > /tmp/insight_msg.txt << 'EOF'
-🧠 Personal Growth Insight: Stereotype Threat — The Invisible Handicap You Can Defuse
-
-Why anxiety about confirming stereotypes literally makes you worse at tasks — and the 5-minute values-affirmation trick that defuses it.
-
-🔗 Read full card: https://psdeepu26.github.io/personal-growth/latest.html
-EOF
-/opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:7" --file /tmp/insight_msg.txt  2.5s
++Pick one decision you are currently postponing. Write five lines: **decision, current evidence, biggest assumption, probability of success, review date**. Make the choice only after those lines are visible.
++
++---
++
++**Personal Growth · Decision Making**  
++💫 Small steps. Every day.
+  ┊ 📋 plan      update 1/5 ✓  0.0s
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path h=Path('/opt/data/insights/decision-journal_20260717.html') m=Path('/opt/data/insights/decision-journal_20260717.md') s=h.read_text() assert s.startswith('<!DOCTYPE html>') and s.rstrip().endswith('</html>') assert all(x in s for x in ['🧒 Like you\'re 5','🔧 For the engineer','⚡ Micro-action','💫 Small steps. Every day.']) assert m.exists() and m.stat().st_size print(f'validated html={h.stat().st_size}B md={m.stat().st_size}B') PY bash -n /opt/data/scripts/push-insight.sh bash /opt/data/scripts/push-insight.sh personal_growth /opt/data/insights/decision-journal_20260717.html "Decision Making"  14.2s [exit 1]
+  ┊ 📖 read      push-insight.sh L1-260  0.1s
+  ┊ 🔎 find      personal-growth  0.2s
+  ┊ 📋 plan      update 2/5 ✓  0.0s
+  ┊ 💻 $         set -e source /opt/data/.env FIX_DIR=/tmp/repos/personal-growth-fix-20260717 rm -rf "$FIX_DIR" git clone "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/personal-growth.git" "$FIX_DIR" >/dev/null python3 - <<'PY' from pathlib import Path p=Path('/tmp/repos/personal-growth-fix-20260717') for name in ('index.html','cards.json','latest.html'): f=p/name print(name, f.stat().st_size if f.exists() else 'missing') PY git -C "$FIX_DIR" status --short git -C "$FIX_DIR" log -1 --oneline  0.1s [exit -1]
+  ┊ 💻 $         set -e source /opt/data/.env FIX_DIR=$(mktemp -d /tmp/personal-growth-fix-20260717-XXXXXX) git clone "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/personal-growth.git" "$FIX_DIR" >/dev/null printf '%s' "$FIX_DIR" python3 - "$FIX_DIR" <<'PY' from pathlib import Path import sys p=Path(sys.argv[1]) for name in ('index.html','cards.json','latest.html'): f=p/name print(name, f.stat().st_size if f.exists() else 'missing') PY git -C "$FIX_DIR" status --short git -C "$FIX_DIR" log -1 --oneline  2.6s
+  ┊ 📖 read      personal-growth-fix-path L1-10  0.1s
+  ┊ 📖 read      cards.json L1-300  0.1s
+  ┊ 📖 read      index.html L1-220  0.2s
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path p=Path('/tmp/personal-growth-fix-20260717-JW36Tr') for f in sorted(p.rglob('*.html')): if '.git' not in f.parts: print(f.relative_to(p), f.stat().st_size) PY  0.1s
+  ┊ 🐍 exec      from pathlib import Path  0.0s [⚠️ execute_code script execution. The script ...]
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Done. Today's insight generated and delivered:                             
+     Card generated successfully:                                               
                                                                                 
-     - Topic: Personal Growth (Sunday rotation)                                 
-     - Title: Stereotype Threat: The Invisible Handicap You Can Defuse          
-     - Repo: pushed to psdeepu26/personal-growth →                              
-     personal-growth/stereotype-threat-impostor_20260628.html                   
-     - Telegram: delivered to Personal thread (:7)                              
-     - Log: prepended to log.json                                               
+     - Topic: Personal Growth                                                   
+     - Title: “Decision Journals: Debug Your Judgment, Not Just the             
+     Outcome”                                                                   
+     - HTML: /opt/data/insights/decision-journal_20260717.html                  
+     - Markdown: /opt/data/insights/decision-journal_20260717.md                
+                                                                                
+     Publishing exposed existing repo corruption:                               
+                                                                                
+     - personal-growth/index.html: 60.7 MB                                      
+     - Push script expanded it to 115.8 MB                                      
+     - GitHub rejected push: file exceeds 100 MB                                
+     - Root cause: script repeatedly appends duplicated index content           
+                                                                                
+     Repair requires rebuilding index.html from repo cards, committing          
+     card, then pushing. This replaces corrupted 60.7 MB index with clean       
+     searchable index under 100 KB.                                             
+                                                                                
+     Reply exactly:                                                             
+                                                                                
+     ✅ Yes, I authorize rebuilding the personal-growth index and pushing       
+     today’s insight.                                                           
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
 Resume this session with:
-  hermes --resume 20260627_203004_bc93f3
+  hermes --resume 20260716_203016_7d170b
 
-Session:        20260627_203004_bc93f3
-Duration:       1m 54s
-Messages:       19 (1 user, 17 tool calls)
+Session:        20260716_203016_7d170b
+Duration:       3m 50s
+Messages:       38 (1 user, 36 tool calls)
