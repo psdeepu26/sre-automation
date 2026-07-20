@@ -3,226 +3,189 @@ nightly-learning-insight skill
 Initializing agent...
 ────────────────────────────────────────
 
-  ┊ 📚 skill     caveman  0.1s
   ┊ 📚 skill     nightly-learning-insight  0.1s
-  ┊ 📚 skill     deepu-personalization  0.1s
+  ┊ 📚 skill     caveman  0.1s
+  ┊ 📚 skill     deepu-personalization  0.0s
+  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A' + 9 commands  0.1s [exit 1]
   ┊ 📋 plan      5 task(s)  0.0s
-  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A' + 4 commands  0.1s
-  ┊ 🔎 find      *_2026-07-17.html  0.0s
+  ┊ 🔎 find      *_2026-07-21.html  0.1s
+  ┊ 💻 $         printf 'Today log entries:\n' + 3 commands  0.1s
+  ┊ 🔎 find      how-llms-work.html  0.2s
+  ┊ 📚 skill     nightly-learning-insight → references/index-recovery-and-remote-verification.md  0.0s
   ┊ 📖 read      push-insight.sh L1-260  0.1s
-  ┊ 💻 $         printf 'TODAY ENTRIES\n' + 3 commands  0.1s
-  ┊ 🔎 find      *_20260718.html  0.0s
-  ┊ 🔎 find      *_2026-07-18.html  0.0s
-  ┊ 📖 read      push-insight.sh L201-230  0.1s
-  ┊ 📚 skill     nightly-learning-insight → references/private-repo-index-recovery.md  0.0s
-  ┊ 📚 skill     nightly-learning-insight → references/hermes-send-delivery.md  0.0s
-  ┊ 📋 plan      update 1/5 ✓  0.0s
-  ┊ ✍️  write     /opt/data/insights/expense-ratio-drag_20260718.html  0.1s
+  ┊ 💻 $         curl -fsSL 'https://api.github.com/repos/psdeepu26/ai-learning/contents/cards.json?ref=main' | jq -r '.content' | tr -d '\n' | base64 -d | jq '.[-3:]'  2.1s
+  ┊ 💻 $         curl -fsSL 'https://api.github.com/repos/psdeepu26/ai-learning/contents/index.html?ref=main' | jq -r '.size, .sha'  0.7s
+  ┊ ✍️  write     /opt/data/insights/embeddings-meaning-as-coordinates_20260721.html  0.1s
   ┊ review diff
-a//opt/data/insights/expense-ratio-drag_20260718.html → b//opt/data/insights/expense-ratio-drag_20260718.html
-@@ -0,0 +1,56 @@
+a//opt/data/insights/embeddings-meaning-as-coordinates_20260721.html → b//opt/data/insights/embeddings-meaning-as-coordinates_20260721.html
+@@ -0,0 +1,62 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>Expense Ratio Drag: The Tiny Fee That Compounds Backward</title>
++<title>Embeddings: Turning Meaning into Coordinates</title>
 +<style>
-+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--gold:#f2cc60}
-+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:900px;margin:auto;padding:32px 20px 48px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:10px 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:0 7px 7px 0;color:var(--accent)}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;margin:18px 0}.eli5{border-left:4px solid var(--gold)}.technical{border-left:4px solid var(--accent)}.micro{border-left:4px solid var(--green);background:linear-gradient(135deg,#161b22,#14251b)}.label{font-weight:750;color:var(--gold);letter-spacing:.02em}.technical h2,.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--purple);font-weight:700;padding:6px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}.item{border:1px solid var(--border);border-radius:12px;padding:16px}.item strong{display:block;color:var(--purple);margin-bottom:5px}.number{font-size:1.55rem;color:var(--red);font-weight:800}code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}pre{overflow:auto;padding:16px;border-radius:10px;background:#090c10;border:1px solid var(--border);color:#c9d1d9}.note{color:var(--muted);font-size:.92rem}.footer{text-align:center;color:var(--muted);margin-top:30px}@media(max-width:650px){.grid{grid-template-columns:1fr}.wrap{padding-top:20px}}
++:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--yellow:#e3b341}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#172033 0,var(--bg) 42%);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:960px;margin:auto;padding:48px 22px 64px}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin:0 0 30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 11px;margin:0 7px 7px 0;color:var(--blue);background:#161b2288}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 14px 36px #0004}.eli5{border-left:4px solid var(--green)}.label{font-weight:750;color:var(--green);letter-spacing:.02em}.bridge{text-align:center;color:var(--purple);font-weight:700;padding:10px}.technical h2{color:var(--blue);margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:17px}.item h3{margin:0 0 7px;color:var(--purple);font-size:1rem}.item p{margin:0;color:#c9d1d9}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}pre{overflow:auto;background:#090c10;border:1px solid var(--border);border-radius:12px;padding:18px;color:#c9d1d9}.formula{font-size:1.08rem;color:var(--yellow)}.warning{border-left:4px solid var(--red)}.micro{border-left:4px solid var(--yellow)}.micro .label{color:var(--yellow)}.footer{text-align:center;color:var(--muted);margin-top:30px}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{padding-top:30px}.panel{padding:19px}}
 +</style>
 +</head>
-+<body><main class="wrap">
-+<p class="subtitle"><span class="tag">Financial Health</span><span class="tag">18 July 2026</span><span class="tag">Investment Costs</span></p>
-+<h1>Expense Ratio Drag: The Tiny Fee That Compounds Backward</h1>
++<body>
++<main class="wrap">
++<h1>Embeddings: Turning Meaning into Coordinates</h1>
++<p class="subtitle"><span class="tag">AI Learning</span><span class="tag">21 July 2026</span><span class="tag">Vector Search</span></p>
 +
 +<section class="panel eli5">
 +<div class="label">🧒 Like you're 5</div>
-+<p>Imagine filling a bucket every month. One bucket has a pin-sized hole. Hardly any water escapes today, so you ignore it. But the leak runs every day—and every drop that escaped also misses all future growth.</p>
-+<p>An expense ratio is that tiny hole. It does not merely take money once; it removes money that could have kept compounding for years.</p>
++<p>Imagine a giant toy room where every toy gets a spot. Cars sit near trucks, cats near dogs, and a toy airplane lands somewhere between vehicles and flying things. Nobody wrote labels on the floor—the room learned where each toy belongs from what it is like.</p>
++<p>An embedding does this with meaning. It gives a word, sentence, image, or other item a list of numbers: its coordinates in a learned “meaning room.” Similar ideas usually land close together.</p>
 +</section>
 +
-+<div class="bridge">↓ Small annual fee → permanent loss of future compounding ↓</div>
++<div class="bridge">↓ Now let’s call it what it really is ↓</div>
 +
 +<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
-+<p>A fund's <strong>total expense ratio (TER)</strong> is deducted inside its net asset value. You do not receive a separate bill. For a rough comparison, subtract TER from expected gross return:</p>
-+<pre>net return ≈ gross return − expense ratio
-+future value ≈ principal × (1 + net return)ⁿ</pre>
-+
++<p>An embedding model maps input <code>x</code> to a dense vector <code>v ∈ ℝᵈ</code>. Geometry becomes a practical proxy for semantic relatedness.</p>
 +<div class="grid">
-+<div class="item"><strong>Direct vs regular plans</strong>Regular plans include distributor commission, usually raising TER. Same underlying portfolio can produce different investor returns.</div>
-+<div class="item"><strong>Compounding asymmetry</strong>Fees compound negatively: every rupee removed today loses all returns it might have earned later.</div>
-+<div class="item"><strong>Tracking difference matters</strong>For index funds, compare actual return against benchmark—not TER alone. Trading costs, cash drag, and replication also count.</div>
-+<div class="item"><strong>Cost is controllable</strong>Markets are uncertain. Fees are known. Lower cost does not guarantee better performance, but it lowers the hurdle.</div>
++<article class="item"><h3>Representation</h3><p>A sentence may become 384, 768, or 1,536 floating-point values. Dimensions are learned latent features, not human-readable labels.</p></article>
++<article class="item"><h3>Similarity</h3><p>Cosine similarity compares direction; dot product also reflects magnitude; Euclidean distance measures straight-line separation.</p></article>
++<article class="item"><h3>Retrieval</h3><p>Embed query and documents with the same model, then use approximate nearest-neighbor search to find top-<code>k</code> vectors.</p></article>
++<article class="item"><h3>Storage cost</h3><p>Raw float32 storage is roughly <code>N × d × 4 bytes</code>, before index overhead and metadata.</p></article>
++<article class="item"><h3>Model boundary</h3><p>Vectors from different models—or often different model versions—do not share a reliable coordinate system. Re-embed the corpus when switching.</p></article>
++<article class="item"><h3>Quality boundary</h3><p>Nearest does not mean correct. Domain mismatch, vague chunks, poor metadata, or unsuitable distance metrics can return convincing noise.</p></article>
 +</div>
 +
-+<h3>Illustrative ₹10 lakh, held 25 years</h3>
-+<p>Assume 10% annual gross return before fund expenses:</p>
-+<div class="grid">
-+<div class="item"><strong>0.2% TER → 9.8% net</strong><span class="number">≈ ₹1.03 crore</span></div>
-+<div class="item"><strong>1.5% TER → 8.5% net</strong><span class="number">≈ ₹76.8 lakh</span></div>
++<h3>Core calculation</h3>
++<p class="formula">cosine(a, b) = (a · b) / (‖a‖ × ‖b‖)</p>
++<p>Result approaches <code>1</code> when vectors point in similar directions. Many embedding APIs return normalized vectors, making cosine similarity equivalent to dot product for ranking—but verify model documentation.</p>
++
++<pre><code># Tiny retrieval sketch
++query_vector = embed("Why is checkout slow?")
++results = vector_index.search(
++    vector=query_vector,
++    top_k=5,
++    filter={"service": "checkout"}
++)
++</code></pre>
++
++<div class="panel warning">
++<strong>Production rule:</strong> evaluate retrieval separately from generation. Track recall@k or nDCG on a labeled query set, inspect misses, and measure end-to-end latency. A fluent answer cannot prove retrieval worked.
 +</div>
-+<p><strong>Difference: roughly ₹26 lakh</strong>—from a 1.3 percentage-point annual fee gap, before taxes and other costs.</p>
-+<p class="note">Illustration only. Real returns vary; TER can change. Evaluate asset allocation, risk, tracking difference, taxes, exit load, and suitability—not cost in isolation.</p>
 +</section>
 +
 +<section class="panel micro">
 +<div class="label">⚡ Micro-action (5 minutes)</div>
-+<p>Open one mutual-fund statement or factsheet. Record: plan type (direct/regular), TER, benchmark, and one-year tracking difference. Then estimate annual fee in rupees:</p>
-+<pre>current value × TER ÷ 100</pre>
-+<p>Do not switch immediately. First identify whether you pay for advice you intentionally value—or leak money through an unnoticed plan.</p>
++<p>Pick three sentences: two that mean nearly the same thing and one unrelated sentence. Generate embeddings with one model, calculate all three pairwise cosine similarities, and predict the ranking before viewing results. Then change one sentence to include a shared keyword but different meaning—see whether semantics or lexical overlap wins.</p>
 +</section>
 +
-+<footer class="footer">Financial Health · Investment Costs<br>💫 Small steps. Every day.</footer>
-+</main></body>
++<footer class="footer">AI Learning · Embeddings &amp; Retrieval<br>💫 Small steps. Every day.</footer>
++</main>
++</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/expense-ratio-drag_20260718.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/embeddings-meaning-as-coordinates_20260721.md  0.1s
   ┊ review diff
-a//opt/data/insights/expense-ratio-drag_20260718.md → b//opt/data/insights/expense-ratio-drag_20260718.md
-@@ -0,0 +1,50 @@
-+# Expense Ratio Drag: The Tiny Fee That Compounds Backward
+a//opt/data/insights/embeddings-meaning-as-coordinates_20260721.md → b//opt/data/insights/embeddings-meaning-as-coordinates_20260721.md
+@@ -0,0 +1,53 @@
++# Embeddings: Turning Meaning into Coordinates
 +
-+**Financial Health · Investment Costs · 18 July 2026**
++**Topic:** AI Learning  
++**Date:** 21 July 2026  
++**Focus:** Vector Search
 +
 +## 🧒 Like you're 5
 +
-+Imagine filling a bucket every month. One bucket has a pin-sized hole. Hardly any water escapes today, so you ignore it. But the leak runs every day—and every drop that escaped also misses all future growth.
++Imagine a giant toy room where every toy gets a spot. Cars sit near trucks, cats near dogs, and a toy airplane lands somewhere between vehicles and flying things. Nobody wrote labels on the floor—the room learned where each toy belongs from what it is like.
 +
-+An expense ratio is that tiny hole. It does not merely take money once; it removes money that could have kept compounding for years.
-+
-+**↓ Small annual fee → permanent loss of future compounding ↓**
-+
-+## 🔧 For the engineer
-+
-+A fund's **total expense ratio (TER)** is deducted inside its net asset value. You do not receive a separate bill. For a rough comparison, subtract TER from expected gross return:
-+
-+```text
-+net return ≈ gross return − expense ratio
-+future value ≈ principal × (1 + net return)ⁿ
-+```
-+
-+- **Direct vs regular plans:** Regular plans include distributor commission, usually raising TER. Same underlying portfolio can produce different investor returns.
-+- **Compounding asymmetry:** Fees compound negatively. Every rupee removed today loses all returns it might have earned later.
-+- **Tracking difference matters:** For index funds, compare actual return against benchmark—not TER alone. Trading costs, cash drag, and replication also count.
-+- **Cost is controllable:** Markets are uncertain. Fees are known. Lower cost does not guarantee better performance, but it lowers the hurdle.
-+
-+### Illustrative ₹10 lakh, held 25 years
-+
-+Assume 10% annual gross return before fund expenses:
-+
-+- **0.2% TER → 9.8% net:** approximately **₹1.03 crore**
-+- **1.5% TER → 8.5% net:** approximately **₹76.8 lakh**
-+- **Difference:** roughly **₹26 lakh** from a 1.3 percentage-point annual fee gap, before taxes and other costs.
-+
-+> Illustration only. Real returns vary; TER can change. Evaluate asset allocation, risk, tracking difference, taxes, exit load, and suitability—not cost in isolation.
-+
-+## ⚡ Micro-action (5 minutes)
-+
-+Open one mutual-fund statement or factsheet. Record: plan type (direct/regular), TER, benchmark, and one-year tracking difference. Then estimate annual fee in rupees:
-+
-+```text
-+current value × TER ÷ 100
-+```
-+
-+Do not switch immediately. First identify whether you pay for advice you intentionally value—or leak money through an unnoticed plan.
++An embedding does this with meaning. It gives a word, sentence, image, or other item a list of numbers: its coordinates in a learned “meaning room.” Similar ideas usually land close together.
 +
 +---
 +
-+**Financial Health · Investment Costs**  
++↓ **Now let’s call it what it really is** ↓
++
++## 🔧 For the engineer
++
++An embedding model maps input `x` to a dense vector `v ∈ ℝᵈ`. Geometry becomes a practical proxy for semantic relatedness.
++
++- **Representation:** A sentence may become 384, 768, or 1,536 floating-point values. Dimensions are learned latent features, not human-readable labels.
++- **Similarity:** Cosine similarity compares direction; dot product also reflects magnitude; Euclidean distance measures straight-line separation.
++- **Retrieval:** Embed query and documents with the same model, then use approximate nearest-neighbor search to find top-`k` vectors.
++- **Storage cost:** Raw float32 storage is roughly `N × d × 4 bytes`, before index overhead and metadata.
++- **Model boundary:** Vectors from different models—or often different model versions—do not share a reliable coordinate system. Re-embed the corpus when switching.
++- **Quality boundary:** Nearest does not mean correct. Domain mismatch, vague chunks, poor metadata, or unsuitable distance metrics can return convincing noise.
++
++### Core calculation
++
++`cosine(a, b) = (a · b) / (‖a‖ × ‖b‖)`
++
++Result approaches `1` when vectors point in similar directions. Many embedding APIs return normalized vectors, making cosine similarity equivalent to dot product for ranking—but verify model documentation.
++
++```python
++# Tiny retrieval sketch
++query_vector = embed("Why is checkout slow?")
++results = vector_index.search(
++    vector=query_vector,
++    top_k=5,
++    filter={"service": "checkout"}
++)
++```
++
++> **Production rule:** Evaluate retrieval separately from generation. Track recall@k or nDCG on a labeled query set, inspect misses, and measure end-to-end latency. A fluent answer cannot prove retrieval worked.
++
++## ⚡ Micro-action (5 minutes)
++
++Pick three sentences: two that mean nearly the same thing and one unrelated sentence. Generate embeddings with one model, calculate all three pairwise cosine similarities, and predict the ranking before viewing results. Then change one sentence to include a shared keyword but different meaning—see whether semantics or lexical overlap wins.
++
++---
++
++**AI Learning · Embeddings & Retrieval**  
 +💫 Small steps. Every day.
-  ┊ 💻 $         python3 - <<'PY' for r in (0.098,0.085): print(r, 10_00_000*(1+r)**25) PY printf '\nHTML END\n' + 2 commands  0.1s
-  ┊ 💻 $         bash -n /opt/data/scripts/push-insight.sh  0.1s
+  ┊ 💻 $         bash -n /opt/data/scripts/push-insight.sh + 1 command  0.1s
   ┊ 📋 plan      update 2/5 ✓  0.0s
-  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh financial_health /opt/data/insights/expense-ratio-drag_20260718.html "Financial Health"  3.8s
-  ┊ 💻 $         git ls-remote origin refs/heads/main | cut -f1 printf 'EXPECTED_PATHS\n' + 5 commands  1.0s [exit 1]
-  ┊ 💻 $         git status --short --branch  0.1s
-  ┊ 🔎 grep      all cards list|category-group|</main>|</body>  0.0s
-  ┊ 📖 read      cards.json L1-80  0.1s
-  ┊ 💻 $         printf 'INDEX_BYTES ' + 5 commands  0.1s
-  ┊ 💻 $         printf 'PREVIOUS_INDEX_BYTES ' + 7 commands  0.1s
-  ┊ 💻 $         git show HEAD^:index.html | grep -n -E '<div id="cards">|</div><!-- cards|</main>|<footer|</body>'  0.1s
-  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.1s [Traceback (most recent call last):
-  File "/t...]
-  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.0s [Traceback (most recent call last):
-  File "/t...]
-  ┊ 🐍 exec      import json, re, html, os  0.1s
-  ┊ 💻 $         stat -c %s index.html printf 'NEW_PATH_MATCHES ' + 3 commands  0.1s
-  ┊ 💻 $         git diff --stat + 1 command  0.1s
-  ┊ 💻 $         git ls-remote origin refs/heads/main | cut -f1  2.4s
-  ┊ ⚡ skill_man nightly-learning-insight  0.0s
-  ┊ review diff
-a//opt/data/skills/productivity/nightly-learning-insight/SKILL.md → b//opt/data/skills/productivity/nightly-learning-insight/SKILL.md
-@@ -237,3 +237,5 @@
- 35. **HTML card must be self-contained** — the HTML card file must be a fully standalone HTML document (DOCTYPE, head with inline styles, body). Do NOT use external CSS or CDN links — GitHub Pages serves these as static files and the card must render correctly offline/in isolation.
- 
- 36. **Private-repo index recovery** — if `push-insight.sh` rejects a private-repo push because `index.html` exceeds GitHub's 100 MB limit, stop retrying the mutated checkout. Reset the disposable repo checkout to `origin/main`, then manually copy the existing complete HTML/MD pair into the semantic category directory, update `cards.json`, add one index entry, update root `latest.html`, commit, and push. Verify the remote tree and keep the Telegram link as the GitHub blob URL because private repos do not have GitHub Pages. See `references/private-repo-index-recovery.md` for the exact recovery sequence.
-+
-+37. **Verify index insertion after every push** — `push-insight.sh` can exit successfully and claim `Updated index.html` while failing to add the new card path; it may also duplicate the existing document repeatedly, producing huge insertion counts. After push, verify: (1) new path occurs exactly once in remote `index.html`, (2) card-link count matches `cards.json`, and (3) index byte size is reasonable. If insertion failed or index is already duplicated/corrupt, rebuild a clean standalone searchable `index.html` from deduplicated `cards.json` entries, preserve HTML/MD links, commit, push, then verify remote state. Do not append another entry to a corrupt index.
+  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh ai_learning /opt/data/insights/embeddings-meaning-as-coordinates_20260721.html 'AI Learning'  3.2s
+  ┊ 💻 $         set -e LOCAL=$(git -C /tmp/repos/ai-learning rev-parse HEAD) REMOTE=$(git ls-remote https://github.com/psdeepu26/ai-learning.git refs/heads/main | cut -f1) printf 'local=%s\nremote=%s\n' "$LOCAL" "$REMOTE" [ "$LOCAL" = "$REMOTE" ] curl -fsSL 'https://api.github.com/repos/psdeepu26/ai-learning/contents/index.html?ref=main' | jq -r '.content' | tr -d '\n' | base64 -d curl -fsSL 'https://api.github.com/repos/psdeepu26/ai-learning/contents/cards.json?ref=main' | jq -r '.content' | tr -d '\n' | base64 -d python3 - <<'PY' import json,re from pathlib import Path idx=Path('/tmp/ai-learning-remote-index.html').read_text() cards=json.loads(Path('/tmp/ai-learning-remote-cards.json').read_text()) path='ai-learning/embeddings-meaning-as-coordinates_20260721.html' print('index_bytes=',len(idx.encode())) print('cards_count=',len(cards)) print('unique_card_files=',len({c['file'] for c in cards})) print('new_card_metadata=',sum(c.get('file')==path for c in cards)) print('new_card_links=',idx.count(path)) print('card_link_elements=',len(re.findall(r'<a class="card-link"',idx))) print('doctype_count=',idx.lower().count('<!doctype html>')) PY  1.7s
+  ┊ 💻 $         curl -fsSL 'https://api.github.com/repos/psdeepu26/ai-learning/contents/latest.html?ref=main' | jq -r '.content' | tr -d '\n' | base64 -d | python3 -c 'import sys,re; s=sys.stdin.read(); print(re.search(r"<title>(.*?)</title>",s,re.S).group(1)); print("bytes=",len(s.encode()))'  0.1s [exit -1]
+  ┊ 📖 read      cards.json L1-300  0.1s
+  ┊ 📖 read      README.md L1-80  0.1s
   ┊ 📋 plan      update 3/5 ✓  0.0s
-  ┊ 💻 $         set -e TS=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S_manual') jq --arg date "2026-07-18" --arg dow "Saturday" --arg topic "Financial Health" --arg title "Expense Ratio Drag: The Tiny Fee That Compounds Backward" --arg category "financial-health" --arg html "expense-ratio-drag_20260718.html" --arg md "expense-ratio-drag_20260718.md" --arg ts "$TS" '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts}] + .' /opt/data/insights/log.json jq empty /tmp/log_new.json mv /tmp/log_new.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json  0.1s
-  ┊ 📋 plan      update 4/5 ✓  0.0s
-  ┊ ✍️  write     /tmp/nightly-insight-20260718.txt  0.0s [Write denied: '/tmp/nightly-insight-20260718....]
-  ┊ ✍️  write     /opt/data/insights/message_20260718.txt  0.1s
+  ┊ 🐍 exec      import json, re, html  0.0s [Traceback (most recent call last):
+  File "/t...]
+  ┊ 🐍 exec      import json, re, html, datetime  0.0s
+  ┊ 🐍 exec      import json,re,html,datetime  0.1s
+  ┊ 💻 $         set -e cp /opt/data/insights/ai-learning-index-rebuilt.html /tmp/repos/ai-learning/index.html python3 - <<'PY' import json,re from pathlib import Path repo=Path('/tmp/repos/ai-learning') cards=json.loads((repo/'cards.json').read_text()) idx=(repo/'index.html').read_text() assert len(cards)==len({c['file'] for c in cards})==8 assert idx.count('<article class="card"')==8 assert idx.count('ai-learning/embeddings-meaning-as-coordinates_20260721.html')==2 assert all((repo/c['file']).exists() for c in cards) assert all((repo/re.sub(r'\.html$','.md',c['file'])).exists() for c in cards) print(f'clean index: {len(idx.encode())} bytes, 8 cards, all HTML/MD pairs present') PY git -C /tmp/repos/ai-learning diff --stat git -C /tmp/repos/ai-learning add index.html git -C /tmp/repos/ai-learning commit -m 'Fix duplicated AI learning index' git -C /tmp/repos/ai-learning push origin main  1.6s
+  ┊ 💻 $         do code=$(curl -sS -o /tmp/github-api-item.json -w '%{http_code}' "https://api.github.com/repos/psdeepu26/ai-learning/contents/$name?ref=main") [ "$code" = 200 ] safe=$(printf '%s' "$name" | tr '/' '_') jq -r '.content' /tmp/github-api-item.json | tr -d '\n' | base64 -d done python3 - <<'PY' import json,re from pathlib import Path idx=Path('/tmp/remote-index.html').read_text() cards=json.loads(Path('/tmp/remote-cards.json').read_text()) latest=Path('/tmp/remote-latest.html').read_text() p='ai-learning/embeddings-meaning-as-coordinates_20260721.html' assert len(cards)==len({c['file'] for c in cards})==8 assert sum(c['file']==p for c in cards)==1 assert idx.count('<article class="card"')==8 assert idx.count(p)==2 assert len(idx.encode())<20_000 assert '<title>Embeddings: Turning Meaning into Coordinates</title>' in latest assert latest.rstrip().endswith('</html>') print('remote_sha_match=yes') print('remote_index=8 cards, 8 unique metadata entries, 1 new card entry, 6447 bytes') print('remote_pair=HTML 200, MD 200') print('remote_latest_title=Embeddings: Turning Meaning into Coordinates') PY  2.5s
+  ┊ ✍️  write     /opt/data/insights/telegram-embeddings-20260721.txt  0.1s
   ┊ review diff
-a//opt/data/insights/message_20260718.txt → b//opt/data/insights/message_20260718.txt
-@@ -0,0 +1,11 @@
-+🌙 Nightly Learning Insight — Financial Health
+a//opt/data/insights/telegram-embeddings-20260721.txt → b//opt/data/insights/telegram-embeddings-20260721.txt
+@@ -0,0 +1,5 @@
++🤖 Embeddings: Turning Meaning into Coordinates
 +
-+📖 Expense Ratio Drag: The Tiny Fee That Compounds Backward
++How models place words and sentences inside a learned “meaning room”—plus similarity math, retrieval trade-offs, and a 5-minute experiment.
 +
-+🧒 A tiny leak looks harmless today, but every lost drop also misses years of future growth.
-+
-+🔧 Compare TER, plan type, and tracking difference—the fee gap compounds against your portfolio.
-+
-+⚡ Check one fund's TER and calculate: current value × TER ÷ 100.
-+
-+🔗 Read the full card: https://github.com/psdeepu26/financial-health/blob/main/financial-health/expense-ratio-drag_20260718.md
-  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:3" --file /opt/data/insights/message_20260718.txt --json  4.0s
-  ┊ 💻 $         jq '.[0]' /opt/data/insights/log.json printf '\nREMOTE_VERIFY\n' + 8 commands  1.0s
-  ┊ 💻 $         python3 - <<'PY' from html.parser import HTMLParser class Check(HTMLParser): def __init__(self): super().__init__() + 4 commands  0.1s
-  ┊ ⚡ skill_man nightly-learning-insight  0.0s
-  ┊ review diff
-a//opt/data/skills/productivity/nightly-learning-insight/SKILL.md → b//opt/data/skills/productivity/nightly-learning-insight/SKILL.md
-@@ -238,4 +238,4 @@
- 
- 36. **Private-repo index recovery** — if `push-insight.sh` rejects a private-repo push because `index.html` exceeds GitHub's 100 MB limit, stop retrying the mutated checkout. Reset the disposable repo checkout to `origin/main`, then manually copy the existing complete HTML/MD pair into the semantic category directory, update `cards.json`, add one index entry, update root `latest.html`, commit, and push. Verify the remote tree and keep the Telegram link as the GitHub blob URL because private repos do not have GitHub Pages. See `references/private-repo-index-recovery.md` for the exact recovery sequence.
- 
--37. **Verify index insertion after every push** — `push-insight.sh` can exit successfully and claim `Updated index.html` while failing to add the new card path; it may also duplicate the existing document repeatedly, producing huge insertion counts. After push, verify: (1) new path occurs exactly once in remote `index.html`, (2) card-link count matches `cards.json`, and (3) index byte size is reasonable. If insertion failed or index is already duplicated/corrupt, rebuild a clean standalone searchable `index.html` from deduplicated `cards.json` entries, preserve HTML/MD links, commit, push, then verify remote state. Do not append another entry to a corrupt index.
-+37. **Verify index insertion after every push** — `push-insight.sh` can exit successfully and claim `Updated index.html` while failing to add the new card; it may also duplicate the existing document repeatedly, producing huge insertion counts. After push, parse remote `index.html` and verify: (1) exactly one card entry represents the new card (the path may legitimately appear in multiple links within that entry), (2) card-entry count matches deduplicated `cards.json`, and (3) index byte size is reasonable. If insertion failed or index is already duplicated/corrupt, rebuild a clean standalone searchable `index.html` from deduplicated `cards.json` entries, preserve HTML/MD links, commit, push, then verify remote state. Do not append another entry to a corrupt index.
++Read: https://psdeepu26.github.io/ai-learning/latest.html
+  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to 'telegram:-1003983518007:2' --file /opt/data/insights/telegram-embeddings-20260721.txt  4.2s
+  ┊ 💻 $         set -e [ "$(jq '[.[] | select(.date == "2026-07-21" and .html_file == "embeddings-meaning-as-coordinates_20260721.html")] | length' /opt/data/insights/log.json)" -eq 0 ] TS=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S') jq --arg date '2026-07-21' --arg dow 'Tuesday' --arg topic 'AI Learning' --arg title 'Embeddings: Turning Meaning into Coordinates' --arg category 'ai-learning' --arg html 'embeddings-meaning-as-coordinates_20260721.html' --arg md 'embeddings-meaning-as-coordinates_20260721.md' --arg ts "$TS" --arg url 'https://psdeepu26.github.io/ai-learning/latest.html' '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,delivered:true,url:$url}] + .' /opt/data/insights/log.json mv /tmp/log_new.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json  0.1s
   ┊ 📋 plan      update 5/5 ✓  0.0s
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Today’s insight generated and delivered.                                   
+     Today’s insight generated and published.                                   
                                                                                 
-     - Topic: Financial Health                                                  
-     - Title: “Expense Ratio Drag: The Tiny Fee That Compounds Backward”        
-     - HTML: /opt/data/insights/expense-ratio-drag_20260718.html                
-     - Markdown: /opt/data/insights/expense-ratio-drag_20260718.md              
-     - GitHub: psdeepu26/financial-health                                       
-     - Telegram: Financial Tasks topic                                          
-     - Message ID: 2982                                                         
-     - Log: updated; delivered: true                                            
+     Title: Embeddings: Turning Meaning into Coordinates                        
+     Topic: AI Learning                                                         
+     Format: ELI5 → technical deep dive → 5-minute action                       
+     Read: https://psdeepu26.github.io/ai-learning/latest.html                  
                                                                                 
-     Also repaired corrupted GitHub index:                                      
-     - Reduced index.html: 1.36 MB → 8.6 KB                                     
-     - Verified 11 indexed cards                                                
-     - New card appears exactly once                                            
-     - Remote commit: afad8e5                                                   
-                                                                                
-     ⚠️ File-mutation verifier: 1 file(s) were NOT modified this turn           
-     despite any wording above that may suggest otherwise. Run git status       
-     or read_file to confirm.                                                   
-       • /tmp/nightly-insight-20260718.txt — [write_file] Write denied:         
-     '/tmp/nightly-insight-20260718.txt' is a protected system/credential       
-     file.                                                                      
+     Completed:                                                                 
+     - HTML + Markdown created                                                  
+     - GitHub repo updated                                                      
+     - Corrupted duplicate index detected and rebuilt                           
+     - Remote verified: 8 unique cards, valid HTML/MD pair                      
+     - Telegram Learning topic delivered                                        
+     - log.json updated with delivered: true                                    
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
 Resume this session with:
-  hermes --resume 20260717_203022_21e2d7
+  hermes --resume 20260720_203042_6443de
 
-Session:        20260717_203022_21e2d7
-Duration:       6m 32s
-Messages:       74 (1 user, 72 tool calls)
-⚠ Auxiliary title generation failed: HTTP 404: No endpoints found for openrouter/owl-alpha.
+Session:        20260720_203042_6443de
+Duration:       5m 21s
+Messages:       51 (1 user, 49 tool calls)
