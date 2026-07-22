@@ -1,79 +1,82 @@
 [
   {
     "file": "sre-&-automation/safe-runbook-automation_20260723.html",
+    "md_file": "sre-&-automation/safe-runbook-automation_20260723.md",
     "category": "sre-&-automation",
-    "title": "safe-runbook-automation 20260723",
-    "emoji": "📚",
+    "title": "Safe Runbook Automation: Idempotency, Preconditions, and Rollback",
+    "emoji": "⚡",
     "timestamp": "20260722_203252"
   },
   {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260720_203605"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260717_203656"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260716_203407"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260627_203159"
+    "file": "incident-management/incident-response.html",
+    "md_file": "incident-management/incident-response.md",
+    "category": "incident-management",
+    "title": "Incident Response Flow — ELI5 → Technical",
+    "emoji": "🚨",
+    "timestamp": "20260716_203408"
   },
   {
     "file": "sre-&-automation/autoscaling-policy-thresholds_20260625.html",
+    "md_file": "sre-&-automation/autoscaling-policy-thresholds_20260625.md",
     "category": "sre-&-automation",
-    "title": "autoscaling-policy-thresholds 20260625",
-    "emoji": "📚",
+    "title": "Autoscaling Policy Thresholds: Tuning Your Safety Nets",
+    "emoji": "⚡",
     "timestamp": "20260624_203315"
   },
   {
-    "file": "sre-&-automation/autoscaling-policy-thresholds_20260625.html",
-    "category": "sre-&-automation",
-    "title": "autoscaling-policy-thresholds 20260625",
-    "emoji": "📚",
-    "timestamp": "20260624_203257"
-  },
-  {
     "file": "sre-&-automation/blameless-postmortems-incident-culture_20260618.html",
+    "md_file": "sre-&-automation/blameless-postmortems-incident-culture_20260618.md",
     "category": "sre-&-automation",
-    "title": "blameless-postmortems-incident-culture 20260618",
-    "emoji": "📚",
+    "title": "Blameless Postmortems & Incident Culture | SRE & Automation | 2026-06-18",
+    "emoji": "⚡",
     "timestamp": "20260617_203742"
   },
   {
     "file": "sre-&-automation/canary-deployments-safe-releases_20260618.html",
+    "md_file": "sre-&-automation/canary-deployments-safe-releases_20260618.md",
     "category": "sre-&-automation",
-    "title": "canary-deployments-safe-releases 20260618",
-    "emoji": "📚",
+    "title": "Canary Deployments: Releasing Without the Heart Attack",
+    "emoji": "⚡",
     "timestamp": "20260617_203435"
   },
   {
     "file": "sre-&-automation/slo-error-budgets-speedometer_20260611.html",
+    "md_file": "sre-&-automation/slo-error-budgets-speedometer_20260611.md",
     "category": "sre-&-automation",
-    "title": "slo-error-budgets-speedometer 20260611",
-    "emoji": "📚",
+    "title": "SLOs & Error Budgets: The Speedometer for Your Service",
+    "emoji": "⚡",
     "timestamp": "20260610_203433"
   },
   {
     "file": "sre-&-automation/slo-error-budgets_20260611.html",
+    "md_file": "sre-&-automation/slo-error-budgets_20260611.md",
     "category": "sre-&-automation",
-    "title": "slo-error-budgets 20260611",
-    "emoji": "📚",
+    "title": "SLOs & Error Budgets: The Reliability Contract",
+    "emoji": "⚡",
     "timestamp": "20260610_203302"
+  },
+  {
+    "file": "reliability-patterns/latest_20260531_053517.html",
+    "md_file": null,
+    "category": "reliability-patterns",
+    "title": "Insight #4 — SRE & Automation",
+    "emoji": "🛡️",
+    "timestamp": "20260531_000000"
+  },
+  {
+    "file": "reliability-patterns/latest_20260530_203109.html",
+    "md_file": null,
+    "category": "reliability-patterns",
+    "title": "Insight #3 — SRE & Automation",
+    "emoji": "🛡️",
+    "timestamp": "20260530_000000"
+  },
+  {
+    "file": "reliability-patterns/error-budgets-reliability_20260529_20260531_053616.html",
+    "md_file": null,
+    "category": "reliability-patterns",
+    "title": "Insight #4 — SRE & Automation",
+    "emoji": "🛡️",
+    "timestamp": "20260529_000000"
   }
 ]
