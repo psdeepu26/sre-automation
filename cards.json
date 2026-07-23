@@ -1,5 +1,12 @@
 [
   {
+    "file": "sre-&-automation/latest.html",
+    "category": "sre-&-automation",
+    "title": "latest",
+    "emoji": "📚",
+    "timestamp": "20260723_204009"
+  },
+  {
     "file": "sre-&-automation/safe-runbook-automation_20260723.html",
     "md_file": "sre-&-automation/safe-runbook-automation_20260723.md",
     "category": "sre-&-automation",
