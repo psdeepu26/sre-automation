@@ -5,245 +5,170 @@ Initializing agent...
 
   ┊ 📚 skill     nightly-learning-insight  0.1s
   ┊ 📚 skill     caveman  0.1s
-  ┊ 📋 plan      5 task(s)  0.0s
-  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A' + 2 commands  0.1s
-  ┊ 🔎 find      *_2026-07-23.html  0.1s
-  ┊ 🔎 find      *_20260723.html  0.0s
+  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A'  0.1s
+  ┊ 💻 $         jq '{today: [.[] | select(.date == "2026-07-25")], titles: [.[] | select(.topic == "Financial Health") | .title]}' /opt/data/insights/log.json  0.1s
+  ┊ 🔎 find      *_2026-07-25.html  0.2s
   ┊ 📖 read      push-insight.sh L1-260  0.1s
-  ┊ 💻 $         jq '[.[] | select(.date == "2026-07-24")]' /opt/data/insights/log.json + 1 command  0.1s
-  ┊ 🔎 find      *_20260724.html  0.0s
-  ┊ 📖 read      push-insight.sh L201-240  0.1s
   ┊ 📚 skill     deepu-personalization  0.0s
-  ┊ 📋 plan      update 1/5 ✓  0.0s
-  ┊ ✍️  write     /opt/data/insights/minimum-viable-day_20260724.html  0.1s
+  ┊ 📖 read      cards.json L1-300  0.1s
+  ┊ 📖 read      insight-card-markdown-template.md L1-220  0.1s
+  ┊ 📖 read      push-insight.sh L201-230  0.0s
+  ┊ ✍️  write     /opt/data/insights/sinking-funds-predictable-surprises_20260725.html  0.1s
   ┊ review diff
-a//opt/data/insights/minimum-viable-day_20260724.html → b//opt/data/insights/minimum-viable-day_20260724.html
+a//opt/data/insights/sinking-funds-predictable-surprises_20260725.html → b//opt/data/insights/sinking-funds-predictable-surprises_20260725.html
 @@ -0,0 +1,46 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>The Minimum Viable Day: Protect Momentum When Energy Drops</title>
++<title>Sinking Funds: Make Predictable Surprises Boring</title>
 +<style>
-+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--amber:#f2cc60}
-+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:940px;margin:auto;padding:48px 22px 64px}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:32px}.tag{display:inline-block;padding:4px 10px;margin:0 7px 7px 0;border:1px solid var(--border);border-radius:999px;font-size:.82rem}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--purple)}.technical{border-left:4px solid var(--accent)}.micro{border-left:4px solid var(--green);background:linear-gradient(135deg,#161b22,#122119)}.label{font-weight:800;color:var(--purple);letter-spacing:.02em}.technical h2{color:var(--accent)}.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--muted);font-weight:700;padding:8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}.item{border:1px solid var(--border);border-radius:12px;padding:17px}.item strong{display:block;color:var(--amber);margin-bottom:6px}code{color:var(--green);background:#0d1117;padding:2px 6px;border-radius:5px}pre{overflow:auto;background:#0d1117;border:1px solid var(--border);border-radius:10px;padding:17px;color:var(--green)}blockquote{margin:18px 0;padding:10px 18px;border-left:3px solid var(--red);color:var(--muted)}footer{text-align:center;color:var(--muted);margin-top:38px;font-size:.9rem}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{padding-top:30px}.panel{padding:19px}}
++:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--gold:#e3b341}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:40px 20px 56px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 11px;margin:0 7px 7px 0;font-size:.85rem}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--gold)}.technical{border-left:4px solid var(--blue)}.micro{border-left:4px solid var(--green);background:linear-gradient(135deg,#161b22,#102418)}.label{font-weight:800;color:var(--gold);letter-spacing:.02em}.technical h2{margin-top:0;color:var(--blue)}.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--purple);font-weight:700;margin:20px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:16px}.item strong{display:block;color:var(--purple);margin-bottom:5px}code{color:var(--green);background:#0d1117;border:1px solid var(--border);border-radius:6px;padding:2px 6px}.formula{font-size:1.1rem;text-align:center;border:1px dashed var(--blue);border-radius:10px;padding:16px;margin:18px 0}.example{color:var(--muted)}footer{text-align:center;color:var(--muted);margin-top:32px}@media(max-width:650px){.grid{grid-template-columns:1fr}.wrap{padding-top:28px}}
 +</style>
 +</head>
-+<body><main class="wrap">
-+<h1>The Minimum Viable Day</h1>
-+<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">24 July 2026</span><span class="tag">Resilience</span></p>
++<body>
++<main class="wrap">
++<h1>💰 Sinking Funds: Make Predictable Surprises Boring</h1>
++<p class="subtitle"><span class="tag">Financial Health</span><span class="tag">25 July 2026</span><span class="tag">Cash-flow planning</span></p>
++
 +<section class="panel eli5">
 +<div class="label">🧒 Like you're 5</div>
-+<p>Imagine keeping a campfire alive. On a good day, you add big logs and cook dinner. During rain, you may only protect one tiny ember. That ember looks unimpressive—but tomorrow, it lets you restart the fire without beginning from zero.</p>
-+<p>A Minimum Viable Day is that protected ember: the smallest version of your important routines that keeps your identity and momentum alive when energy is low.</p>
++<p>Your school trip costs ₹12,000 next year. Waiting until trip day makes it feel like a giant surprise. Putting ₹1,000 into a jar every month turns it into twelve tiny, easy payments.</p>
++<p>A sinking fund is that jar. It is for expenses that feel unexpected only because they do not happen every month: insurance, vehicle service, festivals, travel, repairs, or replacing a phone.</p>
 +</section>
-+<div class="bridge">↓ Small enough for a hard day; meaningful enough to preserve continuity ↓</div>
++
++<div class="bridge">↓ Now call it what it really is: pre-funding a known future liability ↓</div>
++
 +<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
-+<p>Most plans assume normal capacity. Real life has degraded modes: poor sleep, incidents, illness, travel, or emotional overload. Instead of treating degraded capacity as total failure, define a reduced service level for yourself.</p>
++<div class="formula"><code>monthly contribution = (target cost − current balance) ÷ months remaining</code></div>
 +<div class="grid">
-+<div class="item"><strong>Normal mode</strong>Full routine when capacity is healthy: 45-minute workout, focused learning block, complete financial review.</div>
-+<div class="item"><strong>Degraded mode</strong>Predefined floor when capacity is low: 5-minute walk, one paragraph of notes, record one expense.</div>
-+<div class="item"><strong>Success condition</strong>Measure continuity, not volume. Question becomes <code>Did I preserve the loop?</code>, not <code>Did I maximize output?</code></div>
-+<div class="item"><strong>Recovery trigger</strong>Degraded mode is temporary. After two days, reassess capacity and deliberately return to normal—or redesign the routine.</div>
++<div class="item"><strong>Sinking fund vs emergency fund</strong>Sinking fund handles known or estimable costs. Emergency fund handles genuinely uncertain shocks such as job loss or urgent medical needs.</div>
++<div class="item"><strong>Separate ledger</strong>Use one bank sub-account or one spreadsheet ledger with named buckets. Separation prevents spending money twice in your mental model.</div>
++<div class="item"><strong>Estimate with headroom</strong>Use last cost plus a 5–10% buffer for inflation or scope drift. Review estimate when renewal quotes arrive.</div>
++<div class="item"><strong>Match risk to horizon</strong>Money needed within 1–2 years should prioritize liquidity and capital safety, not volatile equity returns.</div>
++<div class="item"><strong>Automate after payday</strong>Schedule transfers immediately after income lands. Treat contributions like recurring bills, not whatever remains at month-end.</div>
++<div class="item"><strong>Reconcile quarterly</strong>Update target, due date, balance, and contribution. When one goal completes, redirect freed cash instead of letting lifestyle spend absorb it.</div>
 +</div>
-+<pre>if capacity &gt;= normal_threshold:
-+    run(normal_routine)
-+else:
-+    run(minimum_viable_routine)
-+    schedule(capacity_review, within="48h")</pre>
-+<p><strong>Why it works:</strong> lowering scope reduces activation energy while preserving the cue → action → reward loop. You avoid the “miss once, abandon everything” failure mode and gather evidence for the identity: <em>I continue, even when conditions are imperfect.</em></p>
-+<blockquote>Important guardrail: this is graceful degradation, not permanent underperformance. If minimum mode becomes default, investigate the bottleneck—sleep, workload, unclear priorities, or an oversized routine.</blockquote>
++<p class="example"><strong>Example:</strong> Annual insurance ₹36,000 due in 9 months, with ₹9,000 saved: <code>(₹36,000 − ₹9,000) ÷ 9 = ₹3,000/month</code>. Add a 10% buffer only if renewal cost is uncertain.</p>
 +</section>
++
 +<section class="panel micro">
 +<div class="label">⚡ Micro-action (5 minutes)</div>
-+<p>Pick one routine that often collapses on hard days. Write two lines:</p>
-+<p><strong>Normal:</strong> “Read for 30 minutes and capture notes.”<br><strong>Minimum:</strong> “Read one page and write one sentence.”</p>
-+<p>Put the minimum beside the normal plan. Next low-energy day, switch modes deliberately instead of silently quitting.</p>
++<p>Write your next three non-monthly expenses with amount and due month. Calculate each monthly contribution using the formula. Automate the smallest one today.</p>
 +</section>
-+<footer>Personal Growth · 💫 Small steps. Every day.</footer>
-+</main></body>
++
++<footer>Financial Health · 💫 Small steps. Every day.</footer>
++</main>
++</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/minimum-viable-day_20260724.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/sinking-funds-predictable-surprises_20260725.md  0.1s
   ┊ review diff
-a//opt/data/insights/minimum-viable-day_20260724.md → b//opt/data/insights/minimum-viable-day_20260724.md
+a//opt/data/insights/sinking-funds-predictable-surprises_20260725.md → b//opt/data/insights/sinking-funds-predictable-surprises_20260725.md
 @@ -0,0 +1,47 @@
-+# The Minimum Viable Day
++# 💰 Sinking Funds: Make Predictable Surprises Boring
 +
-+**Personal Growth · 24 July 2026 · Resilience**
-+
-+## 🧒 Like you're 5
-+
-+Imagine keeping a campfire alive. On a good day, you add big logs and cook dinner. During rain, you may only protect one tiny ember. That ember looks unimpressive—but tomorrow, it lets you restart the fire without beginning from zero.
-+
-+A Minimum Viable Day is that protected ember: the smallest version of your important routines that keeps your identity and momentum alive when energy is low.
++**Financial Health** · 25 July 2026 · Cash-flow planning
 +
 +---
 +
-+**↓ Small enough for a hard day; meaningful enough to preserve continuity ↓**
++## 🧒 Like You're 5
 +
-+## 🔧 For the engineer
++Your school trip costs ₹12,000 next year. Waiting until trip day makes it feel
++like a giant surprise. Putting ₹1,000 into a jar every month turns it into
++twelve tiny, easy payments.
 +
-+Most plans assume normal capacity. Real life has degraded modes: poor sleep, incidents, illness, travel, or emotional overload. Instead of treating degraded capacity as total failure, define a reduced service level for yourself.
++A sinking fund is that jar. It is for expenses that feel unexpected only
++because they do not happen every month: insurance, vehicle service, festivals,
++travel, repairs, or replacing a phone.
 +
-+- **Normal mode:** Full routine when capacity is healthy—45-minute workout, focused learning block, complete financial review.
-+- **Degraded mode:** Predefined floor when capacity is low—5-minute walk, one paragraph of notes, record one expense.
-+- **Success condition:** Measure continuity, not volume. Ask `Did I preserve the loop?`, not `Did I maximize output?`
-+- **Recovery trigger:** Degraded mode is temporary. After two days, reassess capacity and deliberately return to normal—or redesign the routine.
++---
 +
-+```text
-+if capacity >= normal_threshold:
-+    run(normal_routine)
-+else:
-+    run(minimum_viable_routine)
-+    schedule(capacity_review, within="48h")
-+```
++↓ Now call it what it really is: pre-funding a known future liability ↓
 +
-+**Why it works:** Lowering scope reduces activation energy while preserving the cue → action → reward loop. You avoid the “miss once, abandon everything” failure mode and gather evidence for the identity: *I continue, even when conditions are imperfect.*
++## 🔧 For the Engineer
 +
-+> **Guardrail:** This is graceful degradation, not permanent underperformance. If minimum mode becomes default, investigate the bottleneck—sleep, workload, unclear priorities, or an oversized routine.
++> `monthly contribution = (target cost − current balance) ÷ months remaining`
++
++| Concept | What It Is |
++|---|---|
++| **Sinking fund vs emergency fund** | Sinking fund handles known or estimable costs. Emergency fund handles genuinely uncertain shocks such as job loss or urgent medical needs. |
++| **Separate ledger** | Use one bank sub-account or spreadsheet ledger with named buckets. Separation prevents spending money twice in your mental model. |
++| **Estimate with headroom** | Use last cost plus a 5–10% buffer for inflation or scope drift. Review when renewal quotes arrive. |
++| **Match risk to horizon** | Money needed within 1–2 years should prioritize liquidity and capital safety, not volatile equity returns. |
++| **Automate after payday** | Schedule transfers immediately after income lands. Treat contributions like recurring bills, not month-end leftovers. |
++| **Reconcile quarterly** | Update target, due date, balance, and contribution. Redirect freed cash when a goal completes. |
++
++**Example:** Annual insurance ₹36,000 due in 9 months, with ₹9,000 saved:
++`(₹36,000 − ₹9,000) ÷ 9 = ₹3,000/month`. Add a 10% buffer only if the
++renewal cost is uncertain.
++
++---
 +
 +## ⚡ Micro-action (5 minutes)
 +
-+Pick one routine that often collapses on hard days. Write two lines:
-+
-+- **Normal:** “Read for 30 minutes and capture notes.”
-+- **Minimum:** “Read one page and write one sentence.”
-+
-+Put the minimum beside the normal plan. Next low-energy day, switch modes deliberately instead of silently quitting.
++Write your next three non-monthly expenses with amount and due month. Calculate
++each monthly contribution using the formula. Automate the smallest one today.
 +
 +---
 +
-+**Personal Growth · 💫 Small steps. Every day.**
-  ┊ 📋 plan      update 2/5 ✓  0.0s
-  ┊ 💻 $         python3 - <<'PY' from pathlib import Path from html.parser import HTMLParser p=Path('/opt/data/insights/minimum-viable-day_20260724.html') s=p.read_text() HTMLParser().feed(s) assert s.rstrip().endswith('</html>') assert Path('/opt/data/insights/minimum-viable-day_20260724.md').is_file() print(f'validated html_bytes={len(s.encode())} complete=true md=true') PY bash -n /opt/data/scripts/push-insight.sh bash /opt/data/scripts/push-insight.sh personal_growth /opt/data/insights/minimum-viable-day_20260724.html "Personal Growth"  16.6s [exit 1]
-  ┊ 📚 skill     nightly-learning-insight → references/private-repo-index-recovery.md  0.0s
-  ┊ 💻 $         printf '%s\n' '--- checkout ---' git status --short --branch git log --oneline --decorate -3 git cat-file -s origin/main:index.html printf '%s\n' '--- remote metadata ---' git show origin/main:cards.json | jq '{type:type, count:length, unique_files:([.[].file]|unique|length)}' git show origin/main:index.html | python3 -c 'import sys; s=sys.stdin.read(); print({"bytes":len(s.encode()),"doctype_count":s.lower().count("<!doctype html"),"card_link_count":s.count("class=\"card-link\"")})'  0.1s [exit -1]
-  ┊ 💻 $         git status --short --branch + 5 commands  0.0s
-  ┊ 💻 $         pwd + 5 commands  0.1s
-  ┊ 💻 $         git ls-remote https://github.com/psdeepu26/personal-growth.git refs/heads/main  0.4s [exit 128]
-  ┊ 🐍 exec      import json  0.1s
-  ┊ 💻 $         REC=/tmp/repos/personal-growth-recovery-20260724 + 5 commands  3.8s
-  ┊ 📖 read      index.html L1-240  0.1s
-  ┊ 📖 read      cards.json L1-120  0.1s
-  ┊ 🔎 find      *.html  0.1s
-  ┊ 🔎 find      *.md  0.1s
-  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.2s [Traceback (most recent call last):
++**Financial Health** · 💫 Small steps. Every day.
+  ┊ 💻 $         bash -n /opt/data/scripts/push-insight.sh + 2 commands  0.1s
+  ┊ 💻 $         git -C /tmp/repos/financial-health status --short + 2 commands  0.1s
+  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh financial_health /opt/data/insights/sinking-funds-predictable-surprises_20260725.html "Financial Health"  2.6s
+  ┊ 💻 $         git -C /tmp/repos/financial-health show --stat --oneline HEAD + 8 commands  0.1s
+  ┊ 💻 $         api='https://api.github.com/repos/psdeepu26/financial-health/contents/index.html?ref=main' + 5 commands  0.7s
+  ┊ 💻 $         git ls-remote https://github.com/psdeepu26/financial-health.git refs/heads/main  0.4s [exit 128]
+  ┊ 📚 skill     nightly-learning-insight → references/index-recovery-and-remote-verification.md  0.0s
+  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.1s [Traceback (most recent call last):
   File "/t...]
   ┊ 🐍 exec      from hermes_tools import write_file  0.0s
-  ┊ 📖 read      minimum-viable-day_20260724.html L1-8  0.0s [File not found: minimum-viable-day_20260724.html]
-  ┊ 📖 read      minimum-viable-day_20260724.md L1-8  0.0s [File not found: minimum-viable-day_20260724.md]
-  ┊ 📖 read      latest.html L1-5  0.1s
-  ┊ 💻 $         cp /opt/data/insights/minimum-viable-day_20260724.html personal-growth/minimum-viable-day_20260724.html + 7 commands  0.1s [exit -1]
-  ┊ 💻 $         cp /opt/data/insights/minimum-viable-day_20260724.html personal-growth/minimum-viable-day_20260724.html + 4 commands  0.1s
-  ┊ ✍️  write     /tmp/rebuild_personal_growth_index_20260724.py  0.0s [Write denied: '/tmp/rebuild_personal_growth_i...]
-  ┊ ✍️  write     /opt/data/tmp/rebuild_personal_growth_index_20260724.py  1.2s
+  ┊ 🐍 exec      from hermes_tools import write_file  0.1s
+  ┊ 💻 $         cp /opt/data/insights/financial-health-index-rebuilt.html /tmp/repos/financial-health/index.html + 3 commands  1.6s
+  ┊ 💻 $         git ls-remote "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/financial-health.git" refs/heads/main | cut -f1 + 1 command  1.1s
+  ┊ 💻 $         api='https://api.github.com/repos/psdeepu26/financial-health/contents/index.html?ref=main' + 2 commands  0.7s
+  ┊ 💻 $         for p in financial-health/sinking-funds-predictable-surprises_20260725.html financial-health/sinking-funds-predictable-surprises_20260725.md latest.html + 7 commands  0.1s [exit -1]
+  ┊ 📖 read      log.json L1-50  0.1s
+  ┊ 💻 $         curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/psdeepu26/financial-health/git/trees/main?recursive=1' | jq -r '[.tree[].path] as $p | {html: ($p | index("financial-health/sinking-funds-predictable-surprises_20260725.html") != null), md: ($p | index("financial-health/sinking-funds-predictable-surprises_20260725.md") != null), latest: ($p | index("latest.html") != null)}'  0.8s
+  ┊ 💻 $         ts=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S') + 3 commands  0.1s
+  ┊ ✍️  write     /opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt  0.1s
   ┊ review diff
-a//opt/data/tmp/rebuild_personal_growth_index_20260724.py → b//opt/data/tmp/rebuild_personal_growth_index_20260724.py
-@@ -0,0 +1,37 @@
-+from pathlib import Path
-+import html
-+import json
-+
-+repo = Path('/tmp/repos/personal-growth-recovery-20260724')
-+cards_path = repo / 'cards.json'
-+cards = json.loads(cards_path.read_text())
-+new = {'file': 'personal-growth/minimum-viable-day_20260724.html', 'category': 'personal-growth', 'title': 'The Minimum Viable Day: Protect Momentum When Energy Drops', 'emoji': '🌱', 'timestamp': '20260724_manual'}
-+by_file = {card['file']: card for card in cards}
-+by_file[new['file']] = new
-+cards = sorted(by_file.values(), key=lambda card: card.get('timestamp', ''), reverse=True)
-+cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + '\n')
-+groups = {}
-+for card in cards:
-+    groups.setdefault(card.get('category', 'other'), []).append(card)
-+sections = []
-+for category in sorted(groups):
-+    entries = []
-+    for card in groups[category]:
-+        file_path = card['file']
-+        md_path = file_path[:-5] + '.md'
-+        md_link = f'<a href="{html.escape(md_path)}">MD</a>' if (repo / md_path).is_file() else ''
-+        entries.append(f'<article class="card" data-title="{html.escape(card.get("title", ""))}" data-category="{html.escape(category)}"><div class="emoji">{html.escape(card.get("emoji", "📚"))}</div><div><h3>{html.escape(card.get("title", ""))}</h3><p>{html.escape(category)}</p><nav><a href="{html.escape(file_path)}">HTML</a>{md_link}</nav></div></article>')
-+    category_title = category.replace('-', ' ').replace('_', ' ').title()
-+    sections.append(f'<section><h2>{html.escape(category_title)} <span>{len(entries)}</span></h2><div class="cards">{"".join(entries)}</div></section>')
-+index = f'''<!DOCTYPE html>
-+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Growth Learning Cards</title><style>
-+:root{{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:42px 22px}}h1{{font-size:clamp(2rem,5vw,3.2rem);margin:0}}.sub,p{{color:var(--muted)}}input{{width:100%;margin:28px 0;padding:14px 16px;border:1px solid var(--border);border-radius:10px;background:var(--panel);color:var(--text);font-size:1rem}}h2{{margin-top:32px}}h2 span{{color:var(--muted);font-size:.8em}}.cards{{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}}.card{{display:flex;gap:14px;padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--panel)}}.emoji{{font-size:1.6rem}}h3{{margin:0 0 6px;font-size:1rem}}.card p{{margin:0 0 10px;font-size:.85rem}}nav{{display:flex;gap:12px}}a{{color:var(--accent);text-decoration:none}}.hidden{{display:none}}footer{{margin-top:42px;color:var(--muted)}}
-+</style></head><body><main><h1>Personal Growth</h1><div class="sub">{len(cards)} learning cards · Updated 24 Jul 2026</div><input id="q" type="search" placeholder="Search cards…" aria-label="Search cards">{''.join(sections)}<footer>💫 Small steps. Every day.</footer></main><script>const q=document.getElementById('q');q.addEventListener('input',()=>{{const s=q.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hidden',!c.dataset.title.toLowerCase().includes(s)&&!c.dataset.category.toLowerCase().includes(s)))}});</script></body></html>
-+'''
-+(repo / 'index.html').write_text(index)
-+assert len(cards) == len({card['file'] for card in cards}) == 18
-+assert sum(card['file'] == new['file'] for card in cards) == 1
-+assert index.count('data-title="The Minimum Viable Day: Protect Momentum When Energy Drops"') == 1
-+assert (repo / new['file']).read_text().rstrip().endswith('</html>')
-+assert (repo / new['file'].replace('.html', '.md')).is_file()
-+print(f'verified cards={len(cards)} categories={len(groups)} index_bytes={len(index.encode())} new_entries=1')
-  ┊ 💻 $         python3 /opt/data/tmp/rebuild_personal_growth_index_20260724.py + 2 commands  0.1s
-  ┊ 💻 $         git add cards.json index.html latest.html personal-growth/minimum-viable-day_20260724.html personal-growth/minimum-viable-day_20260724.md + 2 commands  1.6s
-  ┊ 💻 $         git ls-remote origin refs/heads/main + 3 commands  2.0s
-  ┊ 🐍 exec      import base64, json  0.1s
-  ┊ 📋 plan      update 3/5 ✓  0.0s
-  ┊ 💻 $         TS=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S') + 3 commands  0.1s
-  ┊ 📋 plan      update 4/5 ✓  0.0s
-  ┊ ✍️  write     /opt/data/insights/telegram_minimum-viable-day_20260724.txt  0.1s
-  ┊ review diff
-a//opt/data/insights/telegram_minimum-viable-day_20260724.txt → b//opt/data/insights/telegram_minimum-viable-day_20260724.txt
+a//opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt → b//opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt
 @@ -0,0 +1,5 @@
-+🌱 The Minimum Viable Day: Protect Momentum When Energy Drops
++💰 Sinking Funds: Make Predictable Surprises Boring
 +
-+When capacity falls, shrink routine—not continuity. Define a degraded mode that protects momentum without turning low output into permanent default.
++Turn annual “surprises” into small monthly transfers—and keep your emergency fund for real emergencies.
 +
-+Read card: https://github.com/psdeepu26/personal-growth/blob/main/personal-growth/minimum-viable-day_20260724.html
-⚠️ Iteration budget exhausted (30/30) — asking model to summarise
-⚠️  Reached maximum iterations (30). Requesting summary...
++Read card: https://github.com/psdeepu26/financial-health/blob/main/financial-health/sinking-funds-predictable-surprises_20260725.html
+  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:3" --file /opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt --json  4.2s
+  ┊ 💻 $         jq 'map(if .date == "2026-07-25" and .title == "Sinking Funds: Make Predictable Surprises Boring" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3005"} else . end)' /opt/data/insights/log.json + 2 commands  0.1s
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Generated today’s Personal Growth insight:                                 
+     Today’s insight generated:                                                 
                                                                                 
-     Title: The Minimum Viable Day: Protect Momentum When Energy Drops          
-     Date: 24 July 2026                                                         
-     Theme: Graceful degradation for personal routines                          
+     Title: Sinking Funds: Make Predictable Surprises Boring                    
+     Topic: Financial Health                                                    
+     Core idea: Convert predictable annual expenses into small monthly          
+     transfers.                                                                 
                                                                                 
      Completed:                                                                 
-     - HTML card created                                                        
-     - Markdown companion created                                               
-     - Published to private psdeepu26/personal-growth repo                      
-     - Rebuilt clean searchable index after push script produced corrupted      
-     output                                                                     
-     - Remote verified:                                                         
-       - 18 unique cards                                                        
-       - Exactly 1 new index entry                                              
-       - Complete HTML                                                          
-       - Correct latest.html                                                    
-     - Added entry to /opt/data/insights/log.json                               
+     - HTML + Markdown cards created                                            
+     - Published to private GitHub repo                                         
+     - Searchable index rebuilt and verified: 12 cards, 1 new entry             
+     - Delivered to Telegram Financial Tasks topic                              
+     - Message ID: 3005                                                         
+     - Delivery logged successfully                                             
                                                                                 
-     Files:                                                                     
-     - /opt/data/insights/minimum-viable-day_20260724.html                      
-     - /opt/data/insights/minimum-viable-day_20260724.md                        
-                                                                                
-     GitHub:                                                                    
-     https://github.com/psdeepu26/personal-growth/blob/main/personal-growth     
-     /minimum-viable-day_20260724.html                                          
-                                                                                
-     Not completed:                                                             
-     - Telegram delivery was prepared but tool limit hit before send.           
-     - Log therefore not marked delivered: true.                                
-                                                                                
-     ⚠️ File-mutation verifier: 1 file(s) were NOT modified this turn           
-     despite any wording above that may suggest otherwise. Run git status       
-     or read_file to confirm.                                                   
-       • /tmp/rebuild_personal_growth_index_20260724.py — [write_file]          
-     Write denied: '/tmp/rebuild_personal_growth_index_20260724.py' is a        
-     protected system/credential file.                                          
+     Card:                                                                      
+     https://github.com/psdeepu26/financial-health/blob/main/financial-heal     
+     th/sinking-funds-predictable-surprises_20260725.html                       
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
-⚠ Iteration budget reached (30/30) — response may be incomplete
-
 Resume this session with:
-  hermes --resume 20260723_203004_f00416
+  hermes --resume 20260724_203012_7c9752
 
-Session:        20260723_203004_f00416
-Duration:       10m 5s
-Messages:       77 (2 user, 74 tool calls)
+Session:        20260724_203012_7c9752
+Duration:       4m 37s
+Messages:       53 (1 user, 51 tool calls)
