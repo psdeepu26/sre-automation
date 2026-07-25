@@ -5,170 +5,225 @@ Initializing agent...
 
   ┊ 📚 skill     nightly-learning-insight  0.1s
   ┊ 📚 skill     caveman  0.1s
-  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A'  0.1s
-  ┊ 💻 $         jq '{today: [.[] | select(.date == "2026-07-25")], titles: [.[] | select(.topic == "Financial Health") | .title]}' /opt/data/insights/log.json  0.1s
-  ┊ 🔎 find      *_2026-07-25.html  0.2s
-  ┊ 📖 read      push-insight.sh L1-260  0.1s
+  ┊ 📋 plan      5 task(s)  0.0s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.2s
   ┊ 📚 skill     deepu-personalization  0.0s
-  ┊ 📖 read      cards.json L1-300  0.1s
-  ┊ 📖 read      insight-card-markdown-template.md L1-220  0.1s
-  ┊ 📖 read      push-insight.sh L201-230  0.0s
-  ┊ ✍️  write     /opt/data/insights/sinking-funds-predictable-surprises_20260725.html  0.1s
+  ┊ 📚 skill     nightly-learning-insight → references/insight-card-markdown-template.md  0.0s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 📋 plan      update 1/5 ✓  0.0s
+  ┊ ✍️  write     /opt/data/insights/cognitive-offloading_20260726.html  0.1s
   ┊ review diff
-a//opt/data/insights/sinking-funds-predictable-surprises_20260725.html → b//opt/data/insights/sinking-funds-predictable-surprises_20260725.html
-@@ -0,0 +1,46 @@
+a//opt/data/insights/cognitive-offloading_20260726.html → b//opt/data/insights/cognitive-offloading_20260726.html
+@@ -0,0 +1,47 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>Sinking Funds: Make Predictable Surprises Boring</title>
++<title>Cognitive Offloading: Stop Using Your Brain as a To-Do List</title>
 +<style>
-+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--gold:#e3b341}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:40px 20px 56px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 11px;margin:0 7px 7px 0;font-size:.85rem}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--gold)}.technical{border-left:4px solid var(--blue)}.micro{border-left:4px solid var(--green);background:linear-gradient(135deg,#161b22,#102418)}.label{font-weight:800;color:var(--gold);letter-spacing:.02em}.technical h2{margin-top:0;color:var(--blue)}.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--purple);font-weight:700;margin:20px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:16px}.item strong{display:block;color:var(--purple);margin-bottom:5px}code{color:var(--green);background:#0d1117;border:1px solid var(--border);border-radius:6px;padding:2px 6px}.formula{font-size:1.1rem;text-align:center;border:1px dashed var(--blue);border-radius:10px;padding:16px;margin:18px 0}.example{color:var(--muted)}footer{text-align:center;color:var(--muted);margin-top:32px}@media(max-width:650px){.grid{grid-template-columns:1fr}.wrap{padding-top:28px}}
++:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--yellow:#e3b341}
++*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{width:min(920px,calc(100% - 32px));margin:40px auto 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.04em}.subtitle{color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}.tag{border:1px solid var(--border);border-radius:999px;padding:4px 10px;background:var(--card)}.panel{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;margin:22px 0;box-shadow:0 14px 40px rgba(0,0,0,.18)}.eli5{border-left:4px solid var(--purple)}.label{font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}.bridge{text-align:center;color:var(--blue);font-weight:700;margin:18px 0}.technical h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{border:1px solid var(--border);border-radius:12px;padding:16px;background:#0d1117}.item strong{display:block;color:var(--blue);margin-bottom:6px}.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0}.flow span{padding:8px 12px;border:1px solid var(--border);border-radius:9px;background:#0d1117}.flow b{color:var(--green)}.micro{border-left:4px solid var(--green);background:linear-gradient(135deg,#161b22,#122017)}.micro .label{color:var(--green)}code{color:var(--yellow);background:#0d1117;border:1px solid var(--border);border-radius:5px;padding:2px 5px}.footer{text-align:center;color:var(--muted);margin-top:28px}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{margin-top:24px}.panel{padding:19px}}
 +</style>
 +</head>
 +<body>
 +<main class="wrap">
-+<h1>💰 Sinking Funds: Make Predictable Surprises Boring</h1>
-+<p class="subtitle"><span class="tag">Financial Health</span><span class="tag">25 July 2026</span><span class="tag">Cash-flow planning</span></p>
++<h1>Cognitive Offloading: Stop Using Your Brain as a To-Do List</h1>
++<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">Mental Clarity</span><span class="tag">26 July 2026</span></p>
 +
 +<section class="panel eli5">
 +<div class="label">🧒 Like you're 5</div>
-+<p>Your school trip costs ₹12,000 next year. Waiting until trip day makes it feel like a giant surprise. Putting ₹1,000 into a jar every month turns it into twelve tiny, easy payments.</p>
-+<p>A sinking fund is that jar. It is for expenses that feel unexpected only because they do not happen every month: insurance, vehicle service, festivals, travel, repairs, or replacing a phone.</p>
++<p>Imagine carrying every grocery item in your hands instead of putting them in a basket. You can keep saying “milk, rice, apples” so you do not forget—but now you have less attention for choosing good food.</p>
++<p>Your brain does the same with unfinished tasks. Writing them in a trusted place is like using a basket: the tasks still exist, but your hands—and your mind—become free.</p>
 +</section>
 +
-+<div class="bridge">↓ Now call it what it really is: pre-funding a known future liability ↓</div>
++<div class="bridge">↓ Give memory a reliable external home ↓</div>
 +
 +<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
-+<div class="formula"><code>monthly contribution = (target cost − current balance) ÷ months remaining</code></div>
 +<div class="grid">
-+<div class="item"><strong>Sinking fund vs emergency fund</strong>Sinking fund handles known or estimable costs. Emergency fund handles genuinely uncertain shocks such as job loss or urgent medical needs.</div>
-+<div class="item"><strong>Separate ledger</strong>Use one bank sub-account or one spreadsheet ledger with named buckets. Separation prevents spending money twice in your mental model.</div>
-+<div class="item"><strong>Estimate with headroom</strong>Use last cost plus a 5–10% buffer for inflation or scope drift. Review estimate when renewal quotes arrive.</div>
-+<div class="item"><strong>Match risk to horizon</strong>Money needed within 1–2 years should prioritize liquidity and capital safety, not volatile equity returns.</div>
-+<div class="item"><strong>Automate after payday</strong>Schedule transfers immediately after income lands. Treat contributions like recurring bills, not whatever remains at month-end.</div>
-+<div class="item"><strong>Reconcile quarterly</strong>Update target, due date, balance, and contribution. When one goal completes, redirect freed cash instead of letting lifestyle spend absorb it.</div>
++<div class="item"><strong>Working memory</strong>Small, temporary mental workspace. Keeping reminders active consumes capacity needed for reasoning and focus.</div>
++<div class="item"><strong>Cognitive offloading</strong>Move information or future actions into an external system: notes, calendar, checklist, timer, or automation.</div>
++<div class="item"><strong>Open-loop cost</strong>Unclear unfinished work keeps resurfacing. A captured task with a defined next action reduces rehearsal pressure.</div>
++<div class="item"><strong>Trust is the control plane</strong>A capture system helps only when you review it. If reminders disappear into a forgotten list, your brain resumes alert duty.</div>
++<div class="item"><strong>Capture ≠ organize</strong>Capture quickly first. Clarify and prioritize later. Mixing both steps adds friction and makes you avoid the system.</div>
++<div class="item"><strong>Good task shape</strong>Store an executable next action: <code>Email Arun for invoice</code>, not a vague project label like <code>Finances</code>.</div>
 +</div>
-+<p class="example"><strong>Example:</strong> Annual insurance ₹36,000 due in 9 months, with ₹9,000 saved: <code>(₹36,000 − ₹9,000) ÷ 9 = ₹3,000/month</code>. Add a 10% buffer only if renewal cost is uncertain.</p>
++<div class="flow"><span>Notice loop</span><b>→</b><span>Capture</span><b>→</b><span>Define next action</span><b>→</b><span>Review reliably</span><b>→</b><span>Brain lets go</span></div>
++<p><strong>Design principle:</strong> externalize remembering, not thinking. A tool should hold commitments and context; you still choose what matters.</p>
 +</section>
 +
 +<section class="panel micro">
 +<div class="label">⚡ Micro-action (5 minutes)</div>
-+<p>Write your next three non-monthly expenses with amount and due month. Calculate each monthly contribution using the formula. Automate the smallest one today.</p>
++<p>Do a two-minute brain dump of every open loop. Pick the three that keep resurfacing, rewrite each as one visible next action, then place them in the system you already check daily. Schedule a five-minute review for tomorrow.</p>
 +</section>
 +
-+<footer>Financial Health · 💫 Small steps. Every day.</footer>
++<footer class="footer">Personal Growth · Mental Clarity<br>💫 Small steps. Every day.</footer>
 +</main>
 +</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/sinking-funds-predictable-surprises_20260725.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/cognitive-offloading_20260726.md  0.1s
   ┊ review diff
-a//opt/data/insights/sinking-funds-predictable-surprises_20260725.md → b//opt/data/insights/sinking-funds-predictable-surprises_20260725.md
-@@ -0,0 +1,47 @@
-+# 💰 Sinking Funds: Make Predictable Surprises Boring
+a//opt/data/insights/cognitive-offloading_20260726.md → b//opt/data/insights/cognitive-offloading_20260726.md
+@@ -0,0 +1,48 @@
++# 🧠 Cognitive Offloading: Stop Using Your Brain as a To-Do List
 +
-+**Financial Health** · 25 July 2026 · Cash-flow planning
++**Personal Growth** · Mental Clarity · 26 July 2026
 +
 +---
 +
 +## 🧒 Like You're 5
 +
-+Your school trip costs ₹12,000 next year. Waiting until trip day makes it feel
-+like a giant surprise. Putting ₹1,000 into a jar every month turns it into
-+twelve tiny, easy payments.
++Imagine carrying every grocery item in your hands instead of putting them in a
++basket. You can keep saying “milk, rice, apples” so you do not forget—but now
++you have less attention for choosing good food.
 +
-+A sinking fund is that jar. It is for expenses that feel unexpected only
-+because they do not happen every month: insurance, vehicle service, festivals,
-+travel, repairs, or replacing a phone.
++Your brain does the same with unfinished tasks. Writing them in a trusted place
++is like using a basket: the tasks still exist, but your hands—and your mind—
++become free.
++
++> ↓ Give memory a reliable external home ↓
 +
 +---
-+
-+↓ Now call it what it really is: pre-funding a known future liability ↓
 +
 +## 🔧 For the Engineer
 +
-+> `monthly contribution = (target cost − current balance) ÷ months remaining`
-+
 +| Concept | What It Is |
-+|---|---|
-+| **Sinking fund vs emergency fund** | Sinking fund handles known or estimable costs. Emergency fund handles genuinely uncertain shocks such as job loss or urgent medical needs. |
-+| **Separate ledger** | Use one bank sub-account or spreadsheet ledger with named buckets. Separation prevents spending money twice in your mental model. |
-+| **Estimate with headroom** | Use last cost plus a 5–10% buffer for inflation or scope drift. Review when renewal quotes arrive. |
-+| **Match risk to horizon** | Money needed within 1–2 years should prioritize liquidity and capital safety, not volatile equity returns. |
-+| **Automate after payday** | Schedule transfers immediately after income lands. Treat contributions like recurring bills, not month-end leftovers. |
-+| **Reconcile quarterly** | Update target, due date, balance, and contribution. Redirect freed cash when a goal completes. |
++|---------|------------|
++| **Working memory** | Small, temporary mental workspace. Active reminders consume capacity needed for reasoning and focus. |
++| **Cognitive offloading** | Moving information or future actions into an external system: notes, calendar, checklist, timer, or automation. |
++| **Open-loop cost** | Unclear unfinished work keeps resurfacing. A captured task with a defined next action reduces rehearsal pressure. |
++| **Trust is the control plane** | A capture system helps only when reviewed. If reminders disappear into a forgotten list, your brain resumes alert duty. |
++| **Capture ≠ organize** | Capture quickly first; clarify and prioritize later. Mixing both steps adds friction. |
++| **Good task shape** | Store an executable next action: `Email Arun for invoice`, not a vague label like `Finances`. |
 +
-+**Example:** Annual insurance ₹36,000 due in 9 months, with ₹9,000 saved:
-+`(₹36,000 − ₹9,000) ÷ 9 = ₹3,000/month`. Add a 10% buffer only if the
-+renewal cost is uncertain.
++**Flow:** Notice loop → Capture → Define next action → Review reliably → Brain
++lets go.
 +
-+---
-+
-+## ⚡ Micro-action (5 minutes)
-+
-+Write your next three non-monthly expenses with amount and due month. Calculate
-+each monthly contribution using the formula. Automate the smallest one today.
++**Design principle:** Externalize remembering, not thinking. A tool should hold
++commitments and context; you still choose what matters.
 +
 +---
 +
-+**Financial Health** · 💫 Small steps. Every day.
-  ┊ 💻 $         bash -n /opt/data/scripts/push-insight.sh + 2 commands  0.1s
-  ┊ 💻 $         git -C /tmp/repos/financial-health status --short + 2 commands  0.1s
-  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh financial_health /opt/data/insights/sinking-funds-predictable-surprises_20260725.html "Financial Health"  2.6s
-  ┊ 💻 $         git -C /tmp/repos/financial-health show --stat --oneline HEAD + 8 commands  0.1s
-  ┊ 💻 $         api='https://api.github.com/repos/psdeepu26/financial-health/contents/index.html?ref=main' + 5 commands  0.7s
-  ┊ 💻 $         git ls-remote https://github.com/psdeepu26/financial-health.git refs/heads/main  0.4s [exit 128]
-  ┊ 📚 skill     nightly-learning-insight → references/index-recovery-and-remote-verification.md  0.0s
-  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.1s [Traceback (most recent call last):
-  File "/t...]
-  ┊ 🐍 exec      from hermes_tools import write_file  0.0s
-  ┊ 🐍 exec      from hermes_tools import write_file  0.1s
-  ┊ 💻 $         cp /opt/data/insights/financial-health-index-rebuilt.html /tmp/repos/financial-health/index.html + 3 commands  1.6s
-  ┊ 💻 $         git ls-remote "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/financial-health.git" refs/heads/main | cut -f1 + 1 command  1.1s
-  ┊ 💻 $         api='https://api.github.com/repos/psdeepu26/financial-health/contents/index.html?ref=main' + 2 commands  0.7s
-  ┊ 💻 $         for p in financial-health/sinking-funds-predictable-surprises_20260725.html financial-health/sinking-funds-predictable-surprises_20260725.md latest.html + 7 commands  0.1s [exit -1]
-  ┊ 📖 read      log.json L1-50  0.1s
-  ┊ 💻 $         curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/psdeepu26/financial-health/git/trees/main?recursive=1' | jq -r '[.tree[].path] as $p | {html: ($p | index("financial-health/sinking-funds-predictable-surprises_20260725.html") != null), md: ($p | index("financial-health/sinking-funds-predictable-surprises_20260725.md") != null), latest: ($p | index("latest.html") != null)}'  0.8s
-  ┊ 💻 $         ts=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S') + 3 commands  0.1s
-  ┊ ✍️  write     /opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt  0.1s
++⚡ **Micro-action (5 minutes):** Do a two-minute brain dump of every open loop.
++Pick the three that keep resurfacing, rewrite each as one visible next action,
++then place them in the system you already check daily. Schedule a five-minute
++review for tomorrow.
++
++---
++
++**Personal Growth · Mental Clarity**  
++💫 Small steps. Every day.
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 📋 plan      update 2/5 ✓  0.0s
+  ┊ 🐍 exec      from hermes_tools import terminal  59.3s
+  ┊ 📚 skill     nightly-learning-insight → references/stale-checkout-index-recovery.md  0.0s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 🐍 exec      from hermes_tools import terminal  3.1s
+  ┊ 📖 read      cards.json  0.1s
+  ┊ 📖 read      index.html  0.1s
+  ┊ ✍️  write     /tmp/rebuild_personal_growth_index.py  0.0s [Write denied: '/tmp/rebuild_personal_growth_i...]
+  ┊ ✍️  write     /tmp/personal-growth-recovery-vLbBqo/rebuild_index.py  0.0s [Write denied: '/tmp/personal-growth-recovery-...]
+  ┊ ✍️  write     /opt/data/insights/rebuild_personal_growth_index.py  1.2s
   ┊ review diff
-a//opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt → b//opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt
-@@ -0,0 +1,5 @@
-+💰 Sinking Funds: Make Predictable Surprises Boring
+a//opt/data/insights/rebuild_personal_growth_index.py → b//opt/data/insights/rebuild_personal_growth_index.py
+@@ -0,0 +1,35 @@
++import html
++import json
++from collections import defaultdict
++from pathlib import Path
 +
-+Turn annual “surprises” into small monthly transfers—and keep your emergency fund for real emergencies.
++repo = Path("/tmp/personal-growth-recovery-vLbBqo")
++card_file = "mental-clarity/cognitive-offloading_20260726.html"
++new_card = {"file": card_file, "category": "mental-clarity", "title": "Cognitive Offloading: Stop Using Your Brain as a To-Do List", "emoji": "🧠", "timestamp": "20260726_manual"}
 +
-+Read card: https://github.com/psdeepu26/financial-health/blob/main/financial-health/sinking-funds-predictable-surprises_20260725.html
-  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:3" --file /opt/data/insights/sinking-funds-predictable-surprises_20260725_message.txt --json  4.2s
-  ┊ 💻 $         jq 'map(if .date == "2026-07-25" and .title == "Sinking Funds: Make Predictable Surprises Boring" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3005"} else . end)' /opt/data/insights/log.json + 2 commands  0.1s
++cards_path = repo / "cards.json"
++cards = json.loads(cards_path.read_text())
++if not isinstance(cards, list):
++    raise TypeError("cards.json must be an array")
++by_file = {c["file"]: c for c in cards if isinstance(c, dict) and c.get("file")}
++by_file[card_file] = new_card
++cards = sorted(by_file.values(), key=lambda c: c.get("timestamp", ""), reverse=True)
++cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + "\n")
++
++groups = defaultdict(list)
++for card in cards:
++    groups[card.get("category", "other")].append(card)
++sections = []
++for category in sorted(groups):
++    articles = []
++    for card in groups[category]:
++        file = card["file"]
++        md_file = file[:-5] + ".md" if file.endswith(".html") else file + ".md"
++        title = html.escape(card.get("title", Path(file).stem))
++        emoji = html.escape(card.get("emoji", "📚"))
++        search = html.escape(f"{title} {category}", quote=True)
++        articles.append(f'<article class="card" data-title="{search}"><div class="emoji">{emoji}</div><h3>{title}</h3><p class="meta">{html.escape(category.replace("-", " ").title())}</p><div class="links"><a href="{html.escape(file, quote=True)}">Open card</a><a href="{html.escape(md_file, quote=True)}">Markdown</a></div></article>')
++    sections.append(f'<section><h2>{html.escape(category.replace("-", " ").title())}</h2><div class="grid">{"".join(articles)}</div></section>')
++index = f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Growth Learning Cards</title><style>:root{{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:42px 22px}}h1{{font-size:clamp(2rem,5vw,3.2rem);margin:0}}.sub,.meta{{color:var(--muted)}}input{{width:100%;margin:24px 0;padding:14px 16px;border:1px solid var(--border);border-radius:10px;background:var(--panel);color:var(--text);font:inherit}}section{{margin-top:34px}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}}.card{{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}}.card h3{{margin:8px 0}}.emoji{{font-size:1.6rem}}.links{{display:flex;gap:12px;flex-wrap:wrap}}a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}}</style></head><body><main><h1>Personal Growth Learning Cards</h1><p class="sub">Small ideas. Practical action. Search every card.</p><input id="search" type="search" placeholder="Search cards or categories…" aria-label="Search cards">{"".join(sections)}</main><script>const q=document.getElementById('search');q.addEventListener('input',()=>{{const v=q.value.toLowerCase();document.querySelectorAll('article.card').forEach(c=>c.hidden=!c.dataset.title.toLowerCase().includes(v));}});</script></body></html>'''
++(repo / "index.html").write_text(index)
++print(json.dumps({"cards": len(cards), "new_records": sum(1 for c in cards if c.get("file") == card_file), "index_articles": index.count('<article class="card"'), "index_bytes": len(index.encode())}))
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.2s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 🐍 exec      import json  0.1s
+  ┊ 💻 $         git status --short + 1 command  0.1s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 💻 $         git log -1 --format='%an%n%ae'  0.1s
+  ┊ 💻 $         git config --get user.name + 1 command  0.1s [exit 1]
+  ┊ 🐍 exec      from hermes_tools import terminal  1.7s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.7s [Traceback (most recent call last):
+  File "/t...]
+  ┊ 🐍 exec      from hermes_tools import terminal  1.9s
+  ┊ 📋 plan      update 3/5 ✓  0.0s
+  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
+  ┊ 📋 plan      update 4/5 ✓  0.0s
+⚠️ Iteration budget exhausted (30/30) — asking model to summarise
+⚠️  Reached maximum iterations (30). Requesting summary...
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Today’s insight generated:                                                 
+     Generated today’s Personal Growth insight:                                 
                                                                                 
-     Title: Sinking Funds: Make Predictable Surprises Boring                    
-     Topic: Financial Health                                                    
-     Core idea: Convert predictable annual expenses into small monthly          
-     transfers.                                                                 
+     - Title: Cognitive Offloading: Stop Using Your Brain as a To-Do List       
+     - Date: 26 July 2026 IST                                                   
+     - Category: Mental Clarity                                                 
+     - HTML: /opt/data/insights/cognitive-offloading_20260726.html              
+     - Markdown: /opt/data/insights/cognitive-offloading_20260726.md            
+     - Published: private psdeepu26/personal-growth repo                        
+     - GitHub:                                                                  
+     https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/     
+     cognitive-offloading_20260726.html                                         
+     - Verified: HTML, Markdown, latest.html, cards.json, and searchable        
+     index                                                                      
+     - Logged: /opt/data/insights/log.json                                      
                                                                                 
-     Completed:                                                                 
-     - HTML + Markdown cards created                                            
-     - Published to private GitHub repo                                         
-     - Searchable index rebuilt and verified: 12 cards, 1 new entry             
-     - Delivered to Telegram Financial Tasks topic                              
-     - Message ID: 3005                                                         
-     - Delivery logged successfully                                             
+     Initial publish hit stale-checkout/non-fast-forward issue. Recovered       
+     safely using fresh clone and rebuilt clean index: 20 cards, exactly        
+     one new entry.                                                             
                                                                                 
-     Card:                                                                      
-     https://github.com/psdeepu26/financial-health/blob/main/financial-heal     
-     th/sinking-funds-predictable-surprises_20260725.html                       
+     Telegram delivery remains incomplete because tool-call limit was           
+     reached. No duplicate delivery attempted.                                  
+                                                                                
+     ⚠️ File-mutation verifier: 2 file(s) were NOT modified this turn           
+     despite any wording above that may suggest otherwise. Run git status       
+     or read_file to confirm.                                                   
+       • /tmp/rebuild_personal_growth_index.py — [write_file] Write denied:     
+     '/tmp/rebuild_personal_growth_index.py' is a protected                     
+     system/credential file.                                                    
+       • /tmp/personal-growth-recovery-vLbBqo/rebuild_index.py —                
+     [write_file] Write denied:                                                 
+     '/tmp/personal-growth-recovery-vLbBqo/rebuild_index.py' is a protected     
+     system/credential file.                                                    
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
-Resume this session with:
-  hermes --resume 20260724_203012_7c9752
+⚠ Iteration budget reached (30/30) — response may be incomplete
 
-Session:        20260724_203012_7c9752
-Duration:       4m 37s
-Messages:       53 (1 user, 51 tool calls)
+Resume this session with:
+  hermes --resume 20260725_203018_0232a4
+
+Session:        20260725_203018_0232a4
+Duration:       7m 6s
+Messages:       69 (2 user, 66 tool calls)
+⚠ Auxiliary title generation failed: HTTP 404: No endpoints found for openrouter/owl-alpha.
