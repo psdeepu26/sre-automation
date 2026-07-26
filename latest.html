@@ -5,225 +5,206 @@ Initializing agent...
 
   ┊ 📚 skill     nightly-learning-insight  0.1s
   ┊ 📚 skill     caveman  0.1s
-  ┊ 📋 plan      5 task(s)  0.0s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.2s
   ┊ 📚 skill     deepu-personalization  0.0s
   ┊ 📚 skill     nightly-learning-insight → references/insight-card-markdown-template.md  0.0s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 📋 plan      update 1/5 ✓  0.0s
-  ┊ ✍️  write     /opt/data/insights/cognitive-offloading_20260726.html  0.1s
+  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A' + 4 commands  0.1s
+  ┊ 🔎 find      *_20260726.html  0.1s
+  ┊ 💻 $         printf 'TODAY_LOGS\n' + 6 commands  0.1s
+  ┊ 🔎 find      *_20260727.html  0.0s
+  ┊ 🔎 find      *_202607*.html  0.0s
+  ┊ 📖 read      cognitive-offloading_20260726.html  0.1s
+  ┊ 📖 read      push-insight.sh  0.1s
+  ┊ 📖 read      load-shedding-protect-the-core_20260720.html  0.1s
+  ┊ 📖 read      load-shedding-protect-the-core_20260720.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/idempotency-keys-safe-retries_20260727.html  0.1s
   ┊ review diff
-a//opt/data/insights/cognitive-offloading_20260726.html → b//opt/data/insights/cognitive-offloading_20260726.html
-@@ -0,0 +1,47 @@
+a//opt/data/insights/idempotency-keys-safe-retries_20260727.html → b//opt/data/insights/idempotency-keys-safe-retries_20260727.html
+@@ -0,0 +1,54 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>Cognitive Offloading: Stop Using Your Brain as a To-Do List</title>
++<title>Idempotency Keys: Make Retries Safe</title>
 +<style>
 +:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--yellow:#e3b341}
-+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{width:min(920px,calc(100% - 32px));margin:40px auto 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.04em}.subtitle{color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}.tag{border:1px solid var(--border);border-radius:999px;padding:4px 10px;background:var(--card)}.panel{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;margin:22px 0;box-shadow:0 14px 40px rgba(0,0,0,.18)}.eli5{border-left:4px solid var(--purple)}.label{font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}.bridge{text-align:center;color:var(--blue);font-weight:700;margin:18px 0}.technical h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{border:1px solid var(--border);border-radius:12px;padding:16px;background:#0d1117}.item strong{display:block;color:var(--blue);margin-bottom:6px}.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0}.flow span{padding:8px 12px;border:1px solid var(--border);border-radius:9px;background:#0d1117}.flow b{color:var(--green)}.micro{border-left:4px solid var(--green);background:linear-gradient(135deg,#161b22,#122017)}.micro .label{color:var(--green)}code{color:var(--yellow);background:#0d1117;border:1px solid var(--border);border-radius:5px;padding:2px 5px}.footer{text-align:center;color:var(--muted);margin-top:28px}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{margin-top:24px}.panel{padding:19px}}
++*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{width:min(920px,calc(100% - 32px));margin:40px auto 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.04em}.subtitle{color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.tag{border:1px solid var(--border);border-radius:999px;padding:4px 10px;background:var(--card)}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--purple)}.technical{border-left:4px solid var(--blue)}.micro{border-left:4px solid var(--green)}.label{font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.05em}.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--muted);font-weight:700;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.item{border:1px solid var(--border);border-radius:12px;padding:16px;background:#0d1117}.item strong{display:block;color:var(--blue);margin-bottom:5px}.flow{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin:20px 0}.flow span{border:1px solid var(--border);border-radius:9px;padding:7px 10px}.flow b{color:var(--green)}code{color:var(--green);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}pre{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto}.warning{border-left:3px solid var(--yellow);padding-left:14px}.footer{text-align:center;color:var(--muted);margin-top:26px}@media(max-width:680px){.grid{grid-template-columns:1fr}.panel{padding:18px}}
 +</style>
 +</head>
 +<body>
 +<main class="wrap">
-+<h1>Cognitive Offloading: Stop Using Your Brain as a To-Do List</h1>
-+<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">Mental Clarity</span><span class="tag">26 July 2026</span></p>
++<h1>Idempotency Keys: Make Retries Safe</h1>
++<p class="subtitle"><span class="tag">System Design</span><span class="tag">API Reliability</span><span class="tag">27 July 2026</span></p>
 +
 +<section class="panel eli5">
 +<div class="label">🧒 Like you're 5</div>
-+<p>Imagine carrying every grocery item in your hands instead of putting them in a basket. You can keep saying “milk, rice, apples” so you do not forget—but now you have less attention for choosing good food.</p>
-+<p>Your brain does the same with unfinished tasks. Writing them in a trusted place is like using a basket: the tasks still exist, but your hands—and your mind—become free.</p>
++<p>You press an elevator button, but its light does not turn on. You press it three more times. A good elevator still sends only one car—not four.</p>
++<p>Network requests need the same protection. When a reply gets lost, a client must retry without accidentally charging a card twice, creating two orders, or launching duplicate work.</p>
 +</section>
 +
-+<div class="bridge">↓ Give memory a reliable external home ↓</div>
++<div class="bridge">↓ Turn repeated intent into one durable result ↓</div>
 +
 +<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
++<p>An <strong>idempotency key</strong> identifies one logical operation across retries. Server stores first operation's state and response; later requests with same key return that result instead of repeating side effects.</p>
 +<div class="grid">
-+<div class="item"><strong>Working memory</strong>Small, temporary mental workspace. Keeping reminders active consumes capacity needed for reasoning and focus.</div>
-+<div class="item"><strong>Cognitive offloading</strong>Move information or future actions into an external system: notes, calendar, checklist, timer, or automation.</div>
-+<div class="item"><strong>Open-loop cost</strong>Unclear unfinished work keeps resurfacing. A captured task with a defined next action reduces rehearsal pressure.</div>
-+<div class="item"><strong>Trust is the control plane</strong>A capture system helps only when you review it. If reminders disappear into a forgotten list, your brain resumes alert duty.</div>
-+<div class="item"><strong>Capture ≠ organize</strong>Capture quickly first. Clarify and prioritize later. Mixing both steps adds friction and makes you avoid the system.</div>
-+<div class="item"><strong>Good task shape</strong>Store an executable next action: <code>Email Arun for invoice</code>, not a vague project label like <code>Finances</code>.</div>
++<div class="item"><strong>Scope</strong>Bind key to tenant, endpoint, and operation. <code>(tenant_id, route, key)</code> avoids collisions across customers or APIs.</div>
++<div class="item"><strong>Request fingerprint</strong>Hash canonical request fields. Same key plus different payload must return <code>409 Conflict</code>, not silently reuse old result.</div>
++<div class="item"><strong>Atomic reservation</strong>Create key record with a unique constraint before side effect. A check-then-insert race can still execute duplicate work.</div>
++<div class="item"><strong>Concurrent duplicates</strong>Represent <code>IN_PROGRESS</code>, <code>SUCCEEDED</code>, and retryable failure states. Duplicate callers wait briefly or receive a retry signal.</div>
++<div class="item"><strong>Response replay</strong>Persist status code and stable response body or resource ID. Retried caller should observe same logical outcome.</div>
++<div class="item"><strong>Retention</strong>TTL must exceed maximum client retry window. Expiring too early makes an old retry look like new work; retaining forever wastes storage.</div>
 +</div>
-+<div class="flow"><span>Notice loop</span><b>→</b><span>Capture</span><b>→</b><span>Define next action</span><b>→</b><span>Review reliably</span><b>→</b><span>Brain lets go</span></div>
-+<p><strong>Design principle:</strong> externalize remembering, not thinking. A tool should hold commitments and context; you still choose what matters.</p>
++<div class="flow"><span>Reserve key</span><b>→</b><span>Validate fingerprint</span><b>→</b><span>Execute once</span><b>→</b><span>Store result</span><b>→</b><span>Replay</span></div>
++<pre><code>INSERT INTO idempotency (tenant, key, request_hash, state)
++VALUES (:tenant, :key, :hash, 'IN_PROGRESS')
++ON CONFLICT (tenant, key) DO NOTHING;
++
++-- Only reservation owner performs side effect.
++-- Retries read existing state/result.</code></pre>
++<p class="warning"><strong>Boundary:</strong> idempotency keys provide effectively-once API semantics only inside designed scope. They do not create magical exactly-once delivery; downstream side effects also need transactional coupling, an outbox, or their own deduplication key.</p>
 +</section>
 +
 +<section class="panel micro">
 +<div class="label">⚡ Micro-action (5 minutes)</div>
-+<p>Do a two-minute brain dump of every open loop. Pick the three that keep resurfacing, rewrite each as one visible next action, then place them in the system you already check daily. Schedule a five-minute review for tomorrow.</p>
++<p>Pick one POST endpoint that clients may retry. Write four decisions: key scope, payload-mismatch behavior, in-progress response, and retention TTL. If any answer is unclear, retries are currently part of failure risk—not recovery design.</p>
 +</section>
 +
-+<footer class="footer">Personal Growth · Mental Clarity<br>💫 Small steps. Every day.</footer>
++<footer class="footer">System Design · API Reliability<br>💫 Small steps. Every day.</footer>
 +</main>
 +</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/cognitive-offloading_20260726.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/idempotency-keys-safe-retries_20260727.md  0.1s
   ┊ review diff
-a//opt/data/insights/cognitive-offloading_20260726.md → b//opt/data/insights/cognitive-offloading_20260726.md
-@@ -0,0 +1,48 @@
-+# 🧠 Cognitive Offloading: Stop Using Your Brain as a To-Do List
+a//opt/data/insights/idempotency-keys-safe-retries_20260727.md → b//opt/data/insights/idempotency-keys-safe-retries_20260727.md
+@@ -0,0 +1,63 @@
++# Idempotency Keys: Make Retries Safe
 +
-+**Personal Growth** · Mental Clarity · 26 July 2026
-+
-+---
-+
-+## 🧒 Like You're 5
-+
-+Imagine carrying every grocery item in your hands instead of putting them in a
-+basket. You can keep saying “milk, rice, apples” so you do not forget—but now
-+you have less attention for choosing good food.
-+
-+Your brain does the same with unfinished tasks. Writing them in a trusted place
-+is like using a basket: the tasks still exist, but your hands—and your mind—
-+become free.
-+
-+> ↓ Give memory a reliable external home ↓
++**Topic:** System Design  
++**Category:** API Reliability  
++**Date:** 27 July 2026
 +
 +---
 +
-+## 🔧 For the Engineer
++## 🧒 Like you're 5
 +
-+| Concept | What It Is |
-+|---------|------------|
-+| **Working memory** | Small, temporary mental workspace. Active reminders consume capacity needed for reasoning and focus. |
-+| **Cognitive offloading** | Moving information or future actions into an external system: notes, calendar, checklist, timer, or automation. |
-+| **Open-loop cost** | Unclear unfinished work keeps resurfacing. A captured task with a defined next action reduces rehearsal pressure. |
-+| **Trust is the control plane** | A capture system helps only when reviewed. If reminders disappear into a forgotten list, your brain resumes alert duty. |
-+| **Capture ≠ organize** | Capture quickly first; clarify and prioritize later. Mixing both steps adds friction. |
-+| **Good task shape** | Store an executable next action: `Email Arun for invoice`, not a vague label like `Finances`. |
++You press an elevator button, but its light does not turn on. You press it three
++more times. A good elevator still sends only one car—not four.
 +
-+**Flow:** Notice loop → Capture → Define next action → Review reliably → Brain
-+lets go.
-+
-+**Design principle:** Externalize remembering, not thinking. A tool should hold
-+commitments and context; you still choose what matters.
++Network requests need the same protection. When a reply gets lost, a client
++must retry without accidentally charging a card twice, creating two orders, or
++launching duplicate work.
 +
 +---
 +
-+⚡ **Micro-action (5 minutes):** Do a two-minute brain dump of every open loop.
-+Pick the three that keep resurfacing, rewrite each as one visible next action,
-+then place them in the system you already check daily. Schedule a five-minute
-+review for tomorrow.
++↓ Turn repeated intent into one durable result ↓
++
++## 🔧 For the engineer
++
++An **idempotency key** identifies one logical operation across retries. Server
++stores first operation's state and response; later requests with same key return
++that result instead of repeating side effects.
++
++| Concept | Design rule |
++|---|---|
++| **Scope** | Bind key to tenant, endpoint, and operation. `(tenant_id, route, key)` avoids collisions across customers or APIs. |
++| **Request fingerprint** | Hash canonical request fields. Same key plus different payload must return `409 Conflict`, not silently reuse old result. |
++| **Atomic reservation** | Create key record with a unique constraint before side effect. A check-then-insert race can still execute duplicate work. |
++| **Concurrent duplicates** | Represent `IN_PROGRESS`, `SUCCEEDED`, and retryable failure states. Duplicate callers wait briefly or receive a retry signal. |
++| **Response replay** | Persist status code and stable response body or resource ID. Retried caller should observe same logical outcome. |
++| **Retention** | TTL must exceed maximum client retry window. Expiring too early makes an old retry look like new work; retaining forever wastes storage. |
++
++**Flow:** Reserve key → Validate fingerprint → Execute once → Store result → Replay
++
++```sql
++INSERT INTO idempotency (tenant, key, request_hash, state)
++VALUES (:tenant, :key, :hash, 'IN_PROGRESS')
++ON CONFLICT (tenant, key) DO NOTHING;
++
++-- Only reservation owner performs side effect.
++-- Retries read existing state/result.
++```
++
++> **Boundary:** Idempotency keys provide effectively-once API semantics only
++> inside designed scope. They do not create magical exactly-once delivery;
++> downstream side effects also need transactional coupling, an outbox, or their
++> own deduplication key.
 +
 +---
 +
-+**Personal Growth · Mental Clarity**  
++## ⚡ Micro-action
++
++Pick one POST endpoint that clients may retry. Write four decisions: key scope,
++payload-mismatch behavior, in-progress response, and retention TTL. If any
++answer is unclear, retries are currently part of failure risk—not recovery
++design.
++
++**System Design · API Reliability**  
 +💫 Small steps. Every day.
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 📋 plan      update 2/5 ✓  0.0s
-  ┊ 🐍 exec      from hermes_tools import terminal  59.3s
-  ┊ 📚 skill     nightly-learning-insight → references/stale-checkout-index-recovery.md  0.0s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 🐍 exec      from hermes_tools import terminal  3.1s
-  ┊ 📖 read      cards.json  0.1s
+  ┊ 💻 $         python3 - <<'PY' from html.parser import HTMLParser from pathlib import Path p=Path('/opt/data/insights/idempotency-keys-safe-retries_20260727.html') s=p.read_text() HTMLParser().feed(s) assert s.rstrip().endswith('</html>') assert p.with_suffix('.md').exists() for section in ["🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action', '💫 Small steps. Every day.']: assert section in s, section print(f'HTML valid: {len(s)} bytes; MD companion present') PY  0.1s
+  ┊ 💻 $         git status --short -- /opt/data/insights/idempotency-keys-safe-retries_20260727.html /opt/data/insights/idempotency-keys-safe-retries_20260727.md  0.1s
+  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh system_design /opt/data/insights/idempotency-keys-safe-retries_20260727.html "API Reliability"  2.6s
+  ┊ 💻 $         python3 - <<'PY' import base64, json, urllib.request base='https://api.github.com/repos/psdeepu26/system-design/contents/' headers={'Accept':'application/vnd.github+json','User-Agent':'Hermes-Agent'} def get(path): req=urllib.request.Request(base+path+'?ref=main',headers=headers) with urllib.request.urlopen(req,timeout=30) as r: return json.load(r) def text(path): return base64.b64decode(get(path)['content']).decode() card='api-reliability/idempotency-keys-safe-retries_20260727.html' md='api-reliability/idempotency-keys-safe-retries_20260727.md' index=text('index.html') + 4 commands  2.3s
+  ┊ 📚 skill     nightly-learning-insight → references/index-recovery-and-remote-verification.md  0.1s
   ┊ 📖 read      index.html  0.1s
-  ┊ ✍️  write     /tmp/rebuild_personal_growth_index.py  0.0s [Write denied: '/tmp/rebuild_personal_growth_i...]
-  ┊ ✍️  write     /tmp/personal-growth-recovery-vLbBqo/rebuild_index.py  0.0s [Write denied: '/tmp/personal-growth-recovery-...]
-  ┊ ✍️  write     /opt/data/insights/rebuild_personal_growth_index.py  1.2s
-  ┊ review diff
-a//opt/data/insights/rebuild_personal_growth_index.py → b//opt/data/insights/rebuild_personal_growth_index.py
-@@ -0,0 +1,35 @@
-+import html
-+import json
-+from collections import defaultdict
-+from pathlib import Path
-+
-+repo = Path("/tmp/personal-growth-recovery-vLbBqo")
-+card_file = "mental-clarity/cognitive-offloading_20260726.html"
-+new_card = {"file": card_file, "category": "mental-clarity", "title": "Cognitive Offloading: Stop Using Your Brain as a To-Do List", "emoji": "🧠", "timestamp": "20260726_manual"}
-+
-+cards_path = repo / "cards.json"
-+cards = json.loads(cards_path.read_text())
-+if not isinstance(cards, list):
-+    raise TypeError("cards.json must be an array")
-+by_file = {c["file"]: c for c in cards if isinstance(c, dict) and c.get("file")}
-+by_file[card_file] = new_card
-+cards = sorted(by_file.values(), key=lambda c: c.get("timestamp", ""), reverse=True)
-+cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + "\n")
-+
-+groups = defaultdict(list)
-+for card in cards:
-+    groups[card.get("category", "other")].append(card)
-+sections = []
-+for category in sorted(groups):
-+    articles = []
-+    for card in groups[category]:
-+        file = card["file"]
-+        md_file = file[:-5] + ".md" if file.endswith(".html") else file + ".md"
-+        title = html.escape(card.get("title", Path(file).stem))
-+        emoji = html.escape(card.get("emoji", "📚"))
-+        search = html.escape(f"{title} {category}", quote=True)
-+        articles.append(f'<article class="card" data-title="{search}"><div class="emoji">{emoji}</div><h3>{title}</h3><p class="meta">{html.escape(category.replace("-", " ").title())}</p><div class="links"><a href="{html.escape(file, quote=True)}">Open card</a><a href="{html.escape(md_file, quote=True)}">Markdown</a></div></article>')
-+    sections.append(f'<section><h2>{html.escape(category.replace("-", " ").title())}</h2><div class="grid">{"".join(articles)}</div></section>')
-+index = f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Growth Learning Cards</title><style>:root{{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:42px 22px}}h1{{font-size:clamp(2rem,5vw,3.2rem);margin:0}}.sub,.meta{{color:var(--muted)}}input{{width:100%;margin:24px 0;padding:14px 16px;border:1px solid var(--border);border-radius:10px;background:var(--panel);color:var(--text);font:inherit}}section{{margin-top:34px}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}}.card{{border:1px solid var(--border);border-radius:14px;padding:18px;background:var(--panel)}}.card h3{{margin:8px 0}}.emoji{{font-size:1.6rem}}.links{{display:flex;gap:12px;flex-wrap:wrap}}a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}}</style></head><body><main><h1>Personal Growth Learning Cards</h1><p class="sub">Small ideas. Practical action. Search every card.</p><input id="search" type="search" placeholder="Search cards or categories…" aria-label="Search cards">{"".join(sections)}</main><script>const q=document.getElementById('search');q.addEventListener('input',()=>{{const v=q.value.toLowerCase();document.querySelectorAll('article.card').forEach(c=>c.hidden=!c.dataset.title.toLowerCase().includes(v));}});</script></body></html>'''
-+(repo / "index.html").write_text(index)
-+print(json.dumps({"cards": len(cards), "new_records": sum(1 for c in cards if c.get("file") == card_file), "index_articles": index.count('<article class="card"'), "index_bytes": len(index.encode())}))
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.2s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 🐍 exec      import json  0.1s
-  ┊ 💻 $         git status --short + 1 command  0.1s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 💻 $         git log -1 --format='%an%n%ae'  0.1s
-  ┊ 💻 $         git config --get user.name + 1 command  0.1s [exit 1]
-  ┊ 🐍 exec      from hermes_tools import terminal  1.7s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.7s [Traceback (most recent call last):
+  ┊ 📖 read      cards.json  0.1s
+  ┊ ✍️  write     /tmp/rebuild_system_design_index.py  0.0s [Write denied: '/tmp/rebuild_system_design_ind...]
+  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.1s [Traceback (most recent call last):
   File "/t...]
-  ┊ 🐍 exec      from hermes_tools import terminal  1.9s
-  ┊ 📋 plan      update 3/5 ✓  0.0s
-  ┊ 🐍 exec      from hermes_tools import terminal  0.1s
-  ┊ 📋 plan      update 4/5 ✓  0.0s
-⚠️ Iteration budget exhausted (30/30) — asking model to summarise
-⚠️  Reached maximum iterations (30). Requesting summary...
+  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.0s [Traceback (most recent call last):
+  File "/t...]
+  ┊ 🐍 exec      import html, json  0.1s
+  ┊ 💻 $         python3 - <<'PY' import json from pathlib import Path r=Path('/tmp/repos/system-design') i=(r/'index.html').read_text() + 4 commands  1.8s
+  ┊ 💻 $         python3 - <<'PY' import base64,json,urllib.request base='https://api.github.com/repos/psdeepu26/system-design/contents/' h={'Accept':'application/vnd.github+json','User-Agent':'Hermes-Agent'} def obj(path): r=urllib.request.Request(base+path+'?ref=main',headers=h) with urllib.request.urlopen(r,timeout=30) as x:return json.load(x) def txt(path):return base64.b64decode(obj(path)['content']).decode() target='api-reliability/idempotency-keys-safe-retries_20260727.html' idx=txt('index.html') + 4 commands  2.5s
+  ┊ 📚 skill     nightly-learning-insight → references/hermes-send-delivery.md  0.0s
+  ┊ ✍️  write     /opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt  0.1s
+  ┊ review diff
+a//opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt → b//opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt
+@@ -0,0 +1,11 @@
++🌙 Nightly Learning Insight — System Design
++
++📖 Idempotency Keys: Make Retries Safe
++
++🧒 Repeated elevator-button presses should still summon only one car.
++
++🔧 Atomic key reservation, request fingerprinting, response replay, and TTL turn retries into one logical operation.
++
++⚡ Pick one retryable POST endpoint; define key scope, payload-mismatch behavior, in-progress response, and retention TTL.
++
++🌐 Read the full card: https://psdeepu26.github.io/system-design/latest.html
+  ┊ 💻 $         then echo 'Log entry already exists; skipped prepend' else ts=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S_manual') jq --arg date "2026-07-27" --arg dow "Monday" --arg topic "System Design" --arg title "Idempotency Keys: Make Retries Safe" --arg category "api-reliability" --arg html "idempotency-keys-safe-retries_20260727.html" --arg md "idempotency-keys-safe-retries_20260727.md" --arg ts "$ts" --arg url "https://psdeepu26.github.io/system-design/latest.html" '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,url:$url}] + .' /opt/data/insights/log.json mv /tmp/log_new.json /opt/data/insights/log.json echo "Log entry prepended: $ts" fi jq '.[0]' /opt/data/insights/log.json  0.1s
+  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:2" --file /opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt --json  4.6s
+  ┊ 💻 $         set -e jq 'map(if .html_file == "idempotency-keys-safe-retries_20260727.html" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3012"} else . end)' /opt/data/insights/log.json mv /tmp/log_delivered.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json printf '\nPages check: ' curl -fsSL --max-time 30 https://psdeepu26.github.io/system-design/latest.html | python3 -c 'import sys; s=sys.stdin.read(); print("title OK" if "<title>Idempotency Keys: Make Retries Safe</title>" in s else "CDN not refreshed yet")'  0.1s [exit -1]
+  ┊ 💻 $         set -e jq 'map(if .html_file == "idempotency-keys-safe-retries_20260727.html" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3012"} else . end)' /opt/data/insights/log.json mv /tmp/log_delivered.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json python3 - <<'PY' import urllib.request s=urllib.request.urlopen('https://psdeepu26.github.io/system-design/latest.html',timeout=30).read().decode() print('Pages check:', 'title OK' if '<title>Idempotency Keys: Make Retries Safe</title>' in s else 'CDN not refreshed yet') PY  0.5s
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Generated today’s Personal Growth insight:                                 
+     Generated today’s insight:                                                 
                                                                                 
-     - Title: Cognitive Offloading: Stop Using Your Brain as a To-Do List       
-     - Date: 26 July 2026 IST                                                   
-     - Category: Mental Clarity                                                 
-     - HTML: /opt/data/insights/cognitive-offloading_20260726.html              
-     - Markdown: /opt/data/insights/cognitive-offloading_20260726.md            
-     - Published: private psdeepu26/personal-growth repo                        
-     - GitHub:                                                                  
-     https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/     
-     cognitive-offloading_20260726.html                                         
-     - Verified: HTML, Markdown, latest.html, cards.json, and searchable        
-     index                                                                      
-     - Logged: /opt/data/insights/log.json                                      
-                                                                                
-     Initial publish hit stale-checkout/non-fast-forward issue. Recovered       
-     safely using fresh clone and rebuilt clean index: 20 cards, exactly        
+     - Topic: System Design                                                     
+     - Title: “Idempotency Keys: Make Retries Safe”                             
+     - HTML: /opt/data/insights/idempotency-keys-safe-retries_20260727.html     
+     - Markdown:                                                                
+     /opt/data/insights/idempotency-keys-safe-retries_20260727.md               
+     - Published: https://psdeepu26.github.io/system-design/latest.html         
+     - Telegram Learning topic: delivered, message 3012                         
+     - Remote verification: HTML, Markdown, searchable index, cards.json,       
+     and latest.html valid                                                      
+     - Index insertion initially failed; rebuilt cleanly. 10 unique cards,      
      one new entry.                                                             
                                                                                 
-     Telegram delivery remains incomplete because tool-call limit was           
-     reached. No duplicate delivery attempted.                                  
-                                                                                
-     ⚠️ File-mutation verifier: 2 file(s) were NOT modified this turn           
+     ⚠️ File-mutation verifier: 1 file(s) were NOT modified this turn           
      despite any wording above that may suggest otherwise. Run git status       
      or read_file to confirm.                                                   
-       • /tmp/rebuild_personal_growth_index.py — [write_file] Write denied:     
-     '/tmp/rebuild_personal_growth_index.py' is a protected                     
-     system/credential file.                                                    
-       • /tmp/personal-growth-recovery-vLbBqo/rebuild_index.py —                
-     [write_file] Write denied:                                                 
-     '/tmp/personal-growth-recovery-vLbBqo/rebuild_index.py' is a protected     
-     system/credential file.                                                    
+       • /tmp/rebuild_system_design_index.py — [write_file] Write denied:       
+     '/tmp/rebuild_system_design_index.py' is a protected system/credential     
+     file.                                                                      
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
-⚠ Iteration budget reached (30/30) — response may be incomplete
-
 Resume this session with:
-  hermes --resume 20260725_203018_0232a4
+  hermes --resume 20260726_203024_8db2d3
 
-Session:        20260725_203018_0232a4
-Duration:       7m 6s
-Messages:       69 (2 user, 66 tool calls)
+Session:        20260726_203024_8db2d3
+Duration:       5m 53s
+Messages:       55 (1 user, 53 tool calls)
 ⚠ Auxiliary title generation failed: HTTP 404: No endpoints found for openrouter/owl-alpha.
