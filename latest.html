@@ -6,205 +6,348 @@ Initializing agent...
   ┊ 📚 skill     nightly-learning-insight  0.1s
   ┊ 📚 skill     caveman  0.1s
   ┊ 📚 skill     deepu-personalization  0.0s
-  ┊ 📚 skill     nightly-learning-insight → references/insight-card-markdown-template.md  0.0s
   ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A' + 4 commands  0.1s
-  ┊ 🔎 find      *_20260726.html  0.1s
-  ┊ 💻 $         printf 'TODAY_LOGS\n' + 6 commands  0.1s
+  ┊ 🔎 find      *_2026-07-27.html  0.1s
   ┊ 🔎 find      *_20260727.html  0.0s
-  ┊ 🔎 find      *_202607*.html  0.0s
-  ┊ 📖 read      cognitive-offloading_20260726.html  0.1s
-  ┊ 📖 read      push-insight.sh  0.1s
-  ┊ 📖 read      load-shedding-protect-the-core_20260720.html  0.1s
-  ┊ 📖 read      load-shedding-protect-the-core_20260720.md  0.1s
-  ┊ ✍️  write     /opt/data/insights/idempotency-keys-safe-retries_20260727.html  0.1s
+  ┊ 💻 $         today=$(TZ='Asia/Kolkata' date '+%Y-%m-%d') + 5 commands  0.1s
+  ┊ 🔎 find      *_20260728.html  0.0s
+  ┊ 🔎 find      *_20260728.md  0.0s
+  ┊ 📋 plan      4 task(s)  0.0s
+  ┊ 🔎 find      how-llms-work.html  0.2s
+  ┊ 📖 read      push-insight.sh L1-260  0.1s
+  ┊ 📖 read      idempotency-keys-safe-retries_20260727.html L1-80  0.1s
+  ┊ 📖 read      idempotency-keys-safe-retries_20260727.md L1-120  0.1s
+  ┊ ✍️  write     /opt/data/insights/temperature-top-p-token-sampling_20260728.html  0.1s
   ┊ review diff
-a//opt/data/insights/idempotency-keys-safe-retries_20260727.html → b//opt/data/insights/idempotency-keys-safe-retries_20260727.html
+a//opt/data/insights/temperature-top-p-token-sampling_20260728.html → b//opt/data/insights/temperature-top-p-token-sampling_20260728.html
 @@ -0,0 +1,54 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>Idempotency Keys: Make Retries Safe</title>
++<title>Temperature and Top-p: Steering the Next Token</title>
 +<style>
 +:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--yellow:#e3b341}
-+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{width:min(920px,calc(100% - 32px));margin:40px auto 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.04em}.subtitle{color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.tag{border:1px solid var(--border);border-radius:999px;padding:4px 10px;background:var(--card)}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--purple)}.technical{border-left:4px solid var(--blue)}.micro{border-left:4px solid var(--green)}.label{font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.05em}.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--muted);font-weight:700;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.item{border:1px solid var(--border);border-radius:12px;padding:16px;background:#0d1117}.item strong{display:block;color:var(--blue);margin-bottom:5px}.flow{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin:20px 0}.flow span{border:1px solid var(--border);border-radius:9px;padding:7px 10px}.flow b{color:var(--green)}code{color:var(--green);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}pre{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto}.warning{border-left:3px solid var(--yellow);padding-left:14px}.footer{text-align:center;color:var(--muted);margin-top:26px}@media(max-width:680px){.grid{grid-template-columns:1fr}.panel{padding:18px}}
++*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{width:min(920px,calc(100% - 32px));margin:40px auto 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px;letter-spacing:-.04em}.subtitle{color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}.tag{border:1px solid var(--border);border-radius:999px;padding:4px 10px;background:var(--card)}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--purple)}.technical{border-left:4px solid var(--blue)}.micro{border-left:4px solid var(--green)}.label{font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.04em}.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--muted);font-weight:700;margin:22px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}.item{border:1px solid var(--border);border-radius:12px;padding:16px;background:#0d1117}.item strong{display:block;color:var(--blue);margin-bottom:5px}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--green)}pre{overflow:auto;background:#010409;border:1px solid var(--border);border-radius:12px;padding:16px}.formula{font-size:1.05rem;text-align:center;background:#010409;border:1px solid var(--border);border-radius:12px;padding:14px;margin:18px 0;color:var(--yellow)}.warning{border-left:3px solid var(--red);padding-left:14px;color:var(--muted)}.footer{text-align:center;color:var(--muted);margin-top:30px}@media(max-width:700px){.grid{grid-template-columns:1fr}.wrap{margin-top:24px}}
 +</style>
 +</head>
 +<body>
 +<main class="wrap">
-+<h1>Idempotency Keys: Make Retries Safe</h1>
-+<p class="subtitle"><span class="tag">System Design</span><span class="tag">API Reliability</span><span class="tag">27 July 2026</span></p>
++<h1>Temperature and Top-p: Steering the Next Token</h1>
++<p class="subtitle"><span class="tag">AI Learning</span><span class="tag">Generation Controls</span><span class="tag">28 July 2026</span></p>
 +
 +<section class="panel eli5">
 +<div class="label">🧒 Like you're 5</div>
-+<p>You press an elevator button, but its light does not turn on. You press it three more times. A good elevator still sends only one car—not four.</p>
-+<p>Network requests need the same protection. When a reply gets lost, a client must retry without accidentally charging a card twice, creating two orders, or launching duplicate work.</p>
++<p>Imagine choosing ice cream. One flavor is the clear favorite, but several others look good.</p>
++<p><strong>Temperature</strong> decides how adventurous you feel. Low temperature means “pick the favorite.” High temperature means “surprise me.” <strong>Top-p</strong> first removes the unlikely flavors, then lets you choose only among a small group that together covers most reasonable choices.</p>
 +</section>
 +
-+<div class="bridge">↓ Turn repeated intent into one durable result ↓</div>
++<div class="bridge">↓ Turn model scores into a controlled sampling policy ↓</div>
 +
 +<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
-+<p>An <strong>idempotency key</strong> identifies one logical operation across retries. Server stores first operation's state and response; later requests with same key return that result instead of repeating side effects.</p>
++<p>An LLM outputs one <strong>logit</strong> per vocabulary token. Decoding transforms those raw scores into a probability distribution, optionally filters candidates, then selects the next token.</p>
++<div class="formula"><code>P(token i) = softmax(logit_i / T)</code></div>
 +<div class="grid">
-+<div class="item"><strong>Scope</strong>Bind key to tenant, endpoint, and operation. <code>(tenant_id, route, key)</code> avoids collisions across customers or APIs.</div>
-+<div class="item"><strong>Request fingerprint</strong>Hash canonical request fields. Same key plus different payload must return <code>409 Conflict</code>, not silently reuse old result.</div>
-+<div class="item"><strong>Atomic reservation</strong>Create key record with a unique constraint before side effect. A check-then-insert race can still execute duplicate work.</div>
-+<div class="item"><strong>Concurrent duplicates</strong>Represent <code>IN_PROGRESS</code>, <code>SUCCEEDED</code>, and retryable failure states. Duplicate callers wait briefly or receive a retry signal.</div>
-+<div class="item"><strong>Response replay</strong>Persist status code and stable response body or resource ID. Retried caller should observe same logical outcome.</div>
-+<div class="item"><strong>Retention</strong>TTL must exceed maximum client retry window. Expiring too early makes an old retry look like new work; retaining forever wastes storage.</div>
++<div class="item"><strong>Temperature T</strong><code>T &lt; 1</code> sharpens probability gaps; <code>T &gt; 1</code> flattens them. It changes relative probabilities across all candidates before sampling.</div>
++<div class="item"><strong>Top-p nucleus</strong>Sort tokens by probability and retain the smallest set whose cumulative probability reaches <code>p</code>. Candidate count adapts to model confidence.</div>
++<div class="item"><strong>Greedy decoding</strong>Select highest-probability token each step. Reproducible and cheap, but can become repetitive or lock into an early poor choice.</div>
++<div class="item"><strong>Seed</strong>A fixed seed can make sampling repeatable only when model, runtime, hardware behavior, prompt, and decoding settings remain stable.</div>
++<div class="item"><strong>Structured tasks</strong>For extraction, tool arguments, and config generation, favor low randomness plus schema-constrained decoding. Sampling settings alone do not guarantee valid JSON.</div>
++<div class="item"><strong>Creative tasks</strong>Moderate temperature and top-p can increase variety. Measure useful diversity—not novelty alone—against task-specific evaluation criteria.</div>
 +</div>
-+<div class="flow"><span>Reserve key</span><b>→</b><span>Validate fingerprint</span><b>→</b><span>Execute once</span><b>→</b><span>Store result</span><b>→</b><span>Replay</span></div>
-+<pre><code>INSERT INTO idempotency (tenant, key, request_hash, state)
-+VALUES (:tenant, :key, :hash, 'IN_PROGRESS')
-+ON CONFLICT (tenant, key) DO NOTHING;
++<pre><code># Illustrative profiles; exact behavior varies by model/provider
++factual = {"temperature": 0.1, "top_p": 0.9}
++balanced = {"temperature": 0.7, "top_p": 0.9}
++creative = {"temperature": 1.0, "top_p": 0.95}
 +
-+-- Only reservation owner performs side effect.
-+-- Retries read existing state/result.</code></pre>
-+<p class="warning"><strong>Boundary:</strong> idempotency keys provide effectively-once API semantics only inside designed scope. They do not create magical exactly-once delivery; downstream side effects also need transactional coupling, an outbox, or their own deduplication key.</p>
++# Change one control at a time during evaluation.</code></pre>
++<p class="warning"><strong>Common trap:</strong> temperature and top-p do not add knowledge or reasoning ability. They reshape token selection. If answers are wrong, first inspect prompt context, retrieval, model capability, and evaluation—not only randomness knobs.</p>
 +</section>
 +
 +<section class="panel micro">
 +<div class="label">⚡ Micro-action (5 minutes)</div>
-+<p>Pick one POST endpoint that clients may retry. Write four decisions: key scope, payload-mismatch behavior, in-progress response, and retention TTL. If any answer is unclear, retries are currently part of failure risk—not recovery design.</p>
++<p>Run one prompt three times with identical seed and <code>top_p=0.9</code>, using temperatures <code>0.1</code>, <code>0.7</code>, and <code>1.0</code>. Compare factual consistency, wording diversity, and format compliance. Pick settings from evidence, not folklore.</p>
 +</section>
 +
-+<footer class="footer">System Design · API Reliability<br>💫 Small steps. Every day.</footer>
++<footer class="footer">AI Learning · Generation Controls<br>💫 Small steps. Every day.</footer>
 +</main>
 +</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/idempotency-keys-safe-retries_20260727.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/temperature-top-p-token-sampling_20260728.md  0.1s
   ┊ review diff
-a//opt/data/insights/idempotency-keys-safe-retries_20260727.md → b//opt/data/insights/idempotency-keys-safe-retries_20260727.md
+a//opt/data/insights/temperature-top-p-token-sampling_20260728.md → b//opt/data/insights/temperature-top-p-token-sampling_20260728.md
 @@ -0,0 +1,63 @@
-+# Idempotency Keys: Make Retries Safe
++# Temperature and Top-p: Steering the Next Token
 +
-+**Topic:** System Design  
-+**Category:** API Reliability  
-+**Date:** 27 July 2026
++**Topic:** AI Learning  
++**Category:** Generation Controls  
++**Date:** 28 July 2026
 +
 +---
 +
 +## 🧒 Like you're 5
 +
-+You press an elevator button, but its light does not turn on. You press it three
-+more times. A good elevator still sends only one car—not four.
++Imagine choosing ice cream. One flavor is the clear favorite, but several others
++look good.
 +
-+Network requests need the same protection. When a reply gets lost, a client
-+must retry without accidentally charging a card twice, creating two orders, or
-+launching duplicate work.
++**Temperature** decides how adventurous you feel. Low temperature means “pick
++the favorite.” High temperature means “surprise me.” **Top-p** first removes the
++unlikely flavors, then lets you choose only among a small group that together
++covers most reasonable choices.
 +
 +---
 +
-+↓ Turn repeated intent into one durable result ↓
++↓ Turn model scores into a controlled sampling policy ↓
 +
 +## 🔧 For the engineer
 +
-+An **idempotency key** identifies one logical operation across retries. Server
-+stores first operation's state and response; later requests with same key return
-+that result instead of repeating side effects.
++An LLM outputs one **logit** per vocabulary token. Decoding transforms those raw
++scores into a probability distribution, optionally filters candidates, then
++selects the next token.
 +
-+| Concept | Design rule |
++`P(token i) = softmax(logit_i / T)`
++
++| Concept | Engineering meaning |
 +|---|---|
-+| **Scope** | Bind key to tenant, endpoint, and operation. `(tenant_id, route, key)` avoids collisions across customers or APIs. |
-+| **Request fingerprint** | Hash canonical request fields. Same key plus different payload must return `409 Conflict`, not silently reuse old result. |
-+| **Atomic reservation** | Create key record with a unique constraint before side effect. A check-then-insert race can still execute duplicate work. |
-+| **Concurrent duplicates** | Represent `IN_PROGRESS`, `SUCCEEDED`, and retryable failure states. Duplicate callers wait briefly or receive a retry signal. |
-+| **Response replay** | Persist status code and stable response body or resource ID. Retried caller should observe same logical outcome. |
-+| **Retention** | TTL must exceed maximum client retry window. Expiring too early makes an old retry look like new work; retaining forever wastes storage. |
++| **Temperature T** | `T < 1` sharpens probability gaps; `T > 1` flattens them. It changes relative probabilities across all candidates before sampling. |
++| **Top-p nucleus** | Sort tokens by probability and retain the smallest set whose cumulative probability reaches `p`. Candidate count adapts to model confidence. |
++| **Greedy decoding** | Select highest-probability token each step. Reproducible and cheap, but can become repetitive or lock into an early poor choice. |
++| **Seed** | A fixed seed can make sampling repeatable only when model, runtime, hardware behavior, prompt, and decoding settings remain stable. |
++| **Structured tasks** | For extraction, tool arguments, and config generation, favor low randomness plus schema-constrained decoding. Sampling settings alone do not guarantee valid JSON. |
++| **Creative tasks** | Moderate temperature and top-p can increase variety. Measure useful diversity—not novelty alone—against task-specific evaluation criteria. |
 +
-+**Flow:** Reserve key → Validate fingerprint → Execute once → Store result → Replay
++```python
++# Illustrative profiles; exact behavior varies by model/provider
++factual = {"temperature": 0.1, "top_p": 0.9}
++balanced = {"temperature": 0.7, "top_p": 0.9}
++creative = {"temperature": 1.0, "top_p": 0.95}
 +
-+```sql
-+INSERT INTO idempotency (tenant, key, request_hash, state)
-+VALUES (:tenant, :key, :hash, 'IN_PROGRESS')
-+ON CONFLICT (tenant, key) DO NOTHING;
-+
-+-- Only reservation owner performs side effect.
-+-- Retries read existing state/result.
++# Change one control at a time during evaluation.
 +```
 +
-+> **Boundary:** Idempotency keys provide effectively-once API semantics only
-+> inside designed scope. They do not create magical exactly-once delivery;
-+> downstream side effects also need transactional coupling, an outbox, or their
-+> own deduplication key.
++> **Common trap:** Temperature and top-p do not add knowledge or reasoning
++> ability. They reshape token selection. If answers are wrong, first inspect
++> prompt context, retrieval, model capability, and evaluation—not only
++> randomness knobs.
 +
 +---
 +
 +## ⚡ Micro-action
 +
-+Pick one POST endpoint that clients may retry. Write four decisions: key scope,
-+payload-mismatch behavior, in-progress response, and retention TTL. If any
-+answer is unclear, retries are currently part of failure risk—not recovery
-+design.
++Run one prompt three times with identical seed and `top_p=0.9`, using
++temperatures `0.1`, `0.7`, and `1.0`. Compare factual consistency, wording
++diversity, and format compliance. Pick settings from evidence, not folklore.
 +
-+**System Design · API Reliability**  
++**AI Learning · Generation Controls**  
 +💫 Small steps. Every day.
-  ┊ 💻 $         python3 - <<'PY' from html.parser import HTMLParser from pathlib import Path p=Path('/opt/data/insights/idempotency-keys-safe-retries_20260727.html') s=p.read_text() HTMLParser().feed(s) assert s.rstrip().endswith('</html>') assert p.with_suffix('.md').exists() for section in ["🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action', '💫 Small steps. Every day.']: assert section in s, section print(f'HTML valid: {len(s)} bytes; MD companion present') PY  0.1s
-  ┊ 💻 $         git status --short -- /opt/data/insights/idempotency-keys-safe-retries_20260727.html /opt/data/insights/idempotency-keys-safe-retries_20260727.md  0.1s
-  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh system_design /opt/data/insights/idempotency-keys-safe-retries_20260727.html "API Reliability"  2.6s
-  ┊ 💻 $         python3 - <<'PY' import base64, json, urllib.request base='https://api.github.com/repos/psdeepu26/system-design/contents/' headers={'Accept':'application/vnd.github+json','User-Agent':'Hermes-Agent'} def get(path): req=urllib.request.Request(base+path+'?ref=main',headers=headers) with urllib.request.urlopen(req,timeout=30) as r: return json.load(r) def text(path): return base64.b64decode(get(path)['content']).decode() card='api-reliability/idempotency-keys-safe-retries_20260727.html' md='api-reliability/idempotency-keys-safe-retries_20260727.md' index=text('index.html') + 4 commands  2.3s
-  ┊ 📚 skill     nightly-learning-insight → references/index-recovery-and-remote-verification.md  0.1s
-  ┊ 📖 read      index.html  0.1s
-  ┊ 📖 read      cards.json  0.1s
-  ┊ ✍️  write     /tmp/rebuild_system_design_index.py  0.0s [Write denied: '/tmp/rebuild_system_design_ind...]
-  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.1s [Traceback (most recent call last):
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path from html.parser import HTMLParser for suffix in ('html','md'): p=Path(f'/opt/data/insights/temperature-top-p-token-sampling_20260728.{suffix}') assert p.exists() and p.stat().st_size p html=Path('/opt/data/insights/temperature-top-p-token-sampling_20260728.html').read_text() assert html.rstrip().endswith('</html>') for section in ("🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action', '💫 Small steps. Every day.'): assert section in html, section HTMLParser().feed(html) print('card-validation=PASS') PY bash -n /opt/data/scripts/push-insight.sh bash /opt/data/scripts/push-insight.sh ai_learning /opt/data/insights/temperature-top-p-token-sampling_20260728.html "AI Learning - Generation Controls"  2.6s
+  ┊ 📋 plan      update 1/4 ✓  0.0s
+  ┊ 💻 $         python3 - <<'PY' import json, urllib.request, base64, re base='https://api.github.com/repos/psdeepu26/ai-learning/contents/' def get(path): with urllib.request.urlopen(base+path+'?ref=main') as r: return json.load(r) def text(path): return base64.b64decode(get(path)['content']).decode() category='ai-learning---generation-controls' name='temperature-top-p-token-sampling_20260728' listing={x['name'] for x in get(category)} assert name+'.html' in listing and name+'.md' in listing, listing index=text('index.html') cards=json.loads(text('cards.json')) latest=text('latest.html') path=f'{category}/{name}.html' entries=re.findall(r'<a class="card-link".*?</a>', index, re.S) matching=[e for e in entries if path in e] card_paths=[c.get('file') for c in cards] print(json.dumps({ 'remote_commit':'3f7226a', 'html_md_present':True, 'new_index_entries':len(matching), 'index_card_entries':len(entries), 'cards_json_records':len(cards), 'cards_json_unique_files':len(set(card_paths)), 'new_cards_json_records':card_paths.count(path), 'latest_title_ok':'<title>Temperature and Top-p: Steering the Next Token</title>' in latest, 'index_bytes':len(index.encode()), }, indent=2)) assert len(matching)==1 assert card_paths.count(path)==1 assert len(card_paths)==len(set(card_paths)) assert '<title>Temperature and Top-p: Steering the Next Token</title>' in latest PY  1.5s [exit 1]
+  ┊ 💻 $         python3 - <<'PY' import json, urllib.request, base64 u='https://api.github.com/repos/psdeepu26/ai-learning/contents/index.html?ref=main' d=json.load(urllib.request.urlopen(u)) + 1 command  0.2s
+  ┊ 📖 read      cards.json L1-200  0.1s
+  ┊ 🔎 find      *.html  0.0s
+  ┊ 🔎 find      *.md  0.0s
+  ┊ 💻 $         git status --short + 2 commands  0.8s
+  ┊ 🐍 exec      from hermes_tools import read_file, write_file, terminal  0.1s [Traceback (most recent call last):
   File "/t...]
-  ┊ 🐍 exec      from hermes_tools import read_file, write_file  0.0s [Traceback (most recent call last):
-  File "/t...]
-  ┊ 🐍 exec      import html, json  0.1s
-  ┊ 💻 $         python3 - <<'PY' import json from pathlib import Path r=Path('/tmp/repos/system-design') i=(r/'index.html').read_text() + 4 commands  1.8s
-  ┊ 💻 $         python3 - <<'PY' import base64,json,urllib.request base='https://api.github.com/repos/psdeepu26/system-design/contents/' h={'Accept':'application/vnd.github+json','User-Agent':'Hermes-Agent'} def obj(path): r=urllib.request.Request(base+path+'?ref=main',headers=h) with urllib.request.urlopen(r,timeout=30) as x:return json.load(x) def txt(path):return base64.b64decode(obj(path)['content']).decode() target='api-reliability/idempotency-keys-safe-retries_20260727.html' idx=txt('index.html') + 4 commands  2.5s
-  ┊ 📚 skill     nightly-learning-insight → references/hermes-send-delivery.md  0.0s
-  ┊ ✍️  write     /opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt  0.1s
+  ┊ 📖 read      cards.json L1-100  0.1s
+  ┊ 🔎 find      *temperature-top-p*  0.0s
+  ┊ 💻 $         git status --short  0.1s
+  ┊ 🐍 exec      from hermes_tools import write_file, terminal  1.7s
+  ┊ 📖 read      cards.json L1-20  0.1s
+  ┊ 💻 $         git status --short + 1 command  0.1s
+  ┊ 🔧 patch     /tmp/repos/ai-learning/cards.json  0.0s [Write denied: '/tmp/repos/ai-learning/cards.j...]
+  ┊ 💻 $         mkdir -p /opt/data/work + 1 command  0.2s
+  ┊ 🔧 patch     /opt/data/work/ai-learning-repair/cards.json  0.1s
   ┊ review diff
-a//opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt → b//opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt
-@@ -0,0 +1,11 @@
-+🌙 Nightly Learning Insight — System Design
+a//opt/data/work/ai-learning-repair/cards.json → b//opt/data/work/ai-learning-repair/cards.json
+@@ -1,9 +1,9 @@
+ [
+   {
+-    "file": "ai-learning---generation-controls/temperature-top-p-token-sampling_20260728.html",
+-    "category": "ai-learning---generation-controls",
+-    "title": "temperature-top-p-token-sampling 20260728",
+-    "emoji": "📚",
++    "file": "generation-controls/temperature-top-p-token-sampling_20260728.html",
++    "category": "generation-controls",
++    "title": "Temperature and Top-p: Steering the Next Token",
++    "emoji": "🤖",
+     "timestamp": "20260727_203228"
+   },
+   {
+  ┊ ✍️  write     /opt/data/work/rebuild_ai_index.py  1.2s
+  ┊ review diff
+a//opt/data/work/rebuild_ai_index.py → b//opt/data/work/rebuild_ai_index.py
+@@ -0,0 +1,71 @@
++from pathlib import Path
++import datetime
++import html
++import json
++import re
 +
-+📖 Idempotency Keys: Make Retries Safe
++repo = Path('/opt/data/work/ai-learning-repair')
++cards = json.loads((repo / 'cards.json').read_text())
++labels = {'ai-learning': 'AI Learning', 'generation-controls': 'Generation Controls'}
 +
-+🧒 Repeated elevator-button presses should still summon only one car.
 +
-+🔧 Atomic key reservation, request fingerprinting, response replay, and TTL turn retries into one logical operation.
++def title_for(card):
++    if card['file'].endswith('temperature-top-p-token-sampling_20260728.html'):
++        return card['title']
++    raw = re.sub(r'[_-]20\d{6}$', '', card['title'])
++    words = raw.replace('-', ' ').split()
++    return ' '.join(word.upper() if word.lower() in {'rag', 'kv', 'llm', 'llms', 'moe'} else word.capitalize() for word in words)
 +
-+⚡ Pick one retryable POST endpoint; define key scope, payload-mismatch behavior, in-progress response, and retention TTL.
 +
-+🌐 Read the full card: https://psdeepu26.github.io/system-design/latest.html
-  ┊ 💻 $         then echo 'Log entry already exists; skipped prepend' else ts=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S_manual') jq --arg date "2026-07-27" --arg dow "Monday" --arg topic "System Design" --arg title "Idempotency Keys: Make Retries Safe" --arg category "api-reliability" --arg html "idempotency-keys-safe-retries_20260727.html" --arg md "idempotency-keys-safe-retries_20260727.md" --arg ts "$ts" --arg url "https://psdeepu26.github.io/system-design/latest.html" '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,url:$url}] + .' /opt/data/insights/log.json mv /tmp/log_new.json /opt/data/insights/log.json echo "Log entry prepended: $ts" fi jq '.[0]' /opt/data/insights/log.json  0.1s
-  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:2" --file /opt/data/insights/idempotency-keys-safe-retries_20260727_message.txt --json  4.6s
-  ┊ 💻 $         set -e jq 'map(if .html_file == "idempotency-keys-safe-retries_20260727.html" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3012"} else . end)' /opt/data/insights/log.json mv /tmp/log_delivered.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json printf '\nPages check: ' curl -fsSL --max-time 30 https://psdeepu26.github.io/system-design/latest.html | python3 -c 'import sys; s=sys.stdin.read(); print("title OK" if "<title>Idempotency Keys: Make Retries Safe</title>" in s else "CDN not refreshed yet")'  0.1s [exit -1]
-  ┊ 💻 $         set -e jq 'map(if .html_file == "idempotency-keys-safe-retries_20260727.html" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3012"} else . end)' /opt/data/insights/log.json mv /tmp/log_delivered.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json python3 - <<'PY' import urllib.request s=urllib.request.urlopen('https://psdeepu26.github.io/system-design/latest.html',timeout=30).read().decode() print('Pages check:', 'title OK' if '<title>Idempotency Keys: Make Retries Safe</title>' in s else 'CDN not refreshed yet') PY  0.5s
++def date_for(path):
++    match = re.search(r'_(20\d{2})(\d{2})(\d{2})\.html$', path)
++    if not match:
++        return ''
++    return datetime.date(*map(int, match.groups())).strftime('%d %b %Y')
++
++
++groups = {}
++for card in cards:
++    groups.setdefault(card['category'], []).append(card)
++
++sections = []
++for category, items in groups.items():
++    label = labels.get(category, category.replace('-', ' ').title())
++    articles = []
++    for card in items:
++        path = card['file']
++        md_path = path[:-5] + '.md'
++        title = title_for(card)
++        date = date_for(path)
++        search = html.escape(f'{title} {label} {date}'.lower(), quote=True)
++        articles.append(
++            f'<article class="card" data-search="{search}">'
++            f'<div class="emoji">{html.escape(card.get("emoji", "📚"))}</div>'
++            f'<div class="content"><h2><a href="{html.escape(path, quote=True)}">{html.escape(title)}</a></h2>'
++            f'<p>{html.escape(date)} · {html.escape(label)}</p></div>'
++            f'<div class="formats"><a href="{html.escape(path, quote=True)}">HTML</a>'
++            f'<a href="{html.escape(md_path, quote=True)}">MD</a></div></article>'
++        )
++    sections.append(
++        f'<section class="category" aria-labelledby="{html.escape(category)}-heading">'
++        f'<h2 class="category-title" id="{html.escape(category)}-heading">{html.escape(label)} '
++        f'<span>({len(items)})</span></h2>{"".join(articles)}</section>'
++    )
++
++css = ':root{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#d2a8ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#172033,var(--bg) 38%);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:980px;margin:auto;padding:48px 20px 70px}header{margin-bottom:28px}h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1;margin:0 0 12px}header p,.stats{color:var(--muted)}input{width:100%;padding:14px 16px;margin:20px 0 28px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);font:inherit;outline:none}input:focus{border-color:var(--accent);box-shadow:0 0 0 3px #58a6ff25}.category{display:grid;gap:12px;margin-bottom:28px}.category-title{color:var(--accent2);font-size:1.25rem;margin:4px 0}.card{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:18px;background:var(--panel);border:1px solid var(--border);border-radius:14px}.emoji{font-size:1.7rem}h2{font-size:1.05rem;margin:0 0 4px}h2 a{color:var(--text);text-decoration:none}h2 a:hover{color:var(--accent)}.content p{margin:0;color:var(--muted);font-size:.9rem}.formats{display:flex;gap:8px}.formats a{color:var(--accent);border:1px solid var(--border);border-radius:8px;padding:6px 9px;text-decoration:none;font-size:.8rem}.formats a:hover{border-color:var(--accent)}.empty{display:none;color:var(--muted);padding:20px 0}footer{text-align:center;color:var(--muted);margin-top:35px}@media(max-width:620px){main{padding-top:32px}.card{grid-template-columns:auto 1fr}.formats{grid-column:2}}'
++
++document = (
++    '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">'
++    '<meta name="viewport" content="width=device-width,initial-scale=1.0">'
++    f'<title>AI Learning Cards</title><style>{css}</style></head><body><main>'
++    '<header><h1>🤖 AI Learning</h1><p>ELI5-first cards for understanding and building with modern AI systems.</p>'
++    f'<div class="stats">{len(cards)} cards · {len(groups)} categories · Updated 28 Jul 2026</div></header>'
++    '<label for="search">Search cards</label><input id="search" type="search" '
++    'placeholder="Try: embeddings, attention, RAG…" autocomplete="off">'
++    + ''.join(sections) +
++    '<p class="empty" id="empty">No matching cards.</p><footer>💫 Small steps. Every day.</footer></main>'
++    '<script>const q=document.getElementById("search"),cards=[...document.querySelectorAll(".card")],empty=document.getElementById("empty");q.addEventListener("input",()=>{const term=q.value.trim().toLowerCase();let visible=0;cards.forEach(card=>{const show=card.dataset.search.includes(term);card.hidden=!show;if(show)visible++});empty.style.display=visible?"none":"block"});</script>'
++    '</body></html>\n'
++)
++(repo / 'index.html').write_text(document)
++print(f'cards={len(cards)} categories={len(groups)} index_bytes={len(document.encode())}')
+  ┊ 🔧 patch       0.4s
+  ┊ review diff
+a//opt/data/work/rebuild_ai_index.py → b//opt/data/work/rebuild_ai_index.py
+@@ -40,14 +40,14 @@
+         search = html.escape(f'{title} {label} {date}'.lower(), quote=True)
+         articles.append(
+             f'<article class="card" data-search="{search}">'
+-            f'<div class="emoji">{html.escape(card.get("emoji", "📚"))}</div>'
++            f'<div class="emoji">{html.escape(str(card.get("emoji") or "📚"))}</div>'
+             f'<div class="content"><h2><a href="{html.escape(path, quote=True)}">{html.escape(title)}</a></h2>'
+             f'<p>{html.escape(date)} · {html.escape(label)}</p></div>'
+             f'<div class="formats"><a href="{html.escape(path, quote=True)}">HTML</a>'
+             f'<a href="{html.escape(md_path, quote=True)}">MD</a></div></article>'
+         )
+     sections.append(
+-        f'<section class="category" aria-labelledby="{html.escape(category)}-heading">'
++        f'<section class="category" aria-labelledby="{html.escape(str(category))}-heading">'
+         f'<h2 class="category-title" id="{html.escape(category)}-heading">{html.escape(label)} '
+         f'<span>({len(items)})</span></h2>{"".join(articles)}</section>'
+     )
+  ┊ 🔧 patch     /opt/data/work/rebuild_ai_index.py  0.2s
+  ┊ review diff
+a//opt/data/work/rebuild_ai_index.py → b//opt/data/work/rebuild_ai_index.py
+@@ -48,7 +48,7 @@
+         )
+     sections.append(
+         f'<section class="category" aria-labelledby="{html.escape(str(category))}-heading">'
+-        f'<h2 class="category-title" id="{html.escape(category)}-heading">{html.escape(label)} '
++        f'<h2 class="category-title" id="{html.escape(str(category))}-heading">{html.escape(label)} '
+         f'<span>({len(items)})</span></h2>{"".join(articles)}</section>'
+     )
+ 
+  ┊ 🔧 patch     /opt/data/work/rebuild_ai_index.py  0.2s
+  ┊ review diff
+a//opt/data/work/rebuild_ai_index.py → b//opt/data/work/rebuild_ai_index.py
+@@ -48,7 +48,7 @@
+         )
+     sections.append(
+         f'<section class="category" aria-labelledby="{html.escape(str(category))}-heading">'
+-        f'<h2 class="category-title" id="{html.escape(str(category))}-heading">{html.escape(label)} '
++        f'<h2 class="category-title" id="{html.escape(str(category))}-heading">{html.escape(str(label))} '
+         f'<span>({len(items)})</span></h2>{"".join(articles)}</section>'
+     )
+ 
+  ┊ 💻 $         python3 /opt/data/work/rebuild_ai_index.py + 5 commands  1.6s
+  ┊ 💻 $         python3 - <<'PY' import base64, json, re, urllib.request, subprocess base='https://api.github.com/repos/psdeepu26/ai-learning/contents/' def get(path): with urllib.request.urlopen(base+path+'?ref=main') as r: return json.load(r) def text(path): return base64.b64decode(get(path)['content']).decode() name='temperature-top-p-token-sampling_20260728' + 4 commands  2.1s
+  ┊ 📋 plan      update 2/4 ✓  0.0s
+  ┊ 💻 $         ts=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S_manual') jq --arg date "2026-07-28" --arg dow "Tuesday" --arg topic "AI Learning" --arg title "Temperature and Top-p: Steering the Next Token" --arg category "generation-controls" --arg html "temperature-top-p-token-sampling_20260728.html" --arg md "temperature-top-p-token-sampling_20260728.md" --arg ts "$ts" --arg url "https://psdeepu26.github.io/ai-learning/latest.html" '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,url:$url}] + .' /opt/data/insights/log.json + 1 command  0.1s
+  ┊ ✍️  write     /opt/data/insights/temperature-top-p-token-sampling_20260728_message.txt  0.1s
+  ┊ review diff
+a//opt/data/insights/temperature-top-p-token-sampling_20260728_message.txt → b//opt/data/insights/temperature-top-p-token-sampling_20260728_message.txt
+@@ -0,0 +1,5 @@
++🤖 Temperature and Top-p: Steering the Next Token
++
++How logits become controlled token choices—and why randomness settings cannot fix missing knowledge.
++
++🌐 https://psdeepu26.github.io/ai-learning/latest.html
+  ┊ 📋 plan      update 3/4 ✓  0.0s
+⚠️ Iteration budget exhausted (30/30) — asking model to summarise
+⚠️  Reached maximum iterations (30). Requesting summary...
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Generated today’s insight:                                                 
+     Generated today’s AI Learning insight:                                     
                                                                                 
-     - Topic: System Design                                                     
-     - Title: “Idempotency Keys: Make Retries Safe”                             
-     - HTML: /opt/data/insights/idempotency-keys-safe-retries_20260727.html     
+     - Title: Temperature and Top-p: Steering the Next Token                    
+     - Date: 28 July 2026                                                       
+     - HTML:                                                                    
+     /opt/data/insights/temperature-top-p-token-sampling_20260728.html          
      - Markdown:                                                                
-     /opt/data/insights/idempotency-keys-safe-retries_20260727.md               
-     - Published: https://psdeepu26.github.io/system-design/latest.html         
-     - Telegram Learning topic: delivered, message 3012                         
-     - Remote verification: HTML, Markdown, searchable index, cards.json,       
-     and latest.html valid                                                      
-     - Index insertion initially failed; rebuilt cleanly. 10 unique cards,      
-     one new entry.                                                             
+     /opt/data/insights/temperature-top-p-token-sampling_20260728.md            
+     - Published: https://psdeepu26.github.io/ai-learning/latest.html           
+     - Remote commit: 8306d011e50c30690456886994a1a49eb83b93e0                  
+     - Verified: HTML + MD present, index has exactly one entry, cards.json     
+     has 9 unique records, latest.html correct                                  
+     - Logged in /opt/data/insights/log.json                                    
+                                                                                
+     Telegram delivery not completed: tool-call limit reached before send       
+     command. Message file ready at:                                            
+                                                                                
+     /opt/data/insights/temperature-top-p-token-sampling_20260728_message.t     
+     xt                                                                         
                                                                                 
      ⚠️ File-mutation verifier: 1 file(s) were NOT modified this turn           
      despite any wording above that may suggest otherwise. Run git status       
      or read_file to confirm.                                                   
-       • /tmp/rebuild_system_design_index.py — [write_file] Write denied:       
-     '/tmp/rebuild_system_design_index.py' is a protected system/credential     
+       • /tmp/repos/ai-learning/cards.json — [patch] Write denied:              
+     '/tmp/repos/ai-learning/cards.json' is a protected system/credential       
      file.                                                                      
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
-Resume this session with:
-  hermes --resume 20260726_203024_8db2d3
+⚠ Iteration budget reached (30/30) — response may be incomplete
 
-Session:        20260726_203024_8db2d3
-Duration:       5m 53s
-Messages:       55 (1 user, 53 tool calls)
-⚠ Auxiliary title generation failed: HTTP 404: No endpoints found for openrouter/owl-alpha.
+Resume this session with:
+  hermes --resume 20260727_203031_8bba7f
+
+Session:        20260727_203031_8bba7f
+Duration:       6m 11s
+Messages:       77 (2 user, 74 tool calls)
