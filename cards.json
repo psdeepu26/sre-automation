@@ -1,5 +1,12 @@
 [
   {
+    "file": "sre-&-automation/alert-fatigue-budget_20260730.html",
+    "category": "sre-&-automation",
+    "title": "alert-fatigue-budget 20260730",
+    "emoji": "📚",
+    "timestamp": "20260729_203628"
+  },
+  {
     "file": "sre-&-automation/retry-storm-control_2026-07-30.html",
     "category": "sre-&-automation",
     "title": "Retry Storm Control: Backoff, Jitter, and Retry Budgets",
