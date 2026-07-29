@@ -2,51 +2,10 @@
   {
     "file": "sre-&-automation/retry-storm-control_2026-07-30.html",
     "category": "sre-&-automation",
-    "title": "retry-storm-control 2026-07-30",
-    "emoji": "📚",
-    "timestamp": "20260729_203203"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260728_203453"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260727_203643"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260726_203620"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260725_203726"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260724_203450"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260723_204009"
+    "title": "Retry Storm Control: Backoff, Jitter, and Retry Budgets",
+    "emoji": "⚡",
+    "timestamp": "20260729_203203",
+    "md_file": "sre-&-automation/retry-storm-control_2026-07-30.md"
   },
   {
     "file": "sre-&-automation/safe-runbook-automation_20260723.html",
