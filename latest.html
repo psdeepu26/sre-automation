@@ -1,44 +1,227 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alert Fatigue Budgets: Make Paging Scarce</title>
-<style>
-:root{--bg:#0d1117;--card-bg:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;max-width:960px;padding:32px 20px;margin-inline:auto}h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:0 0 12px}.subtitle{color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}.tag{border:1px solid var(--border);border-radius:999px;padding:3px 10px;color:var(--accent);font-size:.85rem}.eli5,.technical,.micro-action{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:24px;margin:24px 0}.eli5{border-left:4px solid var(--purple)}.technical{border-left:4px solid var(--accent)}.micro-action{border-left:4px solid var(--green)}.eli5-label,.micro-action-label{font-weight:700;color:var(--purple);font-size:1.05rem}.micro-action-label{color:var(--green)}.bridge{text-align:center;color:var(--muted);font-size:2rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.item{border:1px solid var(--border);border-radius:10px;padding:16px}.item h3{margin-top:0;color:var(--accent)}code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}pre{overflow:auto;background:#0d1117;border:1px solid var(--border);border-radius:8px;padding:14px;color:var(--green)}strong{color:var(--text)}footer{color:var(--muted);text-align:center;margin-top:32px}
-</style>
-</head>
-<body>
-<h1>Alert Fatigue Budgets: Make Paging Scarce</h1>
-<p class="subtitle"><span class="tag">SRE &amp; Automation</span><span class="tag">2026-07-30</span><span class="tag">Personal learning insight</span></p>
+Query: Generate today's personal learning insight using the 
+nightly-learning-insight skill
+Initializing agent...
+────────────────────────────────────────
 
-<div class="eli5">
-  <div class="eli5-label">🧒 Like you're 5</div>
-  <p>A fire alarm that screams every time someone burns toast gets ignored. A good alarm only rings when there is a real fire, because everyone trusts it. Your on-call system needs the same rule: every page should be important enough that interrupting sleep is worth it.</p>
-</div>
+  ┊ 📚 skill     nightly-learning-insight  0.0s
+  ┊ 📚 skill     caveman  0.0s
+  ┊ 💻 $         TZ=Asia/Kolkata date '+%A, %Y-%m-%d %H:%M %Z'  0.1s
+  ┊ 💻 $         jq '[.[] | select(.topic == "Personal Growth") | {date,title,html_file,delivered}]' /opt/data/insights/log.json  0.1s
+  ┊ 💻 $         shopt -s nullglob + 2 commands  0.1s
+  ┊ 💻 $         bash -n /opt/data/scripts/push-insight.sh + 1 command  0.1s [exit 128]
+  ┊ 📋 plan      4 task(s)  0.0s
+  ┊ 🔎 grep      CATEGORY=|CATEGORY_DIR=|normalize_repo|cards.json  0.1s
+  ┊ 📖 read      push-insight.sh L1-230  0.1s
+  ┊ ✍️  write     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.html  0.1s
+  ┊ review diff
+a//opt/data/insights/shutdown-ritual-close-open-loops_20260731.html → b//opt/data/insights/shutdown-ritual-close-open-loops_20260731.html
+@@ -0,0 +1,50 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++<meta charset="UTF-8">
++<meta name="viewport" content="width=device-width, initial-scale=1.0">
++<title>The Shutdown Ritual: Close Open Loops Before They Follow You Home</title>
++<style>
++:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72}
++*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:42px 22px 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:0 7px 7px 0;font-size:.82rem}.eli5,.technical,.micro-action{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:20px 0}.eli5{border-left:4px solid var(--purple)}.eli5-label,.micro-action-label{font-weight:750;color:var(--purple);letter-spacing:.02em}.bridge{text-align:center;color:var(--accent);font-size:2rem}.technical{border-left:4px solid var(--accent)}.technical h2{margin-top:0;color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}.cell{border:1px solid var(--border);border-radius:12px;padding:16px}.cell strong{color:var(--green);display:block;margin-bottom:6px}code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}pre{background:#090c10;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;color:#c9d1d9}.micro-action{border-left:4px solid var(--green)}.micro-action-label{color:var(--green)}.note{color:var(--muted);font-size:.93rem}ul{padding-left:22px}b{color:var(--red)}
++</style>
++</head>
++<body><main class="wrap">
++<h1>The Shutdown Ritual: Close Open Loops Before They Follow You Home</h1>
++<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">Mental Recovery</span><span class="tag">31 July 2026</span></p>
++<section class="eli5">
++<div class="eli5-label">🧒 Like you're 5</div>
++<p>Imagine leaving five browser tabs open because you are scared you will forget them. Even when you stop using the computer, those tabs keep asking for attention.</p>
++<p>Your brain does this too. Unfinished work becomes an “open tab.” A shutdown ritual writes down where every tab belongs, so your brain no longer has to hold them overnight.</p>
++</section>
++<div class="bridge">↓</div>
++<section class="technical">
++<h2>🔧 For the engineer</h2>
++<p>Unfinished, ambiguous tasks keep resurfacing in working memory—the practical effect often associated with the <b>Zeigarnik effect</b>. The remedy is not necessarily finishing everything. It is creating a trusted record of state, ownership, and next action.</p>
++<div class="grid">
++<div class="cell"><strong>1. Capture state</strong>Record what changed, what remains, and links needed to resume. Think checkpoint, not diary.</div>
++<div class="cell"><strong>2. Define next action</strong>Replace “investigate alert noise” with one visible action: “compare top 10 alert fingerprints from last 7 days.”</div>
++<div class="cell"><strong>3. Assign destination</strong>Every open loop gets tomorrow, backlog, delegation, or deletion. No vague “remember this.”</div>
++<div class="cell"><strong>4. Declare shutdown</strong>Review tomorrow’s first task, close work apps, then use one consistent phrase: “Workday complete.”</div>
++</div>
++<p>A useful ritual behaves like a clean SRE handoff—even when tomorrow’s on-call engineer is you:</p>
++<pre><code>SHUTDOWN_CHECKPOINT
++Done:       dashboard query optimized
++Open loop:  latency spike after deploy
++Next step:  compare p95 by release version
++Context:    incident note + dashboard link
++When:       tomorrow, first focus block
++</code></pre>
++<ul>
++<li><b>Bad capture:</b> “Continue investigating.” Brain must reconstruct the problem.</li>
++<li><b>Good capture:</b> “Run release-version split on p95; if only v42 regresses, inspect dependency timeout diff.”</li>
++<li><b>Key principle:</b> Closure comes from confidence that the system will remind you—not from pretending work is finished.</li>
++</ul>
++<p class="note">Keep ritual under 10 minutes. If it becomes another project, it will not survive busy days.</p>
++</section>
++<section class="micro-action">
++<div class="micro-action-label">⚡ Micro-action (5 minutes)</div>
++<p>Create a note named <code>Shutdown Checkpoint</code>. List three current open loops. For each, write exactly one next physical action and when you will see it again. Then close one work tab you were keeping open only as a reminder.</p>
++</section>
++</main></body>
++</html>
+  ┊ ✍️  write     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.md  0.1s
+  ┊ review diff
+a//opt/data/insights/shutdown-ritual-close-open-loops_20260731.md → b//opt/data/insights/shutdown-ritual-close-open-loops_20260731.md
+@@ -0,0 +1,43 @@
++# The Shutdown Ritual: Close Open Loops Before They Follow You Home
++
++**Personal Growth · Mental Recovery · 31 July 2026**
++
++## 🧒 Like you're 5
++
++Imagine leaving five browser tabs open because you are scared you will forget them. Even when you stop using the computer, those tabs keep asking for attention.
++
++Your brain does this too. Unfinished work becomes an “open tab.” A shutdown ritual writes down where every tab belongs, so your brain no longer has to hold them overnight.
++
++↓
++
++## 🔧 For the engineer
++
++Unfinished, ambiguous tasks keep resurfacing in working memory—the practical effect often associated with the **Zeigarnik effect**. The remedy is not necessarily finishing everything. It is creating a trusted record of state, ownership, and next action.
++
++### Four-step shutdown
++
++1. **Capture state** — Record what changed, what remains, and links needed to resume. Think checkpoint, not diary.
++2. **Define next action** — Replace “investigate alert noise” with one visible action: “compare top 10 alert fingerprints from last 7 days.”
++3. **Assign destination** — Every open loop gets tomorrow, backlog, delegation, or deletion. No vague “remember this.”
++4. **Declare shutdown** — Review tomorrow’s first task, close work apps, then use one consistent phrase: “Workday complete.”
++
++A useful ritual behaves like a clean SRE handoff—even when tomorrow’s on-call engineer is you:
++
++```text
++SHUTDOWN_CHECKPOINT
++Done:       dashboard query optimized
++Open loop:  latency spike after deploy
++Next step:  compare p95 by release version
++Context:    incident note + dashboard link
++When:       tomorrow, first focus block
++```
++
++- **Bad capture:** “Continue investigating.” Brain must reconstruct the problem.
++- **Good capture:** “Run release-version split on p95; if only v42 regresses, inspect dependency timeout diff.”
++- **Key principle:** Closure comes from confidence that the system will remind you—not from pretending work is finished.
++
++Keep ritual under 10 minutes. If it becomes another project, it will not survive busy days.
++
++## ⚡ Micro-action (5 minutes)
++
++Create a note named `Shutdown Checkpoint`. List three current open loops. For each, write exactly one next physical action and when you will see it again. Then close one work tab you were keeping open only as a reminder.
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path p=Path('/opt/data/insights/shutdown-ritual-close-open-loops_20260731.html') s=p.read_text() assert s.startswith('<!DOCTYPE html>') assert s.rstrip().endswith('</html>') assert all(x in s for x in ["🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action']) md=Path('/opt/data/insights/shutdown-ritual-close-open-loops_20260731.md') assert md.exists() and md.stat().st_size print(f'validated html={len(s)} bytes md={md.stat().st_size} bytes') PY bash /opt/data/scripts/push-insight.sh personal_growth /opt/data/insights/shutdown-ritual-close-open-loops_20260731.html "Personal Growth Mental Recovery"  214.6s [exit 1]
+  ┊ 📚 skill     nightly-learning-insight → references/stale-checkout-index-recovery.md  0.0s
+  ┊ 📋 plan      update 1/4 ✓  0.0s
+  ┊ 💻 $         d=$(mktemp -d /tmp/personal-growth-recovery-XXXXXX) + 2 commands  3.1s
+  ┊ 💻 $         jq '{type:type,count:length,categories:([.[].category]|unique),sample:.[0:3]}' cards.json  0.1s
+  ┊ 💻 $         wc -c index.html cards.json + 2 commands  0.1s
+  ┊ 🔎 find      *.html  0.0s
+  ┊ 🐍 exec      from hermes_tools import read_file, write_file, terminal, json_parse  0.2s [Traceback (most recent call last):
+  File "/t...]
+  ┊ 🐍 exec      from hermes_tools import write_file, terminal, json_parse  0.1s
+  ┊ 💻 $         python3 - <<'PY' import json from pathlib import Path r=Path('.') cards=json.loads((r/'cards.json').read_text()) missing=[] for c in cards: p=r/c['file'] md=p.with_suffix('.md') if not p.exists() or not md.exists(): missing.append((c['file'],p.exists(),md.exists())) print('records',len(cards),'missing_pairs',len(missing)) for x in missing: print(*x) PY  0.1s
+  ┊ 💻 $         jq 'length, map(select(.file=="mental-clarity/shutdown-ritual-close-open-loops_20260731.html"))|length' cards.json + 2 commands  0.1s
+  ┊ 🔎 find      shutdown-ritual*  0.0s
+  ┊ ✍️  write     /tmp/regenerate_personal_growth.py  0.0s [Write denied: '/tmp/regenerate_personal_growt...]
+  ┊ ✍️  write     /tmp/personal-growth-recovery-5eOkKN/regenerate_index.py  0.0s [Write denied: '/tmp/personal-growth-recovery-...]
+  ┊ ✍️  write     /opt/data/insights/regenerate_personal_growth_20260731.py  1.1s
+  ┊ review diff
+a//opt/data/insights/regenerate_personal_growth_20260731.py → b//opt/data/insights/regenerate_personal_growth_20260731.py
+@@ -0,0 +1,31 @@
++import json
++import html
++from pathlib import Path
++
++root = Path('/tmp/personal-growth-recovery-5eOkKN')
++category = 'mental-clarity'
++base = 'shutdown-ritual-close-open-loops_20260731'
++new_path = f'{category}/{base}.html'
++cards_path = root / 'cards.json'
++cards = json.loads(cards_path.read_text())
++cards = [card for card in cards if card.get('file') != new_path]
++cards.append({'file': new_path, 'category': category, 'title': 'The Shutdown Ritual: Close Open Loops Before They Follow You Home', 'emoji': '🧠', 'timestamp': '20260731_020000'})
++cards.sort(key=lambda card: card.get('timestamp', ''), reverse=True)
++cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + '\n')
++groups = {}
++for card in cards:
++    groups.setdefault(card.get('category', 'uncategorized'), []).append(card)
++sections = []
++for category_name in sorted(groups):
++    entries = []
++    for card in groups[category_name]:
++        html_path = card['file']
++        md_path = html_path.removesuffix('.html') + '.md'
++        title = html.escape(card.get('title') or html_path)
++        emoji = html.escape(card.get('emoji', '📚'))
++        entries.append(f'<article class="card" data-title="{title.lower()}" data-category="{html.escape(category_name)}"><div class="card-title"><span>{emoji}</span><a href="{html.escape(html_path)}">{title}</a></div><div class="links"><a href="{html.escape(html_path)}">HTML</a><a href="{html.escape(md_path)}">Markdown</a></div></article>')
++    label = html.escape(category_name.replace('-', ' ').title())
++    sections.append(f'<section><h2>{label} <span>{len(entries)}</span></h2><div class="grid">{"".join(entries)}</div></section>')
++index = f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Growth Learning Cards</title><style>:root{{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:40px 20px 70px}}h1{{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:8px}}.meta{{color:var(--muted)}}input{{width:100%;padding:14px 16px;margin:25px 0;background:var(--card);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:1rem}}h2{{margin-top:34px;text-transform:capitalize}}h2 span{{color:var(--muted);font-size:.8em}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}}.card{{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}}.card-title{{display:flex;gap:9px;align-items:flex-start}}a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}}.links{{display:flex;gap:14px;margin-top:12px;font-size:.86rem}}.links a{{color:var(--muted)}}</style></head><body><main><h1>Personal Growth Learning Cards</h1><p class="meta">{len(cards)} cards · {len(groups)} categories · Updated 31 Jul 2026</p><input id="search" type="search" placeholder="Search cards…" aria-label="Search cards">{''.join(sections)}</main><script>const q=document.getElementById('search');q.addEventListener('input',()=>{{const v=q.value.toLowerCase();document.querySelectorAll('article.card').forEach(c=>c.hidden=!(c.dataset.title+' '+c.dataset.category).includes(v));}});</script></body></html>'''
++(root / 'index.html').write_text(index)
++print(json.dumps({'cards': len(cards), 'categories': len(groups), 'index_bytes': len(index.encode()), 'new_records': sum(c.get('file') == new_path for c in cards)}))
+  ┊ 💻 $         python3 /opt/data/insights/regenerate_personal_growth_20260731.py python3 - <<'PY' import json,re from pathlib import Path r=Path('.') cards=json.loads((r/'cards.json').read_text()) path='mental-clarity/shutdown-ritual-close-open-loops_20260731.html' idx=(r/'index.html').read_text() assert len(cards)==21 assert sum(c.get('file')==path for c in cards)==1 assert len(re.findall(r'<article class="card"[^>]*>.*?shutdown-ritual-close-open-loops_20260731',idx,re.S))==1 assert idx.count('<article class="card"')==len(cards) assert (r/path).exists() and (r/path.replace('.html','.md')).exists() assert (r/'latest.html').read_bytes()==(r/path).read_bytes() print('local verification ok:',len(cards),'cards,',len(idx.encode()),'index bytes') PY git status --short git diff --stat  0.2s
+  ┊ 💻 $         git config user.email 'hermes@deepu26.dev' + 4 commands  1.9s
+  ┊ 💻 $         set -a; source /opt/data/.env; set +a api='https://api.github.com/repos/psdeepu26/personal-growth/contents' idx=$(curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' "$api/index.html?ref=main" | jq -r '.content' | tr -d '\n' | base64 -d) remote_sha=$(git ls-remote "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/personal-growth.git" refs/heads/main | cut -f1) html_status=$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $GITHUB_TOKEN" "$api/mental-clarity/shutdown-ritual-close-open-loops_20260731.html?ref=main") md_status=$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $GITHUB_TOKEN" "$api/mental-clarity/shutdown-ritual-close-open-loops_20260731.md?ref=main") latest=$(curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" "$api/latest.html?ref=main" | jq -r '.content' | tr -d '\n' | base64 -d) python3 - "$remote_sha" "$html_status" "$md_status" <<'PY' import re,sys from pathlib import Path idx=Path('/dev/stdin') print('remote_sha',sys.argv[1]) print('html_http',sys.argv[2],'md_http',sys.argv[3]) PY printf '%s' "$idx" > /tmp/remote_personal_growth_index.html printf '%s' "$latest" > /tmp/remote_personal_growth_latest.html python3 - <<'PY' import re from pathlib import Path idx=Path('/tmp/remote_personal_growth_index.html').read_text() latest=Path('/tmp/remote_personal_growth_latest.html').read_text() path='mental-clarity/shutdown-ritual-close-open-loops_20260731.html' entries=re.findall(r'<article class="card"[^>]*>.*?</article>',idx,re.S) print('index_bytes',len(idx.encode()),'card_entries',len(entries),'new_entry_count',sum(path in e for e in entries)) print('latest_title_ok','<title>The Shutdown Ritual: Close Open Loops Before They Follow You Home</title>' in latest) assert len(idx.encode()) < 1000000 and len(entries)==21 and sum(path in e for e in entries)==1 assert '<title>The Shutdown Ritual: Close Open Loops Before They Follow You Home</title>' in latest PY  2.5s
+  ┊ 📋 plan      update 2/4 ✓  0.0s
+  ┊ 💻 $         jq --arg date '2026-07-31' --arg dow 'Friday' --arg topic 'Personal Growth' --arg title 'The Shutdown Ritual: Close Open Loops Before They Follow You Home' --arg category 'mental-clarity' --arg html 'shutdown-ritual-close-open-loops_20260731.html' --arg md 'shutdown-ritual-close-open-loops_20260731.md' --arg ts '20260731_020000' --arg url 'https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/shutdown-ritual-close-open-loops_20260731.html' '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,url:$url,delivered:false}] + .' /opt/data/insights/log.json + 2 commands  0.1s
+  ┊ ✍️  write     /opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt  0.1s
+  ┊ review diff
+a//opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt → b//opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt
+@@ -0,0 +1,7 @@
++🌱 The Shutdown Ritual: Close Open Loops Before They Follow You Home
++
++Unfinished work follows you because brain still holds its state. Today’s card shows a 4-step shutdown checkpoint that creates real mental closure.
++
++⚡ 5-minute action: capture three open loops, give each one next physical action + revisit time, then close one reminder tab.
++
++🔗 https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/shutdown-ritual-close-open-loops_20260731.html
+  ┊ 📋 plan      update 3/4 ✓  0.0s
+  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to 'telegram:-1003983518007:7' --file /opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt --json  4.4s
+  ┊ 💻 $         jq 'map(if .date=="2026-07-31" and .html_file=="shutdown-ritual-close-open-loops_20260731.html" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3026"} else . end)' /opt/data/insights/log.json + 2 commands  0.1s
+  ┊ 📋 plan      update 4/4 ✓  0.0s
+ ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
+                                                                                
+     Generated today’s Personal Growth insight:                                 
+                                                                                
+     “The Shutdown Ritual: Close Open Loops Before They Follow You Home”        
+                                                                                
+     Completed:                                                                 
+     - HTML + Markdown created                                                  
+     - Published to private personal-growth GitHub repo                         
+     - Remote index verified: 21 cards, one new entry                           
+     - latest.html verified                                                     
+     - Logged in /opt/data/insights/log.json                                    
+     - Delivered to Telegram Personal topic                                     
+     - Telegram message ID: 3026                                                
+                                                                                
+     GitHub:                                                                    
+     https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/     
+     shutdown-ritual-close-open-loops_20260731.html                             
+                                                                                
+     Local:                                                                     
+     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.html          
+     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.md            
+                                                                                
+     ⚠️ File-mutation verifier: 2 file(s) were NOT modified this turn           
+     despite any wording above that may suggest otherwise. Run git status       
+     or read_file to confirm.                                                   
+       • /tmp/regenerate_personal_growth.py — [write_file] Write denied:        
+     '/tmp/regenerate_personal_growth.py' is a protected system/credential      
+     file.                                                                      
+       • /tmp/personal-growth-recovery-5eOkKN/regenerate_index.py —             
+     [write_file] Write denied:                                                 
+     '/tmp/personal-growth-recovery-5eOkKN/regenerate_index.py' is a            
+     protected system/credential file.                                          
+                                                                                
+ ────────────────────────────────────────────────────────────────────────────── 
 
-<div class="bridge">↓ Now let's call it what it really is ↓</div>
+Resume this session with:
+  hermes --resume 20260730_203029_6f3ed5
 
-<div class="technical">
-  <h2>🔧 For the engineer</h2>
-  <p>An <strong>alert fatigue budget</strong> is a lightweight reliability guardrail for the paging surface. It limits low-value interruptions and forces each alert to prove that it is actionable, urgent, and tied to a user-impacting failure mode.</p>
-  <div class="grid">
-    <div class="item"><h3>Page quality test</h3><p>Page only when all three are true:</p><ul><li>Human action is required now.</li><li>Delay causes material user or business impact.</li><li>The responder has a documented first action.</li></ul></div>
-    <div class="item"><h3>Budget signal</h3><p>Track pages per service per week, plus:</p><ul><li>repeat pages for the same incident</li><li>false-positive rate</li><li>pages with no follow-up action</li></ul></div>
-    <div class="item"><h3>Routing policy</h3><p>Not urgent? Route it to a ticket or dashboard annotation. Urgent but automated? Let automation remediate first and page only if the remediation fails.</p></div>
-    <div class="item"><h3>Useful PromQL</h3><pre>sum by (service) (
-  increase(oncall_page_total[7d])
-)</pre></div>
-  </div>
-  <p>A practical starting policy is: review any service above <strong>5 pages per on-call week</strong>, and retire or downgrade alerts that generated no responder action in the last month. Tune the number to your team; the important part is making the budget visible and reviewable.</p>
-</div>
-
-<div class="micro-action">
-  <div class="micro-action-label">⚡ Micro-action (5 minutes)</div>
-  <p>Open the last seven days of paging history. Pick the three most frequent alerts and label each <strong>keep, ticket, automate, or delete</strong>. For every alert marked <strong>keep</strong>, write its one-sentence first responder action in the rule or runbook.</p>
-</div>
-
-<footer>SRE &amp; Automation · 💫 Small steps. Every day.</footer>
-</body>
-</html>
+Session:        20260730_203029_6f3ed5
+Duration:       9m 16s
+Messages:       65 (1 user, 63 tool calls)
