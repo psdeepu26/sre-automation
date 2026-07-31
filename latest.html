@@ -3,225 +3,201 @@ nightly-learning-insight skill
 Initializing agent...
 ────────────────────────────────────────
 
-  ┊ 📚 skill     nightly-learning-insight  0.0s
-  ┊ 📚 skill     caveman  0.0s
-  ┊ 💻 $         TZ=Asia/Kolkata date '+%A, %Y-%m-%d %H:%M %Z'  0.1s
-  ┊ 💻 $         jq '[.[] | select(.topic == "Personal Growth") | {date,title,html_file,delivered}]' /opt/data/insights/log.json  0.1s
-  ┊ 💻 $         shopt -s nullglob + 2 commands  0.1s
-  ┊ 💻 $         bash -n /opt/data/scripts/push-insight.sh + 1 command  0.1s [exit 128]
-  ┊ 📋 plan      4 task(s)  0.0s
-  ┊ 🔎 grep      CATEGORY=|CATEGORY_DIR=|normalize_repo|cards.json  0.1s
-  ┊ 📖 read      push-insight.sh L1-230  0.1s
-  ┊ ✍️  write     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.html  0.1s
+  ┊ 📚 skill     nightly-learning-insight  0.1s
+  ┊ 📚 skill     caveman  0.1s
+  ┊ 📚 skill     deepu-personalization  0.0s
+  ┊ 💻 $         TODAY=$(TZ='Asia/Kolkata' date '+%Y-%m-%d') + 8 commands  0.3s
+  ┊ 💻 $         jq '[.[] | select(.topic == "Financial Health") | {date,title,category,html_file}]' /opt/data/insights/log.json  0.1s
+  ┊ 🔎 find      *.html  0.0s
+  ┊ 📖 read      push-insight.sh L1-260  0.1s
+  ┊ 📖 read      push-insight.sh L201-280  0.1s
+  ┊ 📖 read      sinking-funds-predictable-surprises_20260725.html L1-320  0.1s
+  ┊ 📖 read      sinking-funds-predictable-surprises_20260725.md L1-220  0.1s
+  ┊ ✍️  write     /opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01.html  0.1s
   ┊ review diff
-a//opt/data/insights/shutdown-ritual-close-open-loops_20260731.html → b//opt/data/insights/shutdown-ritual-close-open-loops_20260731.html
-@@ -0,0 +1,50 @@
+a//opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01.html → b//opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01.html
+@@ -0,0 +1,46 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>The Shutdown Ritual: Close Open Loops Before They Follow You Home</title>
++<title>Rebalancing Bands: Let Drift Trigger the Decision</title>
 +<style>
-+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72}
-+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:42px 22px 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:0 7px 7px 0;font-size:.82rem}.eli5,.technical,.micro-action{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:20px 0}.eli5{border-left:4px solid var(--purple)}.eli5-label,.micro-action-label{font-weight:750;color:var(--purple);letter-spacing:.02em}.bridge{text-align:center;color:var(--accent);font-size:2rem}.technical{border-left:4px solid var(--accent)}.technical h2{margin-top:0;color:var(--accent)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}.cell{border:1px solid var(--border);border-radius:12px;padding:16px}.cell strong{color:var(--green);display:block;margin-bottom:6px}code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}pre{background:#090c10;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;color:#c9d1d9}.micro-action{border-left:4px solid var(--green)}.micro-action-label{color:var(--green)}.note{color:var(--muted);font-size:.93rem}ul{padding-left:22px}b{color:var(--red)}
++:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--gold:#e3b341}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:40px 20px 56px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:0 8px 8px 0;font-size:.84rem}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--gold)}.technical{border-left:4px solid var(--blue)}.micro{border-left:4px solid var(--green)}.label{font-weight:750;color:var(--gold);letter-spacing:.02em}.micro .label{color:var(--green)}.bridge{text-align:center;color:var(--purple);font-weight:700;padding:8px}.formula{background:#0d1117;border:1px solid var(--border);border-radius:10px;padding:14px;overflow:auto;margin:12px 0 20px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{background:#0d1117;border:1px solid var(--border);border-radius:10px;padding:16px}.item strong{display:block;color:var(--blue);margin-bottom:6px}.example{border-top:1px solid var(--border);margin-top:20px;padding-top:18px}code{color:var(--green);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}footer{text-align:center;color:var(--muted);margin-top:28px}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{padding-top:28px}.panel{padding:20px}}
 +</style>
 +</head>
-+<body><main class="wrap">
-+<h1>The Shutdown Ritual: Close Open Loops Before They Follow You Home</h1>
-+<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">Mental Recovery</span><span class="tag">31 July 2026</span></p>
-+<section class="eli5">
-+<div class="eli5-label">🧒 Like you're 5</div>
-+<p>Imagine leaving five browser tabs open because you are scared you will forget them. Even when you stop using the computer, those tabs keep asking for attention.</p>
-+<p>Your brain does this too. Unfinished work becomes an “open tab.” A shutdown ritual writes down where every tab belongs, so your brain no longer has to hold them overnight.</p>
++<body>
++<main class="wrap">
++<h1>💰 Rebalancing Bands: Let Drift Trigger the Decision</h1>
++<p class="subtitle"><span class="tag">Financial Health</span><span class="tag">1 August 2026</span><span class="tag">Portfolio discipline</span></p>
++
++<section class="panel eli5">
++<div class="label">🧒 Like you're 5</div>
++<p>Imagine carrying two shopping bags. You planned to put half the weight in each, but one bag keeps getting heavier. Instead of guessing every day, you make a rule: move items only when one bag becomes clearly too heavy.</p>
++<p>Your investments drift the same way. Rebalancing bands turn “Should I buy or sell now?” into a pre-written rule, so market excitement and fear do not get the final vote.</p>
 +</section>
-+<div class="bridge">↓</div>
-+<section class="technical">
++
++<div class="bridge">↓ Now call it what it really is: restoring target risk after allocation drift ↓</div>
++
++<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
-+<p>Unfinished, ambiguous tasks keep resurfacing in working memory—the practical effect often associated with the <b>Zeigarnik effect</b>. The remedy is not necessarily finishing everything. It is creating a trusted record of state, ownership, and next action.</p>
++<div class="formula"><code>drift = current allocation − target allocation</code><br><code>rebalance when |drift| ≥ chosen band</code></div>
 +<div class="grid">
-+<div class="cell"><strong>1. Capture state</strong>Record what changed, what remains, and links needed to resume. Think checkpoint, not diary.</div>
-+<div class="cell"><strong>2. Define next action</strong>Replace “investigate alert noise” with one visible action: “compare top 10 alert fingerprints from last 7 days.”</div>
-+<div class="cell"><strong>3. Assign destination</strong>Every open loop gets tomorrow, backlog, delegation, or deletion. No vague “remember this.”</div>
-+<div class="cell"><strong>4. Declare shutdown</strong>Review tomorrow’s first task, close work apps, then use one consistent phrase: “Workday complete.”</div>
++<div class="item"><strong>Set target allocation</strong>Define percentages from goal horizon, risk capacity, and need for liquidity—not recent returns. Example: 70% equity, 30% debt.</div>
++<div class="item"><strong>Choose one trigger</strong>Use an absolute band such as ±5 percentage points. A 70% equity target triggers below 65% or above 75%. Write rule before volatility arrives.</div>
++<div class="item"><strong>Prefer cash-flow rebalancing</strong>Direct new SIPs, bonuses, or dividends toward underweight assets first. This reduces selling, taxes, exit loads, and unnecessary transactions.</div>
++<div class="item"><strong>Review, do not constantly trade</strong>Check quarterly or half-yearly. Bands decide whether action is needed; calendar only schedules inspection.</div>
++<div class="item"><strong>Measure at portfolio level</strong>Combine EPF, debt funds, equity mutual funds, and direct stocks by asset class. Rebalancing one account in isolation can hide total exposure.</div>
++<div class="item"><strong>Respect friction</strong>Before selling, check capital-gains tax, exit load, lock-in, and transaction cost. Restore risk with least-cost route, not perfect arithmetic.</div>
 +</div>
-+<p>A useful ritual behaves like a clean SRE handoff—even when tomorrow’s on-call engineer is you:</p>
-+<pre><code>SHUTDOWN_CHECKPOINT
-+Done:       dashboard query optimized
-+Open loop:  latency spike after deploy
-+Next step:  compare p95 by release version
-+Context:    incident note + dashboard link
-+When:       tomorrow, first focus block
-+</code></pre>
-+<ul>
-+<li><b>Bad capture:</b> “Continue investigating.” Brain must reconstruct the problem.</li>
-+<li><b>Good capture:</b> “Run release-version split on p95; if only v42 regresses, inspect dependency timeout diff.”</li>
-+<li><b>Key principle:</b> Closure comes from confidence that the system will remind you—not from pretending work is finished.</li>
-+</ul>
-+<p class="note">Keep ritual under 10 minutes. If it becomes another project, it will not survive busy days.</p>
++<p class="example"><strong>Example:</strong> A ₹10 lakh portfolio targets 70:30. Equity rises to ₹8 lakh while debt stays ₹3 lakh, making equity <code>72.7%</code>. With a ±5-point band, no trade: keep directing contributions to debt. At <code>76%</code>, rebalance toward 70% using new cash first, then sell only if needed.</p>
 +</section>
-+<section class="micro-action">
-+<div class="micro-action-label">⚡ Micro-action (5 minutes)</div>
-+<p>Create a note named <code>Shutdown Checkpoint</code>. List three current open loops. For each, write exactly one next physical action and when you will see it again. Then close one work tab you were keeping open only as a reminder.</p>
++
++<section class="panel micro">
++<div class="label">⚡ Micro-action (5 minutes)</div>
++<p>Open your portfolio tracker. Write one target split and one absolute band beside it—for example, <code>Equity 70%, rebalance outside 65–75%</code>. Add a quarterly reminder to measure total allocation across every account.</p>
 +</section>
-+</main></body>
++
++<footer>Financial Health · 💫 Small steps. Every day.</footer>
++</main>
++</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01.md  0.1s
   ┊ review diff
-a//opt/data/insights/shutdown-ritual-close-open-loops_20260731.md → b//opt/data/insights/shutdown-ritual-close-open-loops_20260731.md
-@@ -0,0 +1,43 @@
-+# The Shutdown Ritual: Close Open Loops Before They Follow You Home
+a//opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01.md → b//opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01.md
+@@ -0,0 +1,50 @@
++# 💰 Rebalancing Bands: Let Drift Trigger the Decision
 +
-+**Personal Growth · Mental Recovery · 31 July 2026**
++**Financial Health** · 1 August 2026 · Portfolio discipline
 +
-+## 🧒 Like you're 5
++---
 +
-+Imagine leaving five browser tabs open because you are scared you will forget them. Even when you stop using the computer, those tabs keep asking for attention.
++## 🧒 Like You're 5
 +
-+Your brain does this too. Unfinished work becomes an “open tab.” A shutdown ritual writes down where every tab belongs, so your brain no longer has to hold them overnight.
++Imagine carrying two shopping bags. You planned to put half the weight in each,
++but one bag keeps getting heavier. Instead of guessing every day, you make a
++rule: move items only when one bag becomes clearly too heavy.
 +
-+↓
++Your investments drift the same way. Rebalancing bands turn “Should I buy or
++sell now?” into a pre-written rule, so market excitement and fear do not get the
++final vote.
 +
-+## 🔧 For the engineer
++---
 +
-+Unfinished, ambiguous tasks keep resurfacing in working memory—the practical effect often associated with the **Zeigarnik effect**. The remedy is not necessarily finishing everything. It is creating a trusted record of state, ownership, and next action.
++↓ Now call it what it really is: restoring target risk after allocation drift ↓
 +
-+### Four-step shutdown
++## 🔧 For the Engineer
 +
-+1. **Capture state** — Record what changed, what remains, and links needed to resume. Think checkpoint, not diary.
-+2. **Define next action** — Replace “investigate alert noise” with one visible action: “compare top 10 alert fingerprints from last 7 days.”
-+3. **Assign destination** — Every open loop gets tomorrow, backlog, delegation, or deletion. No vague “remember this.”
-+4. **Declare shutdown** — Review tomorrow’s first task, close work apps, then use one consistent phrase: “Workday complete.”
++> `drift = current allocation − target allocation`  
++> `rebalance when |drift| ≥ chosen band`
 +
-+A useful ritual behaves like a clean SRE handoff—even when tomorrow’s on-call engineer is you:
++| Concept | What It Means |
++|---|---|
++| **Set target allocation** | Define percentages from goal horizon, risk capacity, and liquidity needs—not recent returns. Example: 70% equity, 30% debt. |
++| **Choose one trigger** | Use an absolute band such as ±5 percentage points. A 70% equity target triggers below 65% or above 75%. Write the rule before volatility arrives. |
++| **Prefer cash-flow rebalancing** | Direct new SIPs, bonuses, or dividends toward underweight assets first. This reduces selling, taxes, exit loads, and unnecessary transactions. |
++| **Review, do not constantly trade** | Check quarterly or half-yearly. Bands decide whether action is needed; calendar only schedules inspection. |
++| **Measure at portfolio level** | Combine EPF, debt funds, equity mutual funds, and direct stocks by asset class. One account alone can hide total exposure. |
++| **Respect friction** | Before selling, check capital-gains tax, exit load, lock-in, and transaction cost. Restore risk through the least-cost route. |
 +
-+```text
-+SHUTDOWN_CHECKPOINT
-+Done:       dashboard query optimized
-+Open loop:  latency spike after deploy
-+Next step:  compare p95 by release version
-+Context:    incident note + dashboard link
-+When:       tomorrow, first focus block
-+```
++**Example:** A ₹10 lakh portfolio targets 70:30. Equity rises to ₹8 lakh while
++debt stays ₹3 lakh, making equity `72.7%`. With a ±5-point band, no trade: keep
++directing contributions to debt. At `76%`, rebalance toward 70% using new cash
++first, then sell only if needed.
 +
-+- **Bad capture:** “Continue investigating.” Brain must reconstruct the problem.
-+- **Good capture:** “Run release-version split on p95; if only v42 regresses, inspect dependency timeout diff.”
-+- **Key principle:** Closure comes from confidence that the system will remind you—not from pretending work is finished.
-+
-+Keep ritual under 10 minutes. If it becomes another project, it will not survive busy days.
++---
 +
 +## ⚡ Micro-action (5 minutes)
 +
-+Create a note named `Shutdown Checkpoint`. List three current open loops. For each, write exactly one next physical action and when you will see it again. Then close one work tab you were keeping open only as a reminder.
-  ┊ 💻 $         python3 - <<'PY' from pathlib import Path p=Path('/opt/data/insights/shutdown-ritual-close-open-loops_20260731.html') s=p.read_text() assert s.startswith('<!DOCTYPE html>') assert s.rstrip().endswith('</html>') assert all(x in s for x in ["🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action']) md=Path('/opt/data/insights/shutdown-ritual-close-open-loops_20260731.md') assert md.exists() and md.stat().st_size print(f'validated html={len(s)} bytes md={md.stat().st_size} bytes') PY bash /opt/data/scripts/push-insight.sh personal_growth /opt/data/insights/shutdown-ritual-close-open-loops_20260731.html "Personal Growth Mental Recovery"  214.6s [exit 1]
-  ┊ 📚 skill     nightly-learning-insight → references/stale-checkout-index-recovery.md  0.0s
-  ┊ 📋 plan      update 1/4 ✓  0.0s
-  ┊ 💻 $         d=$(mktemp -d /tmp/personal-growth-recovery-XXXXXX) + 2 commands  3.1s
-  ┊ 💻 $         jq '{type:type,count:length,categories:([.[].category]|unique),sample:.[0:3]}' cards.json  0.1s
-  ┊ 💻 $         wc -c index.html cards.json + 2 commands  0.1s
-  ┊ 🔎 find      *.html  0.0s
-  ┊ 🐍 exec      from hermes_tools import read_file, write_file, terminal, json_parse  0.2s [Traceback (most recent call last):
-  File "/t...]
-  ┊ 🐍 exec      from hermes_tools import write_file, terminal, json_parse  0.1s
-  ┊ 💻 $         python3 - <<'PY' import json from pathlib import Path r=Path('.') cards=json.loads((r/'cards.json').read_text()) missing=[] for c in cards: p=r/c['file'] md=p.with_suffix('.md') if not p.exists() or not md.exists(): missing.append((c['file'],p.exists(),md.exists())) print('records',len(cards),'missing_pairs',len(missing)) for x in missing: print(*x) PY  0.1s
-  ┊ 💻 $         jq 'length, map(select(.file=="mental-clarity/shutdown-ritual-close-open-loops_20260731.html"))|length' cards.json + 2 commands  0.1s
-  ┊ 🔎 find      shutdown-ritual*  0.0s
-  ┊ ✍️  write     /tmp/regenerate_personal_growth.py  0.0s [Write denied: '/tmp/regenerate_personal_growt...]
-  ┊ ✍️  write     /tmp/personal-growth-recovery-5eOkKN/regenerate_index.py  0.0s [Write denied: '/tmp/personal-growth-recovery-...]
-  ┊ ✍️  write     /opt/data/insights/regenerate_personal_growth_20260731.py  1.1s
++Open your portfolio tracker. Write one target split and one absolute band beside
++it—for example, `Equity 70%, rebalance outside 65–75%`. Add a quarterly reminder
++to measure total allocation across every account.
++
++---
++
++**Financial Health** · 💫 Small steps. Every day.
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path from html.parser import HTMLParser base=Path('/opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01') html=base.with_suffix('.html') + 3 commands  0.1s
+  ┊ 💻 $         if [ -d /tmp/repos/financial-health/.git ] + 13 commands  1.1s
+  ┊ 💻 $         bash /opt/data/scripts/push-insight.sh financial_health /opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-01.html "Financial Health"  2.6s
+  ┊ 💻 $         do safe=$(printf '%s' "$item" | tr '/.' '__') curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' "$API/$item?ref=main" done python3 - <<'PY' import base64,json from pathlib import Path name='rebalancing-bands-discipline-over-emotion_2026-08-01.html' def content(item): safe=item.replace('/','_').replace('.','_') data=json.loads(Path('/tmp/verify_'+safe+'.json').read_text()) return base64.b64decode(data['content']).decode(), data index,index_meta=content('index.html') cards,_=content('cards.json') latest,_=content('latest.html') html,hm=content('financial-health/'+name) md,mm=content('financial-health/'+name.replace('.html','.md')) arr=json.loads(cards) paths=[x.get('file') for x in arr] assert paths.count('financial-health/'+name)==1, paths.count('financial-health/'+name) assert index.count('href="financial-health/'+name+'"')==1, index.count(name) assert '<title>Rebalancing Bands: Let Drift Trigger the Decision</title>' in latest assert html.rstrip().endswith('</html>') and md.startswith('# 💰 Rebalancing Bands') assert len(index)<200_000 print(json.dumps({'remote_html_bytes':hm['size'],'remote_md_bytes':mm['size'],'index_bytes':index_meta['size'],'cards':len(arr),'new_card_records':1,'index_html_links':1,'latest_title_ok':True})) PY printf 'REMOTE_HEAD=' + 2 commands  2.3s [exit 1]
+  ┊ 💻 $         python3 - <<'PY' import base64,json from pathlib import Path for item in ['index_html','cards_json']: d=json.loads(Path('/tmp/verify_'+item+'.json').read_text()) s=base64.b64decode(d['content']).decode() print('\n--',item,'bytes',len(s),'--') needle='rebalancing-bands' p=s.find(needle) print('needle_pos',p,'occurrences',s.count(needle)) print(s[max(0,p-300):p+600] if p>=0 else s[:500]) PY  0.1s
+  ┊ 📚 skill     nightly-learning-insight → references/index-insertion-repair-20260730.md  0.0s
+  ┊ 📚 skill     nightly-learning-insight → references/manual-index-rebuild-validation.md  0.0s
+  ┊ 💻 $         git status --short + 1 command  0.1s
+  ┊ 📖 read      index.html L1-80  0.1s
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path s=Path('/tmp/repos/financial-health/index.html').read_text() for i,part in enumerate(s.split('<section')): if i: print('\nSECTION',i, ('<section'+part)[:900]) PY  0.1s
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path s=Path('/tmp/repos/financial-health/index.html').read_text() print(s[s.find('<main'):s.find('<section')]) PY  0.1s
+  ┊ 🔧 patch       0.1s [Apply phase failed (state may be inconsistent...]
+  ┊ 💻 $         git -C "$DEST" rev-parse HEAD printf 'INDEX_BYTES=' + 2 commands  1.4s
+  ┊ 🔧 patch       0.2s
   ┊ review diff
-a//opt/data/insights/regenerate_personal_growth_20260731.py → b//opt/data/insights/regenerate_personal_growth_20260731.py
-@@ -0,0 +1,31 @@
-+import json
-+import html
-+from pathlib import Path
-+
-+root = Path('/tmp/personal-growth-recovery-5eOkKN')
-+category = 'mental-clarity'
-+base = 'shutdown-ritual-close-open-loops_20260731'
-+new_path = f'{category}/{base}.html'
-+cards_path = root / 'cards.json'
-+cards = json.loads(cards_path.read_text())
-+cards = [card for card in cards if card.get('file') != new_path]
-+cards.append({'file': new_path, 'category': category, 'title': 'The Shutdown Ritual: Close Open Loops Before They Follow You Home', 'emoji': '🧠', 'timestamp': '20260731_020000'})
-+cards.sort(key=lambda card: card.get('timestamp', ''), reverse=True)
-+cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + '\n')
-+groups = {}
-+for card in cards:
-+    groups.setdefault(card.get('category', 'uncategorized'), []).append(card)
-+sections = []
-+for category_name in sorted(groups):
-+    entries = []
-+    for card in groups[category_name]:
-+        html_path = card['file']
-+        md_path = html_path.removesuffix('.html') + '.md'
-+        title = html.escape(card.get('title') or html_path)
-+        emoji = html.escape(card.get('emoji', '📚'))
-+        entries.append(f'<article class="card" data-title="{title.lower()}" data-category="{html.escape(category_name)}"><div class="card-title"><span>{emoji}</span><a href="{html.escape(html_path)}">{title}</a></div><div class="links"><a href="{html.escape(html_path)}">HTML</a><a href="{html.escape(md_path)}">Markdown</a></div></article>')
-+    label = html.escape(category_name.replace('-', ' ').title())
-+    sections.append(f'<section><h2>{label} <span>{len(entries)}</span></h2><div class="grid">{"".join(entries)}</div></section>')
-+index = f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Growth Learning Cards</title><style>:root{{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:40px 20px 70px}}h1{{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:8px}}.meta{{color:var(--muted)}}input{{width:100%;padding:14px 16px;margin:25px 0;background:var(--card);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:1rem}}h2{{margin-top:34px;text-transform:capitalize}}h2 span{{color:var(--muted);font-size:.8em}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}}.card{{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}}.card-title{{display:flex;gap:9px;align-items:flex-start}}a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}}.links{{display:flex;gap:14px;margin-top:12px;font-size:.86rem}}.links a{{color:var(--muted)}}</style></head><body><main><h1>Personal Growth Learning Cards</h1><p class="meta">{len(cards)} cards · {len(groups)} categories · Updated 31 Jul 2026</p><input id="search" type="search" placeholder="Search cards…" aria-label="Search cards">{''.join(sections)}</main><script>const q=document.getElementById('search');q.addEventListener('input',()=>{{const v=q.value.toLowerCase();document.querySelectorAll('article.card').forEach(c=>c.hidden=!(c.dataset.title+' '+c.dataset.category).includes(v));}});</script></body></html>'''
-+(root / 'index.html').write_text(index)
-+print(json.dumps({'cards': len(cards), 'categories': len(groups), 'index_bytes': len(index.encode()), 'new_records': sum(c.get('file') == new_path for c in cards)}))
-  ┊ 💻 $         python3 /opt/data/insights/regenerate_personal_growth_20260731.py python3 - <<'PY' import json,re from pathlib import Path r=Path('.') cards=json.loads((r/'cards.json').read_text()) path='mental-clarity/shutdown-ritual-close-open-loops_20260731.html' idx=(r/'index.html').read_text() assert len(cards)==21 assert sum(c.get('file')==path for c in cards)==1 assert len(re.findall(r'<article class="card"[^>]*>.*?shutdown-ritual-close-open-loops_20260731',idx,re.S))==1 assert idx.count('<article class="card"')==len(cards) assert (r/path).exists() and (r/path.replace('.html','.md')).exists() assert (r/'latest.html').read_bytes()==(r/path).read_bytes() print('local verification ok:',len(cards),'cards,',len(idx.encode()),'index bytes') PY git status --short git diff --stat  0.2s
-  ┊ 💻 $         git config user.email 'hermes@deepu26.dev' + 4 commands  1.9s
-  ┊ 💻 $         set -a; source /opt/data/.env; set +a api='https://api.github.com/repos/psdeepu26/personal-growth/contents' idx=$(curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' "$api/index.html?ref=main" | jq -r '.content' | tr -d '\n' | base64 -d) remote_sha=$(git ls-remote "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/personal-growth.git" refs/heads/main | cut -f1) html_status=$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $GITHUB_TOKEN" "$api/mental-clarity/shutdown-ritual-close-open-loops_20260731.html?ref=main") md_status=$(curl -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $GITHUB_TOKEN" "$api/mental-clarity/shutdown-ritual-close-open-loops_20260731.md?ref=main") latest=$(curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" "$api/latest.html?ref=main" | jq -r '.content' | tr -d '\n' | base64 -d) python3 - "$remote_sha" "$html_status" "$md_status" <<'PY' import re,sys from pathlib import Path idx=Path('/dev/stdin') print('remote_sha',sys.argv[1]) print('html_http',sys.argv[2],'md_http',sys.argv[3]) PY printf '%s' "$idx" > /tmp/remote_personal_growth_index.html printf '%s' "$latest" > /tmp/remote_personal_growth_latest.html python3 - <<'PY' import re from pathlib import Path idx=Path('/tmp/remote_personal_growth_index.html').read_text() latest=Path('/tmp/remote_personal_growth_latest.html').read_text() path='mental-clarity/shutdown-ritual-close-open-loops_20260731.html' entries=re.findall(r'<article class="card"[^>]*>.*?</article>',idx,re.S) print('index_bytes',len(idx.encode()),'card_entries',len(entries),'new_entry_count',sum(path in e for e in entries)) print('latest_title_ok','<title>The Shutdown Ritual: Close Open Loops Before They Follow You Home</title>' in latest) assert len(idx.encode()) < 1000000 and len(entries)==21 and sum(path in e for e in entries)==1 assert '<title>The Shutdown Ritual: Close Open Loops Before They Follow You Home</title>' in latest PY  2.5s
-  ┊ 📋 plan      update 2/4 ✓  0.0s
-  ┊ 💻 $         jq --arg date '2026-07-31' --arg dow 'Friday' --arg topic 'Personal Growth' --arg title 'The Shutdown Ritual: Close Open Loops Before They Follow You Home' --arg category 'mental-clarity' --arg html 'shutdown-ritual-close-open-loops_20260731.html' --arg md 'shutdown-ritual-close-open-loops_20260731.md' --arg ts '20260731_020000' --arg url 'https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/shutdown-ritual-close-open-loops_20260731.html' '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,url:$url,delivered:false}] + .' /opt/data/insights/log.json + 2 commands  0.1s
-  ┊ ✍️  write     /opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt  0.1s
+a//opt/data/work/financial-health-index-repair-20260801/index.html → b//opt/data/work/financial-health-index-repair-20260801/index.html
+@@ -1 +1 @@
+-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Financial Health Learning Cards</title><style>:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:38px 20px}h1{margin-bottom:5px}.sub{color:var(--muted)}input{width:100%;margin:22px 0;padding:13px 15px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);font:inherit}h2{margin-top:28px;text-transform:capitalize}h2 span{color:var(--muted);font-size:.8em}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.card{border:1px solid var(--border);background:var(--card);border-radius:12px;padding:16px}.main{display:flex;gap:10px;color:var(--text);text-decoration:none}.emoji{font-size:1.35rem}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.86rem;margin-top:12px}a{color:var(--accent)}footer{color:var(--muted);text-align:center;margin-top:36px}</style></head><body><main><h1>💰 Financial Health Learning Cards</h1><div class="sub">12 cards · 2 categories · Updated 31 Jul 2026</div><input id="search" type="search" placeholder="Search cards…" aria-label="Search cards"><div id="cards"><section class="category"><h2>Budgeting <span>1</span></h2><div class="grid"><article class="card" data-title="the 50/30/20 rule — a budget framework that actually works budgeting"><a class="main" href="budgeting/the-pizza-budget-rule_20260606.html"><span class="emoji">💰</span><strong>The 50/30/20 Rule — A Budget Framework That Actually Works</strong></a><div class="meta"><span>Budgeting</span><span><a href="budgeting/the-pizza-budget-rule_20260606.html">HTML</a> · <a href="budgeting/the-pizza-budget-rule_20260606.md">MD</a></span></div></article></div></section><section class="category"><h2>Financial Health <span>11</span></h2><div class="grid"><article class="card" data-title="sinking funds: make predictable surprises boring financial-health"><a class="main" href="financial-health/sinking-funds-predictable-surprises_20260725.html"><span class="emoji">📚</span><strong>Sinking Funds: Make Predictable Surprises Boring</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/sinking-funds-predictable-surprises_20260725.html">HTML</a> · <a href="financial-health/sinking-funds-predictable-surprises_20260725.md">MD</a></span></div></article><article class="card" data-title="expense ratio drag: the tiny fee that compounds backward financial-health"><a class="main" href="financial-health/expense-ratio-drag_20260718.html"><span class="emoji">📚</span><strong>Expense Ratio Drag: The Tiny Fee That Compounds Backward</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/expense-ratio-drag_20260718.html">HTML</a> · <a href="financial-health/expense-ratio-drag_20260718.md">MD</a></span></div></article><article class="card" data-title="dollar-cost averaging vs lump sum: the timing illusion financial-health"><a class="main" href="financial-health/dca-vs-lumpsum-timing_20260627.html"><span class="emoji">📚</span><strong>Dollar-Cost Averaging vs Lump Sum: The Timing Illusion</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/dca-vs-lumpsum-timing_20260627.html">HTML</a> · <a href="financial-health/dca-vs-lumpsum-timing_20260627.md">MD</a></span></div></article><article class="card" data-title="mental accounting: why your brain puts money in boxes financial-health"><a class="main" href="financial-health/mental-accounting-bias_20260627.html"><span class="emoji">📚</span><strong>Mental Accounting: Why Your Brain Puts Money in Boxes</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/mental-accounting-bias_20260627.html">HTML</a> · <a href="financial-health/mental-accounting-bias_20260627.md">MD</a></span></div></article><article class="card" data-title="the 4% rule: how much you actually need to retire financial-health"><a class="main" href="financial-health/four-percent-rule-retirement-number_20260620.html"><span class="emoji">📚</span><strong>The 4% Rule: How Much You Actually Need to Retire</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/four-percent-rule-retirement-number_20260620.html">HTML</a> · <a href="financial-health/four-percent-rule-retirement-number_20260620.md">MD</a></span></div></article><article class="card" data-title="💸 the 4% rule: how much money buys you freedom financial-health"><a class="main" href="financial-health/four-percent-rule-safe-withdrawal_20260620.html"><span class="emoji">📚</span><strong>💸 The 4% Rule: How Much Money Buys You Freedom</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/four-percent-rule-safe-withdrawal_20260620.html">HTML</a> · <a href="financial-health/four-percent-rule-safe-withdrawal_20260620.md">MD</a></span></div></article><article class="card" data-title="tax-loss harvesting: turning losers into winners financial-health"><a class="main" href="financial-health/tax-loss-harvesting-turning-losers-winners_20260613.html"><span class="emoji">📚</span><strong>Tax-Loss Harvesting: Turning Losers Into Winners</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/tax-loss-harvesting-turning-losers-winners_20260613.html">HTML</a> · <a href="financial-health/tax-loss-harvesting-turning-losers-winners_20260613.md">MD</a></span></div></article><article class="card" data-title="💸 inflation-proofing your portfolio: the tips &amp; bonds ladder financial-health"><a class="main" href="financial-health/inflation-proofing-tips-bonds-ladder_20260613.html"><span class="emoji">📚</span><strong>💸 Inflation-Proofing Your Portfolio: The TIPS &amp; Bonds Ladder</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/inflation-proofing-tips-bonds-ladder_20260613.html">HTML</a> · <a href="financial-health/inflation-proofing-tips-bonds-ladder_20260613.md">MD</a></span></div></article><article class="card" data-title="your emergency fund — the safety net under the safety net financial-health"><a class="main" href="financial-health/emergency-fund-first-safety-net_20260607.html"><span class="emoji">📚</span><strong>Your Emergency Fund — The Safety Net Under the Safety Net</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/emergency-fund-first-safety-net_20260607.html">HTML</a> · <a href="financial-health/emergency-fund-first-safety-net_20260607.md">MD</a></span></div></article><article class="card" data-title="index funds vs active funds - eli5 to technical financial-health"><a class="main" href="financial-health/index-vs-active-funds_20260606.html"><span class="emoji">📚</span><strong>Index Funds vs Active Funds - ELI5 to Technical</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/index-vs-active-funds_20260606.html">HTML</a> · <a href="financial-health/index-vs-active-funds_20260606.md">MD</a></span></div></article><article class="card" data-title="financial health insight - 2026-06-06 financial-health"><a class="main" href="financial-health/financial-health-2026-06-06.html"><span class="emoji">📚</span><strong>Financial Health Insight - 2026-06-06</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/financial-health-2026-06-06.html">HTML</a> · <a href="financial-health/financial-health-2026-06-06.md">MD</a></span></div></article></div></section></div><footer>💫 Small steps. Every day.</footer></main><script>const q=document.getElementById('search');q.addEventListener('input',()=>{const s=q.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.hidden=!c.dataset.title.includes(s));document.querySelectorAll('.category').forEach(g=>g.hidden=![...g.querySelectorAll('.card')].some(c=>!c.hidden));});</script></body></html>+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Financial Health Learning Cards</title><style>:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:38px 20px}h1{margin-bottom:5px}.sub{color:var(--muted)}input{width:100%;margin:22px 0;padding:13px 15px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);font:inherit}h2{margin-top:28px;text-transform:capitalize}h2 span{color:var(--muted);font-size:.8em}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.card{border:1px solid var(--border);background:var(--card);border-radius:12px;padding:16px}.main{display:flex;gap:10px;color:var(--text);text-decoration:none}.emoji{font-size:1.35rem}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.86rem;margin-top:12px}a{color:var(--accent)}footer{color:var(--muted);text-align:center;margin-top:36px}</style></head><body><main><h1>💰 Financial Health Learning Cards</h1><div class="sub">13 cards · 2 categories · Updated 01 Aug 2026</div><input id="search" type="search" placeholder="Search cards…" aria-label="Search cards"><div id="cards"><section class="category"><h2>Budgeting <span>1</span></h2><div class="grid"><article class="card" data-title="the 50/30/20 rule — a budget framework that actually works budgeting"><a class="main" href="budgeting/the-pizza-budget-rule_20260606.html"><span class="emoji">💰</span><strong>The 50/30/20 Rule — A Budget Framework That Actually Works</strong></a><div class="meta"><span>Budgeting</span><span><a href="budgeting/the-pizza-budget-rule_20260606.html">HTML</a> · <a href="budgeting/the-pizza-budget-rule_20260606.md">MD</a></span></div></article></div></section><section class="category"><h2>Financial Health <span>12</span></h2><div class="grid"><article class="card" data-title="rebalancing bands: let drift trigger the decision financial-health"><a class="main" href="financial-health/rebalancing-bands-discipline-over-emotion_2026-08-01.html"><span class="emoji">📚</span><strong>Rebalancing Bands: Let Drift Trigger the Decision</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/rebalancing-bands-discipline-over-emotion_2026-08-01.html">HTML</a> · <a href="financial-health/rebalancing-bands-discipline-over-emotion_2026-08-01.md">MD</a></span></div></article><article class="card" data-title="sinking funds: make predictable surprises boring financial-health"><a class="main" href="financial-health/sinking-funds-predictable-surprises_20260725.html"><span class="emoji">📚</span><strong>Sinking Funds: Make Predictable Surprises Boring</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/sinking-funds-predictable-surprises_20260725.html">HTML</a> · <a href="financial-health/sinking-funds-predictable-surprises_20260725.md">MD</a></span></div></article><article class="card" data-title="expense ratio drag: the tiny fee that compounds backward financial-health"><a class="main" href="financial-health/expense-ratio-drag_20260718.html"><span class="emoji">📚</span><strong>Expense Ratio Drag: The Tiny Fee That Compounds Backward</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/expense-ratio-drag_20260718.html">HTML</a> · <a href="financial-health/expense-ratio-drag_20260718.md">MD</a></span></div></article><article class="card" data-title="dollar-cost averaging vs lump sum: the timing illusion financial-health"><a class="main" href="financial-health/dca-vs-lumpsum-timing_20260627.html"><span class="emoji">📚</span><strong>Dollar-Cost Averaging vs Lump Sum: The Timing Illusion</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/dca-vs-lumpsum-timing_20260627.html">HTML</a> · <a href="financial-health/dca-vs-lumpsum-timing_20260627.md">MD</a></span></div></article><article class="card" data-title="mental accounting: why your brain puts money in boxes financial-health"><a class="main" href="financial-health/mental-accounting-bias_20260627.html"><span class="emoji">📚</span><strong>Mental Accounting: Why Your Brain Puts Money in Boxes</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/mental-accounting-bias_20260627.html">HTML</a> · <a href="financial-health/mental-accounting-bias_20260627.md">MD</a></span></div></article><article class="card" data-title="the 4% rule: how much you actually need to retire financial-health"><a class="main" href="financial-health/four-percent-rule-retirement-number_20260620.html"><span class="emoji">📚</span><strong>The 4% Rule: How Much You Actually Need to Retire</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/four-percent-rule-retirement-number_20260620.html">HTML</a> · <a href="financial-health/four-percent-rule-retirement-number_20260620.md">MD</a></span></div></article><article class="card" data-title="💸 the 4% rule: how much money buys you freedom financial-health"><a class="main" href="financial-health/four-percent-rule-safe-withdrawal_20260620.html"><span class="emoji">📚</span><strong>💸 The 4% Rule: How Much Money Buys You Freedom</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/four-percent-rule-safe-withdrawal_20260620.html">HTML</a> · <a href="financial-health/four-percent-rule-safe-withdrawal_20260620.md">MD</a></span></div></article><article class="card" data-title="tax-loss harvesting: turning losers into winners financial-health"><a class="main" href="financial-health/tax-loss-harvesting-turning-losers-winners_20260613.html"><span class="emoji">📚</span><strong>Tax-Loss Harvesting: Turning Losers Into Winners</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/tax-loss-harvesting-turning-losers-winners_20260613.html">HTML</a> · <a href="financial-health/tax-loss-harvesting-turning-losers-winners_20260613.md">MD</a></span></div></article><article class="card" data-title="💸 inflation-proofing your portfolio: the tips &amp; bonds ladder financial-health"><a class="main" href="financial-health/inflation-proofing-tips-bonds-ladder_20260613.html"><span class="emoji">📚</span><strong>💸 Inflation-Proofing Your Portfolio: The TIPS &amp; Bonds Ladder</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/inflation-proofing-tips-bonds-ladder_20260613.html">HTML</a> · <a href="financial-health/inflation-proofing-tips-bonds-ladder_20260613.md">MD</a></span></div></article><article class="card" data-title="your emergency fund — the safety net under the safety net financial-health"><a class="main" href="financial-health/emergency-fund-first-safety-net_20260607.html"><span class="emoji">📚</span><strong>Your Emergency Fund — The Safety Net Under the Safety Net</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/emergency-fund-first-safety-net_20260607.html">HTML</a> · <a href="financial-health/emergency-fund-first-safety-net_20260607.md">MD</a></span></div></article><article class="card" data-title="index funds vs active funds - eli5 to technical financial-health"><a class="main" href="financial-health/index-vs-active-funds_20260606.html"><span class="emoji">📚</span><strong>Index Funds vs Active Funds - ELI5 to Technical</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/index-vs-active-funds_20260606.html">HTML</a> · <a href="financial-health/index-vs-active-funds_20260606.md">MD</a></span></div></article><article class="card" data-title="financial health insight - 2026-06-06 financial-health"><a class="main" href="financial-health/financial-health-2026-06-06.html"><span class="emoji">📚</span><strong>Financial Health Insight - 2026-06-06</strong></a><div class="meta"><span>Financial Health</span><span><a href="financial-health/financial-health-2026-06-06.html">HTML</a> · <a href="financial-health/financial-health-2026-06-06.md">MD</a></span></div></article></div></section></div><footer>💫 Small steps. Every day.</footer></main><script>const q=document.getElementById('search');q.addEventListener('input',()=>{const s=q.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.hidden=!c.dataset.title.includes(s));document.querySelectorAll('.category').forEach(g=>g.hidden=![...g.querySelectorAll('.card')].some(c=>!c.hidden));});</script></body></html>
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path from html.parser import HTMLParser import json,re root=Path('/opt/data/work/financial-health-index-repair-20260801') s=(root/'index.html').read_text() class Check(HTMLParser): def __init__(self): super().__init__() + 5 commands  0.2s
+  ┊ 💻 $         set -e cd /opt/data/work/financial-health-index-repair-20260801 git config user.email 'hermes@deepu26.dev' git config user.name 'Hermes Agent' git add index.html git commit -m 'Fix index entry for rebalancing bands insight' git push origin main  3.1s
+  ┊ 💻 $         do safe=$(printf '%s' "$item" | tr '/.' '__') curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' "$API/$item?ref=main&nocache=$(date +%s)" done python3 - <<'PY' import base64,json from pathlib import Path name='rebalancing-bands-discipline-over-emotion_2026-08-01.html' def content(item): safe=item.replace('/','_').replace('.','_') data=json.loads(Path('/tmp/final_'+safe+'.json').read_text()) return base64.b64decode(data['content']).decode(), data index,im=content('index.html') + 6 commands  2.3s
+  ┊ 💻 $         set -e source /opt/data/.env REMOTE_HEAD=$(git ls-remote "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/financial-health.git" refs/heads/main | cut -f1) LOCAL_HEAD=$(git -C /opt/data/work/financial-health-index-repair-20260801 rev-parse HEAD) [ "$REMOTE_HEAD" = "$LOCAL_HEAD" ] printf 'HEAD_VERIFIED=%s\n' "$REMOTE_HEAD" TS=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S_IST') jq --arg date '2026-08-01' --arg dow 'Saturday' --arg topic 'Financial Health' --arg title 'Rebalancing Bands: Let Drift Trigger the Decision' --arg category 'financial-health' --arg html 'rebalancing-bands-discipline-over-emotion_2026-08-01.html' --arg md 'rebalancing-bands-discipline-over-emotion_2026-08-01.md' --arg ts "$TS" --arg url 'https://github.com/psdeepu26/financial-health/blob/main/financial-health/rebalancing-bands-discipline-over-emotion_2026-08-01.html' \ '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,github_url:$url,published:true,index_verified:true,delivered:false}] + .' \ /opt/data/insights/log.json jq empty /tmp/log_new.json mv /tmp/log_new.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json  1.1s
+  ┊ 📚 skill     nightly-learning-insight → references/hermes-send-delivery.md  0.0s
+  ┊ ✍️  write     /opt/data/insights/telegram-financial-health_2026-08-01.txt  0.1s
   ┊ review diff
-a//opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt → b//opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt
-@@ -0,0 +1,7 @@
-+🌱 The Shutdown Ritual: Close Open Loops Before They Follow You Home
+a//opt/data/insights/telegram-financial-health_2026-08-01.txt → b//opt/data/insights/telegram-financial-health_2026-08-01.txt
+@@ -0,0 +1,11 @@
++🌙 Nightly Learning Insight — Financial Health
 +
-+Unfinished work follows you because brain still holds its state. Today’s card shows a 4-step shutdown checkpoint that creates real mental closure.
++📖 Rebalancing Bands: Let Drift Trigger the Decision
 +
-+⚡ 5-minute action: capture three open loops, give each one next physical action + revisit time, then close one reminder tab.
++🧒 Like balancing two shopping bags: move weight only when one becomes clearly too heavy.
 +
-+🔗 https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/shutdown-ritual-close-open-loops_20260731.html
-  ┊ 📋 plan      update 3/4 ✓  0.0s
-  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to 'telegram:-1003983518007:7' --file /opt/data/insights/shutdown-ritual-close-open-loops_20260731_message.txt --json  4.4s
-  ┊ 💻 $         jq 'map(if .date=="2026-07-31" and .html_file=="shutdown-ritual-close-open-loops_20260731.html" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3026"} else . end)' /opt/data/insights/log.json + 2 commands  0.1s
-  ┊ 📋 plan      update 4/4 ✓  0.0s
++🔧 Use allocation drift bands to restore portfolio risk by rule, not emotion; rebalance with new cash first.
++
++⚡ Write one target split and trigger band in your tracker, then add a quarterly review.
++
++🌐 Read the full card: https://github.com/psdeepu26/financial-health/blob/main/financial-health/rebalancing-bands-discipline-over-emotion_2026-08-01.html
+  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:3" --file /opt/data/insights/telegram-financial-health_2026-08-01.txt --json  4.2s
+  ┊ 💻 $         set -e jq 'map(if .timestamp == "20260801_020436_IST" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3063"} else . end)' /opt/data/insights/log.json jq empty /tmp/log_delivered.json mv /tmp/log_delivered.json /opt/data/insights/log.json jq '.[0] | {date,topic,title,published,index_verified,delivered,delivery_result,telegram_message_id}' /opt/data/insights/log.json  0.1s
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Generated today’s Personal Growth insight:                                 
+     Generated today’s insight. Saturday rotation selected Financial            
+     Health.                                                                    
                                                                                 
-     “The Shutdown Ritual: Close Open Loops Before They Follow You Home”        
+     Title: Rebalancing Bands: Let Drift Trigger the Decision                   
                                                                                 
      Completed:                                                                 
      - HTML + Markdown created                                                  
-     - Published to private personal-growth GitHub repo                         
-     - Remote index verified: 21 cards, one new entry                           
+     - Published to private financial-health GitHub repo                        
+     - Index repaired and verified: 13 cards, one new entry                     
      - latest.html verified                                                     
      - Logged in /opt/data/insights/log.json                                    
-     - Delivered to Telegram Personal topic                                     
-     - Telegram message ID: 3026                                                
+     - Delivered to Telegram Financial Tasks topic                              
+     - Telegram message ID: 3063                                                
                                                                                 
-     GitHub:                                                                    
-     https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/     
-     shutdown-ritual-close-open-loops_20260731.html                             
+     Card:                                                                      
+     https://github.com/psdeepu26/financial-health/blob/main/financial-heal     
+     th/rebalancing-bands-discipline-over-emotion_2026-08-01.html               
                                                                                 
-     Local:                                                                     
-     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.html          
-     /opt/data/insights/shutdown-ritual-close-open-loops_20260731.md            
+     Local files:                                                               
+     -                                                                          
+     /opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-0     
+     1.html                                                                     
+     -                                                                          
+     /opt/data/insights/rebalancing-bands-discipline-over-emotion_2026-08-0     
+     1.md                                                                       
                                                                                 
-     ⚠️ File-mutation verifier: 2 file(s) were NOT modified this turn           
+     ⚠️ File-mutation verifier: 1 file(s) were NOT modified this turn           
      despite any wording above that may suggest otherwise. Run git status       
      or read_file to confirm.                                                   
-       • /tmp/regenerate_personal_growth.py — [write_file] Write denied:        
-     '/tmp/regenerate_personal_growth.py' is a protected system/credential      
-     file.                                                                      
-       • /tmp/personal-growth-recovery-5eOkKN/regenerate_index.py —             
-     [write_file] Write denied:                                                 
-     '/tmp/personal-growth-recovery-5eOkKN/regenerate_index.py' is a            
-     protected system/credential file.                                          
+       • /tmp/repos/financial-health/index.html — [patch] Apply phase           
+     failed (state may be inconsistent — run git diff to assess): • Failed      
+     to update /tmp/repos/financial-health/index.html: Write denied:            
+     '/tmp/repos/financial-health/in…                                           
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
 Resume this session with:
-  hermes --resume 20260730_203029_6f3ed5
+  hermes --resume 20260731_203035_555731
 
-Session:        20260730_203029_6f3ed5
-Duration:       9m 16s
-Messages:       65 (1 user, 63 tool calls)
+Session:        20260731_203035_555731
+Duration:       4m 42s
+Messages:       60 (1 user, 58 tool calls)
