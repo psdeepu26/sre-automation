@@ -5,66 +5,84 @@
 :root{--bg:#020617;--panel:#0f172a;--border:#1e293b;--text:#e2e8f0;--muted:#64748b;--accent:#818cf8}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}main{max-width:900px;margin:auto;padding:32px 18px}h1{margin:0;font-size:clamp(28px,5vw,44px)}.subtitle,.stats,.path{color:var(--muted)}.stats{margin:6px 0 24px}input{width:100%;padding:12px 14px;margin-bottom:24px;background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:10px}.category{margin:28px 0}h2{font-size:18px;border-bottom:1px solid var(--border);padding-bottom:8px}h2 span{color:var(--muted);font-size:13px}.card{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px;margin:10px 0}.emoji{font-size:22px}.title{color:var(--text);font-weight:700;text-decoration:none}.title:hover{color:var(--accent)}.path{font-size:12px;word-break:break-all}.formats{display:flex;gap:6px}.format{color:var(--accent);text-decoration:none;border:1px solid var(--border);border-radius:6px;padding:3px 7px;font-size:12px}footer{color:var(--muted);text-align:center;margin-top:40px}@media(max-width:600px){.card{grid-template-columns:auto 1fr}.formats{grid-column:2}}
 </style></head><body><main>
 <h1>⚡ SRE Automation</h1><p class="subtitle">ELI5-first reliability and automation concepts</p>
-<div class="stats">12 cards · 3 categories · Updated 05 Aug 2026</div>
+<div class="stats">13 cards · 3 categories · Updated 05 Aug 2026</div>
 <input id="search" type="search" placeholder="🔍 Search cards..." aria-label="Search cards">
-<div id="cards"><section class="category" data-category="sre-&amp;-automation">
-<h2>⚡ SRE &amp; Automation <span>8</span></h2>
-<article class="card" data-title="alert fatigue budgets: make paging scarce" data-path="sre-&amp;-automation/alert-fatigue-budget_20260730.html">
+<div id="cards">
+<section class="category" data-category="sre-&amp;-automation">
+<h2>⚡ SRE &amp; Automation <span>9</span></h2>
+<article class="card" data-title="remediation blast-radius gates: automate without amplifying failure" data-path="sre-&-automation/remediation-blast-radius-gates_20260806.html">
   <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/alert-fatigue-budget_20260730.html">Alert Fatigue Budgets: Make Paging Scarce</a><div class="path">sre-&amp;-automation/alert-fatigue-budget_20260730.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/alert-fatigue-budget_20260730.html">HTML</a><a class="format" href="sre-&amp;-automation/alert-fatigue-budget_20260730.md">MD</a></div>
-</article><article class="card" data-title="retry storm control: backoff, jitter, and retry budgets" data-path="sre-&amp;-automation/retry-storm-control_2026-07-30.html">
-  <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/retry-storm-control_2026-07-30.html">Retry Storm Control: Backoff, Jitter, and Retry Budgets</a><div class="path">sre-&amp;-automation/retry-storm-control_2026-07-30.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/retry-storm-control_2026-07-30.html">HTML</a><a class="format" href="sre-&amp;-automation/retry-storm-control_2026-07-30.md">MD</a></div>
-</article><article class="card" data-title="safe runbook automation: idempotency, preconditions, and rollback" data-path="sre-&amp;-automation/safe-runbook-automation_20260723.html">
-  <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/safe-runbook-automation_20260723.html">Safe Runbook Automation: Idempotency, Preconditions, and Rollback</a><div class="path">sre-&amp;-automation/safe-runbook-automation_20260723.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/safe-runbook-automation_20260723.html">HTML</a><a class="format" href="sre-&amp;-automation/safe-runbook-automation_20260723.md">MD</a></div>
-</article><article class="card" data-title="autoscaling policy thresholds: tuning your safety nets" data-path="sre-&amp;-automation/autoscaling-policy-thresholds_20260625.html">
-  <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/autoscaling-policy-thresholds_20260625.html">Autoscaling Policy Thresholds: Tuning Your Safety Nets</a><div class="path">sre-&amp;-automation/autoscaling-policy-thresholds_20260625.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/autoscaling-policy-thresholds_20260625.html">HTML</a><a class="format" href="sre-&amp;-automation/autoscaling-policy-thresholds_20260625.md">MD</a></div>
-</article><article class="card" data-title="blameless postmortems &amp; incident culture | sre &amp; automation | 2026-06-18" data-path="sre-&amp;-automation/blameless-postmortems-incident-culture_20260618.html">
-  <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/blameless-postmortems-incident-culture_20260618.html">Blameless Postmortems &amp; Incident Culture | SRE &amp; Automation | 2026-06-18</a><div class="path">sre-&amp;-automation/blameless-postmortems-incident-culture_20260618.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/blameless-postmortems-incident-culture_20260618.html">HTML</a><a class="format" href="sre-&amp;-automation/blameless-postmortems-incident-culture_20260618.md">MD</a></div>
-</article><article class="card" data-title="canary deployments: releasing without the heart attack" data-path="sre-&amp;-automation/canary-deployments-safe-releases_20260618.html">
-  <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/canary-deployments-safe-releases_20260618.html">Canary Deployments: Releasing Without the Heart Attack</a><div class="path">sre-&amp;-automation/canary-deployments-safe-releases_20260618.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/canary-deployments-safe-releases_20260618.html">HTML</a><a class="format" href="sre-&amp;-automation/canary-deployments-safe-releases_20260618.md">MD</a></div>
-</article><article class="card" data-title="slos &amp; error budgets: the speedometer for your service" data-path="sre-&amp;-automation/slo-error-budgets-speedometer_20260611.html">
-  <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/slo-error-budgets-speedometer_20260611.html">SLOs &amp; Error Budgets: The Speedometer for Your Service</a><div class="path">sre-&amp;-automation/slo-error-budgets-speedometer_20260611.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/slo-error-budgets-speedometer_20260611.html">HTML</a><a class="format" href="sre-&amp;-automation/slo-error-budgets-speedometer_20260611.md">MD</a></div>
-</article><article class="card" data-title="slos &amp; error budgets: the reliability contract" data-path="sre-&amp;-automation/slo-error-budgets_20260611.html">
-  <span class="emoji">⚡</span>
-  <div class="info"><a class="title" href="sre-&amp;-automation/slo-error-budgets_20260611.html">SLOs &amp; Error Budgets: The Reliability Contract</a><div class="path">sre-&amp;-automation/slo-error-budgets_20260611.html</div></div>
-  <div class="formats"><a class="format" href="sre-&amp;-automation/slo-error-budgets_20260611.html">HTML</a><a class="format" href="sre-&amp;-automation/slo-error-budgets_20260611.md">MD</a></div>
+  <div class="info"><a class="title" href="sre-&-automation/remediation-blast-radius-gates_20260806.html">Remediation Blast-Radius Gates: Automate Without Amplifying Failure</a><div class="path">sre-&-automation/remediation-blast-radius-gates_20260806.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/remediation-blast-radius-gates_20260806.html">HTML</a><a class="format" href="sre-&-automation/remediation-blast-radius-gates_20260806.md">MD</a></div>
 </article>
-</section><section class="category" data-category="incident-management">
+<article class="card" data-title="alert fatigue budgets: make paging scarce" data-path="sre-&-automation/alert-fatigue-budget_20260730.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/alert-fatigue-budget_20260730.html">Alert Fatigue Budgets: Make Paging Scarce</a><div class="path">sre-&-automation/alert-fatigue-budget_20260730.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/alert-fatigue-budget_20260730.html">HTML</a><a class="format" href="sre-&-automation/alert-fatigue-budget_20260730.md">MD</a></div>
+</article>
+<article class="card" data-title="retry storm control: backoff, jitter, and retry budgets" data-path="sre-&-automation/retry-storm-control_2026-07-30.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/retry-storm-control_2026-07-30.html">Retry Storm Control: Backoff, Jitter, and Retry Budgets</a><div class="path">sre-&-automation/retry-storm-control_2026-07-30.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/retry-storm-control_2026-07-30.html">HTML</a><a class="format" href="sre-&-automation/retry-storm-control_2026-07-30.md">MD</a></div>
+</article>
+<article class="card" data-title="safe runbook automation: idempotency, preconditions, and rollback" data-path="sre-&-automation/safe-runbook-automation_20260723.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/safe-runbook-automation_20260723.html">Safe Runbook Automation: Idempotency, Preconditions, and Rollback</a><div class="path">sre-&-automation/safe-runbook-automation_20260723.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/safe-runbook-automation_20260723.html">HTML</a><a class="format" href="sre-&-automation/safe-runbook-automation_20260723.md">MD</a></div>
+</article>
+<article class="card" data-title="autoscaling policy thresholds: tuning your safety nets" data-path="sre-&-automation/autoscaling-policy-thresholds_20260625.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/autoscaling-policy-thresholds_20260625.html">Autoscaling Policy Thresholds: Tuning Your Safety Nets</a><div class="path">sre-&-automation/autoscaling-policy-thresholds_20260625.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/autoscaling-policy-thresholds_20260625.html">HTML</a><a class="format" href="sre-&-automation/autoscaling-policy-thresholds_20260625.md">MD</a></div>
+</article>
+<article class="card" data-title="blameless postmortems &amp; incident culture | sre &amp; automation | 2026-06-18" data-path="sre-&-automation/blameless-postmortems-incident-culture_20260618.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/blameless-postmortems-incident-culture_20260618.html">Blameless Postmortems &amp; Incident Culture | SRE &amp; Automation | 2026-06-18</a><div class="path">sre-&-automation/blameless-postmortems-incident-culture_20260618.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/blameless-postmortems-incident-culture_20260618.html">HTML</a><a class="format" href="sre-&-automation/blameless-postmortems-incident-culture_20260618.md">MD</a></div>
+</article>
+<article class="card" data-title="canary deployments: releasing without the heart attack" data-path="sre-&-automation/canary-deployments-safe-releases_20260618.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/canary-deployments-safe-releases_20260618.html">Canary Deployments: Releasing Without the Heart Attack</a><div class="path">sre-&-automation/canary-deployments-safe-releases_20260618.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/canary-deployments-safe-releases_20260618.html">HTML</a><a class="format" href="sre-&-automation/canary-deployments-safe-releases_20260618.md">MD</a></div>
+</article>
+<article class="card" data-title="slos &amp; error budgets: the speedometer for your service" data-path="sre-&-automation/slo-error-budgets-speedometer_20260611.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/slo-error-budgets-speedometer_20260611.html">SLOs &amp; Error Budgets: The Speedometer for Your Service</a><div class="path">sre-&-automation/slo-error-budgets-speedometer_20260611.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/slo-error-budgets-speedometer_20260611.html">HTML</a><a class="format" href="sre-&-automation/slo-error-budgets-speedometer_20260611.md">MD</a></div>
+</article>
+<article class="card" data-title="slos &amp; error budgets: the reliability contract" data-path="sre-&-automation/slo-error-budgets_20260611.html">
+  <span class="emoji">⚡</span>
+  <div class="info"><a class="title" href="sre-&-automation/slo-error-budgets_20260611.html">SLOs &amp; Error Budgets: The Reliability Contract</a><div class="path">sre-&-automation/slo-error-budgets_20260611.html</div></div>
+  <div class="formats"><a class="format" href="sre-&-automation/slo-error-budgets_20260611.html">HTML</a><a class="format" href="sre-&-automation/slo-error-budgets_20260611.md">MD</a></div>
+</article>
+</section>
+<section class="category" data-category="incident-management">
 <h2>🚨 Incident Management <span>1</span></h2>
 <article class="card" data-title="incident response flow — eli5 → technical" data-path="incident-management/incident-response.html">
   <span class="emoji">🚨</span>
   <div class="info"><a class="title" href="incident-management/incident-response.html">Incident Response Flow — ELI5 → Technical</a><div class="path">incident-management/incident-response.html</div></div>
   <div class="formats"><a class="format" href="incident-management/incident-response.html">HTML</a><a class="format" href="incident-management/incident-response.md">MD</a></div>
 </article>
-</section><section class="category" data-category="reliability-patterns">
+</section>
+<section class="category" data-category="reliability-patterns">
 <h2>🛡️ Reliability Patterns <span>3</span></h2>
 <article class="card" data-title="insight #4 — sre &amp; automation" data-path="reliability-patterns/latest_20260531_053517.html">
   <span class="emoji">🛡️</span>
   <div class="info"><a class="title" href="reliability-patterns/latest_20260531_053517.html">Insight #4 — SRE &amp; Automation</a><div class="path">reliability-patterns/latest_20260531_053517.html</div></div>
   <div class="formats"><a class="format" href="reliability-patterns/latest_20260531_053517.html">HTML</a></div>
-</article><article class="card" data-title="insight #3 — sre &amp; automation" data-path="reliability-patterns/latest_20260530_203109.html">
+</article>
+<article class="card" data-title="insight #3 — sre &amp; automation" data-path="reliability-patterns/latest_20260530_203109.html">
   <span class="emoji">🛡️</span>
   <div class="info"><a class="title" href="reliability-patterns/latest_20260530_203109.html">Insight #3 — SRE &amp; Automation</a><div class="path">reliability-patterns/latest_20260530_203109.html</div></div>
   <div class="formats"><a class="format" href="reliability-patterns/latest_20260530_203109.html">HTML</a></div>
-</article><article class="card" data-title="insight #4 — sre &amp; automation" data-path="reliability-patterns/error-budgets-reliability_20260529_20260531_053616.html">
+</article>
+<article class="card" data-title="insight #4 — sre &amp; automation" data-path="reliability-patterns/error-budgets-reliability_20260529_20260531_053616.html">
   <span class="emoji">🛡️</span>
   <div class="info"><a class="title" href="reliability-patterns/error-budgets-reliability_20260529_20260531_053616.html">Insight #4 — SRE &amp; Automation</a><div class="path">reliability-patterns/error-budgets-reliability_20260529_20260531_053616.html</div></div>
   <div class="formats"><a class="format" href="reliability-patterns/error-budgets-reliability_20260529_20260531_053616.html">HTML</a></div>
 </article>
-</section></div>
+</section>
+</div>
 <footer>Generated by Hermes Agent · 💫 Small steps. Every day.</footer>
 </main><script>
 const input=document.getElementById('search');input.addEventListener('input',()=>{const q=input.value.toLowerCase().trim();document.querySelectorAll('.card').forEach(c=>c.hidden=!(c.dataset.title.includes(q)||c.dataset.path.includes(q)));document.querySelectorAll('.category').forEach(g=>g.hidden=!g.querySelector('.card:not([hidden])'));});

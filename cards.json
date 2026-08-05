@@ -1,46 +1,27 @@
 [
   {
     "file": "sre-&-automation/remediation-blast-radius-gates_20260806.html",
+    "md_file": "sre-&-automation/remediation-blast-radius-gates_20260806.md",
     "category": "sre-&-automation",
-    "title": "remediation-blast-radius-gates 20260806",
-    "emoji": "📚",
+    "title": "Remediation Blast-Radius Gates: Automate Without Amplifying Failure",
+    "emoji": "⚡",
     "timestamp": "20260805_203140"
   },
   {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260801_203640"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260731_203518"
-  },
-  {
-    "file": "sre-&-automation/latest.html",
-    "category": "sre-&-automation",
-    "title": "latest",
-    "emoji": "📚",
-    "timestamp": "20260730_203946"
-  },
-  {
     "file": "sre-&-automation/alert-fatigue-budget_20260730.html",
+    "md_file": "sre-&-automation/alert-fatigue-budget_20260730.md",
     "category": "sre-&-automation",
-    "title": "alert-fatigue-budget 20260730",
-    "emoji": "📚",
+    "title": "Alert Fatigue Budgets: Make Paging Scarce",
+    "emoji": "⚡",
     "timestamp": "20260729_203628"
   },
   {
     "file": "sre-&-automation/retry-storm-control_2026-07-30.html",
+    "md_file": "sre-&-automation/retry-storm-control_2026-07-30.md",
     "category": "sre-&-automation",
     "title": "Retry Storm Control: Backoff, Jitter, and Retry Budgets",
     "emoji": "⚡",
-    "timestamp": "20260729_203203",
-    "md_file": "sre-&-automation/retry-storm-control_2026-07-30.md"
+    "timestamp": "20260729_203203"
   },
   {
     "file": "sre-&-automation/safe-runbook-automation_20260723.html",
