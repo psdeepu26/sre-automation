@@ -1,5 +1,12 @@
 [
   {
+    "file": "sre-&-automation/latest.html",
+    "category": "sre-&-automation",
+    "title": "latest",
+    "emoji": "📚",
+    "timestamp": "20260807_203533"
+  },
+  {
     "file": "sre-&-automation/remediation-blast-radius-gates_20260806.html",
     "md_file": "sre-&-automation/remediation-blast-radius-gates_20260806.md",
     "category": "sre-&-automation",

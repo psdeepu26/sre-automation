@@ -5,302 +5,257 @@ Initializing agent...
 
   ┊ 📚 skill     nightly-learning-insight  0.1s
   ┊ 📚 skill     caveman  0.1s
-  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A'  0.1s
-  ┊ 💻 $         jq '{today: [.[] | select(.date == "2026-08-02")], personal_growth_titles: [.[] | select(.topic == "Personal Growth") | .title]}' /opt/data/insights/log.json  0.1s
-  ┊ 🔎 find      *_2026-08-02.html  0.1s
-  ┊ 📖 read      push-insight.sh L1-260  0.1s
+  ┊ 📋 plan      5 task(s)  0.0s
+  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A %H:%M:%S %Z' + 5 commands  0.1s
+  ┊ 🔎 find      *_2026-08-07.html  0.1s
+  ┊ 🔎 find      *_20260807.html  0.0s
   ┊ 📚 skill     deepu-personalization  0.0s
-  ┊ 🔎 find      *_2026-07-31.html  0.1s
-  ┊ 📖 read      push-insight.sh L201-240  0.1s
-  ┊ 📚 skill     nightly-learning-insight → references/private-repo-index-recovery.md  0.0s
-  ┊ 🔎 find      *_20260802.html  0.0s
-  ┊ 🔎 find      *_20260731.html  0.0s
-  ┊ 📖 read      shutdown-ritual-close-open-loops_20260731.html L1-260  0.1s
-  ┊ ✍️  write     /opt/data/insights/default-decisions-beat-decision-fatigue_20260802.html  0.1s
+  ┊ 💻 $         today=$(TZ='Asia/Kolkata' date '+%Y-%m-%d') + 1 command  0.1s
+  ┊ 🔎 find      *_2026-08-08.html  0.0s
+  ┊ 🔎 find      *_20260808.html  0.0s
+  ┊ 📖 read      push-insight.sh L1-260  0.1s
+  ┊ 💻 $         jq -r '[.[] | select(.topic == "Financial Health")][0]' /opt/data/insights/log.json  0.1s
+  ┊ 📖 read      push-insight.sh L201-280  0.1s
+  ┊ 🔎 find      *rebalancing*  0.0s
+  ┊ 💻 $         if [ -d /tmp/repos/financial-health/.git ] + 4 commands  0.1s
+  ┊ 📖 read      rebalancing-bands-discipline-over-emotion_2026-08-01.html L1-500  0.1s
+  ┊ 📖 read      rebalancing-bands-discipline-over-emotion_2026-08-01.md L1-250  0.1s
+  ┊ 💻 $         git -C /tmp/repos/financial-health fetch origin + 4 commands  1.4s
+  ┊ 📋 plan      update 1/5 ✓  0.0s
+  ┊ ✍️  write     /opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html  0.1s
   ┊ review diff
-a//opt/data/insights/default-decisions-beat-decision-fatigue_20260802.html → b//opt/data/insights/default-decisions-beat-decision-fatigue_20260802.html
-@@ -0,0 +1,49 @@
+a//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html → b//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html
+@@ -0,0 +1,46 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>Default Decisions: Beat Decision Fatigue Before It Starts</title>
++<title>Goal Buckets: Match Risk to When You Need the Money</title>
 +<style>
-+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:42px 22px 64px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:0 7px 7px 0;font-size:.82rem}.eli5,.technical,.micro-action{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:18px 0}.eli5{border-left:4px solid var(--purple)}.technical{border-left:4px solid var(--accent)}.micro-action{border-left:4px solid var(--green)}.eli5-label,.micro-action-label{font-weight:800;color:var(--purple);letter-spacing:.03em}.micro-action-label{color:var(--green)}.bridge{text-align:center;color:var(--muted);font-size:1.8rem;margin:8px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}.cell{border:1px solid var(--border);border-radius:12px;padding:16px}.cell strong{display:block;color:var(--accent);margin-bottom:6px}pre{overflow:auto;background:#010409;border:1px solid var(--border);border-radius:12px;padding:16px;color:var(--green)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.note{color:var(--muted);border-left:3px solid var(--red);padding-left:12px}.footer{text-align:center;color:var(--muted);margin-top:28px;font-size:.9rem}@media(max-width:650px){.grid{grid-template-columns:1fr}.wrap{padding:28px 15px 46px}}
++:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--gold:#e3b341}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:40px 20px 56px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:0 7px 7px 0}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:20px 0}.label,h2{color:var(--blue);font-weight:750}.eli5{border-left:4px solid var(--purple)}.bridge{text-align:center;color:var(--muted);font-weight:700;margin:28px 0}.technical{border-left:4px solid var(--blue)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.item{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:16px}.item strong{display:block;color:var(--green);margin-bottom:6px}.formula,.example{background:#0d1117;border:1px solid var(--border);border-radius:10px;padding:14px;margin:16px 0}.formula code{color:var(--gold)}.micro{border-left:4px solid var(--green)}.micro .label{color:var(--green)}footer{text-align:center;color:var(--muted);margin-top:34px}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{padding-top:26px}}
 +</style>
 +</head>
-+<body><main class="wrap">
-+<h1>Default Decisions: Beat Decision Fatigue Before It Starts</h1>
-+<p class="subtitle"><span class="tag">Personal Growth</span><span class="tag">Energy Management</span><span class="tag">2 August 2026</span></p>
-+<section class="eli5">
-+<div class="eli5-label">🧒 Like you're 5</div>
-+<p>Imagine choosing a new route to school, a new breakfast, and a new outfit every morning. None is hard, but choosing all three makes your brain tired before the day begins.</p>
-+<p>A default is a path already marked with footprints. You can still take another path when it matters, but ordinary days need no debate.</p>
++<body>
++<main class="wrap">
++<h1>💰 Goal Buckets: Match Risk to When You Need the Money</h1>
++<p class="subtitle"><span class="tag">Financial Health</span><span class="tag">8 August 2026</span><span class="tag">Goal-based investing</span></p>
++
++<section class="panel eli5">
++<div class="label">🧒 Like you're 5</div>
++<p>Imagine packing for three trips: one tomorrow, one next year, and one ten years away. You keep tomorrow's ticket in your pocket, next year's supplies in a cupboard, and spend time growing food for the distant trip.</p>
++<p>Money works the same way. Cash needed soon should not ride a roller coaster. Money needed much later can tolerate bumps because it has time to recover.</p>
 +</section>
-+<div class="bridge">↓ Turn repeated choices into trusted defaults ↓</div>
-+<section class="technical">
++
++<div class="bridge">↓ Now call it what it really is: matching asset risk to each goal's time horizon ↓</div>
++
++<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
-+<p>Decision fatigue is the drop in decision quality that can follow sustained cognitive effort. Defaults reduce <b>choice overhead</b>: repeated low-value decisions become precomputed policies, preserving attention for novel or high-impact work.</p>
++<div class="formula"><code>risk capacity ≠ risk appetite</code><br><code>risk capacity rises when time-to-goal, flexibility, and surplus cash rise</code></div>
 +<div class="grid">
-+<div class="cell"><strong>Default</strong>Preselect the normal action: standard breakfast, fixed focus-block time, or one workout plan.</div>
-+<div class="cell"><strong>Override condition</strong>State when the default should not apply. Example: skip workout only for illness, injury, or planned recovery.</div>
-+<div class="cell"><strong>Review cadence</strong>Defaults are policies, not laws. Review monthly or when evidence shows the policy no longer serves its goal.</div>
-+<div class="cell"><strong>Decision budget</strong>Spend deliberate thought on choices with high impact, uncertainty, or reversibility cost—not routine preference.</div>
++<div class="item"><strong>Start with liabilities, not products</strong>Define each goal as amount, due date, priority, and flexibility. “₹20 lakh in 8 years” is actionable; “invest for the future” is not.</div>
++<div class="item"><strong>Near bucket: 0–3 years</strong>Optimize for capital availability and low volatility. Emergency fund and committed near-term expenses belong here; chasing extra return can create forced selling.</div>
++<div class="item"><strong>Middle bucket: 3–7 years</strong>Use a controlled mix based on how flexible the date and amount are. Reduce equity exposure as the deadline approaches instead of waiting for the final year.</div>
++<div class="item"><strong>Far bucket: 7+ years</strong>Diversified equity can carry more weight because recovery time is longer. Allocation still depends on loss tolerance, income stability, and goal importance.</div>
++<div class="item"><strong>Use a glide path</strong>Move money toward lower-volatility assets as time-to-goal shrinks. This converts accumulated gains into deadline certainty and limits sequence risk near withdrawal.</div>
++<div class="item"><strong>Track funded ratio</strong>Compare current goal assets with required present value. Review allocation and contribution rate separately; poor funding is not always solved by taking more risk.</div>
 +</div>
-+<p>Treat personal defaults like safe operational policy:</p>
-+<pre><code>decision: weekday_lunch
-+default:  protein + vegetables + one carb
-+use_when: ordinary workday
-+review:   first Sunday of each month
-+override: social meal, travel, planned treat
-+</code></pre>
-+<ul>
-+<li><b>Good default:</b> easy to execute, aligned with a goal, and safe on most days.</li>
-+<li><b>Bad default:</b> rigid, vague, or optimized for an imaginary perfect week.</li>
-+<li><b>Best target:</b> frequent choices that consume attention but rarely deserve fresh analysis.</li>
-+</ul>
-+<p class="note">Do not automate meaningful decisions merely to avoid discomfort. Use defaults for repetition; use reflection for values, relationships, health changes, and irreversible commitments.</p>
++<p class="example"><strong>Example:</strong> A home down payment due in two years and retirement due in fifteen years should not share one allocation. The home bucket prioritizes availability; the retirement bucket can accept more volatility. Same person, different goals, different risk capacity.</p>
 +</section>
-+<section class="micro-action">
-+<div class="micro-action-label">⚡ Micro-action (5 minutes)</div>
-+<p>Find one choice you make at least three times each week. Write one default, one override condition, and one review date. Put it where the choice happens—for example, pin your default breakfast beside the grocery list.</p>
++
++<section class="panel micro">
++<div class="label">⚡ Micro-action (5 minutes)</div>
++<p>Pick one financial goal. Write its amount, due date, years remaining, and whether the date can move. Label it <code>near</code>, <code>middle</code>, or <code>far</code>, then check whether its current asset mix matches that horizon.</p>
 +</section>
-+<p class="footer">Personal Growth · 💫 Small steps. Every day.</p>
-+</main></body>
++
++<footer>Financial Health · 💫 Small steps. Every day.</footer>
++</main>
++</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/default-decisions-beat-decision-fatigue_20260802.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md  0.1s
   ┊ review diff
-a//opt/data/insights/default-decisions-beat-decision-fatigue_20260802.md → b//opt/data/insights/default-decisions-beat-decision-fatigue_20260802.md
-@@ -0,0 +1,44 @@
-+# Default Decisions: Beat Decision Fatigue Before It Starts
+a//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md → b//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md
+@@ -0,0 +1,41 @@
++# 💰 Goal Buckets: Match Risk to When You Need the Money
 +
-+**Personal Growth · Energy Management · 2 August 2026**
-+
-+## 🧒 Like you're 5
-+
-+Imagine choosing a new route to school, a new breakfast, and a new outfit every morning. None is hard, but choosing all three makes your brain tired before the day begins.
-+
-+A default is a path already marked with footprints. You can still take another path when it matters, but ordinary days need no debate.
-+
-+↓ **Turn repeated choices into trusted defaults** ↓
-+
-+## 🔧 For the engineer
-+
-+Decision fatigue is the drop in decision quality that can follow sustained cognitive effort. Defaults reduce **choice overhead**: repeated low-value decisions become precomputed policies, preserving attention for novel or high-impact work.
-+
-+- **Default:** Preselect the normal action: standard breakfast, fixed focus-block time, or one workout plan.
-+- **Override condition:** State when the default should not apply. Example: skip workout only for illness, injury, or planned recovery.
-+- **Review cadence:** Defaults are policies, not laws. Review monthly or when evidence shows the policy no longer serves its goal.
-+- **Decision budget:** Spend deliberate thought on choices with high impact, uncertainty, or reversibility cost—not routine preference.
-+
-+Treat personal defaults like safe operational policy:
-+
-+```yaml
-+decision: weekday_lunch
-+default:  protein + vegetables + one carb
-+use_when: ordinary workday
-+review:   first Sunday of each month
-+override: social meal, travel, planned treat
-+```
-+
-+- **Good default:** easy to execute, aligned with a goal, and safe on most days.
-+- **Bad default:** rigid, vague, or optimized for an imaginary perfect week.
-+- **Best target:** frequent choices that consume attention but rarely deserve fresh analysis.
-+
-+> Do not automate meaningful decisions merely to avoid discomfort. Use defaults for repetition; use reflection for values, relationships, health changes, and irreversible commitments.
-+
-+## ⚡ Micro-action (5 minutes)
-+
-+Find one choice you make at least three times each week. Write one default, one override condition, and one review date. Put it where the choice happens—for example, pin your default breakfast beside the grocery list.
++**Financial Health** · 8 August 2026 · Goal-based investing
 +
 +---
 +
-+**Personal Growth · 💫 Small steps. Every day.**
-  ┊ 💻 $         python3 - <<'PY' from pathlib import Path p=Path('/opt/data/insights/default-decisions-beat-decision-fatigue_20260802.html') s=p.read_text() print({'complete': s.rstrip().endswith('</html>'), 'title_count': s.count('<title>'), 'bytes': len(s.encode())}) PY bash -n /opt/data/scripts/push-insight.sh  0.1s
-  ┊ 💻 $         if [ -d /tmp/repos/personal-growth/.git ] + 10 commands  1.4s
-  ┊ 📚 skill     nightly-learning-insight → references/stale-checkout-index-recovery.md  0.0s
-  ┊ 💻 $         RECOVERY_DIR=$(mktemp -d /tmp/personal-growth-recovery-XXXXXX) + 2 commands  3.3s
-  ┊ 📖 read      cards.json L1-300  0.1s
-  ┊ 📖 read      index.html L1-260  0.1s
-  ┊ 💻 $         git -C /tmp/personal-growth-recovery-S7b1wj status --short --branch + 1 command  0.1s
-  ┊ ✍️  write     /tmp/personal-growth-recovery-S7b1wj/rebuild_index.py  0.0s [Write denied: '/tmp/personal-growth-recovery-...]
-  ┊ ✍️  write     /opt/hermes/rebuild_personal_growth_index.py  0.0s [Write denied: '/opt/hermes/rebuild_personal_g...]
-  ┊ ✍️  write     /opt/data/home/rebuild_personal_growth_index.py  1.0s
++## 🧒 Like You're 5
++
++Imagine packing for three trips: one tomorrow, one next year, and one ten years away. You keep tomorrow's ticket in your pocket, next year's supplies in a cupboard, and spend time growing food for the distant trip.
++
++Money works the same way. Cash needed soon should not ride a roller coaster. Money needed much later can tolerate bumps because it has time to recover.
++
++---
++
++↓ Now call it what it really is: matching asset risk to each goal's time horizon ↓
++
++## 🔧 For the Engineer
++
++> `risk capacity ≠ risk appetite`  
++> `risk capacity rises when time-to-goal, flexibility, and surplus cash rise`
++
++| Concept | What It Means |
++|---|---|
++| **Start with liabilities, not products** | Define each goal as amount, due date, priority, and flexibility. “₹20 lakh in 8 years” is actionable; “invest for the future” is not. |
++| **Near bucket: 0–3 years** | Optimize for capital availability and low volatility. Emergency funds and committed near-term expenses belong here; chasing extra return can create forced selling. |
++| **Middle bucket: 3–7 years** | Use a controlled mix based on how flexible the date and amount are. Reduce equity exposure as the deadline approaches instead of waiting for the final year. |
++| **Far bucket: 7+ years** | Diversified equity can carry more weight because recovery time is longer. Allocation still depends on loss tolerance, income stability, and goal importance. |
++| **Use a glide path** | Move money toward lower-volatility assets as time-to-goal shrinks. This converts accumulated gains into deadline certainty and limits sequence risk near withdrawal. |
++| **Track funded ratio** | Compare current goal assets with required present value. Review allocation and contribution rate separately; poor funding is not always solved by taking more risk. |
++
++**Example:** A home down payment due in two years and retirement due in fifteen years should not share one allocation. The home bucket prioritizes availability; the retirement bucket can accept more volatility. Same person, different goals, different risk capacity.
++
++---
++
++## ⚡ Micro-action (5 minutes)
++
++Pick one financial goal. Write its amount, due date, years remaining, and whether the date can move. Label it `near`, `middle`, or `far`, then check whether its current asset mix matches that horizon.
++
++---
++
++**Financial Health** · 💫 Small steps. Every day.
+  ┊ 💻 $         set -e html=/opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html md=/opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md python3 - "$html" "$md" <<'PY' import pathlib, sys html=pathlib.Path(sys.argv[1]).read_text() md=pathlib.Path(sys.argv[2]).read_text() assert html.startswith('<!DOCTYPE html>') and html.rstrip().endswith('</html>') for marker in ["🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action', '💫 Small steps. Every day.']: assert marker in html, marker for marker in ["🧒 Like You're 5", '🔧 For the Engineer', '⚡ Micro-action', '💫 Small steps. Every day.']: assert marker in md, marker print(f'CARD_OK html={len(html)}B md={len(md)}B') PY work=$(mktemp -d /tmp/financial-health-20260808-XXXXXX) set -a; source /opt/data/.env; set +a git clone --quiet "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/financial-health.git" "$work" printf 'FRESH_CLONE=%s\n' "$work" git -C "$work" status --short --branch git -C "$work" rev-parse HEAD wc -c "$work/index.html" jq '{count:length,categories:([.[].category]|unique),duplicates:([group_by(.file)[]|select(length>1)|.[0].file])}' "$work/cards.json"  1.5s
+  ┊ 📖 read      index.html L1-500  0.1s
+  ┊ 📖 read      cards.json L1-500  0.0s
+  ┊ 🔎 grep      article class=.card.|cards.json  0.1s
+  ┊ ✍️  write     /tmp/rebuild_financial_index_20260808.py  0.0s [Write denied: '/tmp/rebuild_financial_index_2...]
+  ┊ ✍️  write     /opt/data/insights/.rebuild_financial_index_20260808.py  1.2s
   ┊ review diff
-a//opt/data/home/rebuild_personal_growth_index.py → b//opt/data/home/rebuild_personal_growth_index.py
-@@ -0,0 +1 @@
-+print('ok')
-  ┊ ✍️  write     /opt/data/home/rebuild_personal_growth_index.py  0.4s
-  ┊ review diff
-a//opt/data/home/rebuild_personal_growth_index.py → b//opt/data/home/rebuild_personal_growth_index.py
-@@ -1 +1,72 @@
--print('ok')
+a//opt/data/insights/.rebuild_financial_index_20260808.py → b//opt/data/insights/.rebuild_financial_index_20260808.py
+@@ -0,0 +1,106 @@
 +from __future__ import annotations
 +
 +import html
 +import json
-+import shutil
++import pathlib
 +from collections import defaultdict
-+from pathlib import Path
 +
-+repo = Path("/tmp/personal-growth-recovery-S7b1wj")
-+source_html = Path("/opt/data/insights/default-decisions-beat-decision-fatigue_20260802.html")
-+source_md = source_html.with_suffix(".md")
-+category = "energy-management"
-+filename = source_html.name
-+card_path = f"{category}/{filename}"
-+md_path = f"{category}/{source_md.name}"
-+title = "Default Decisions: Beat Decision Fatigue Before It Starts"
++repo = pathlib.Path('/tmp/financial-health-20260808-lBrDe0')
++source = pathlib.Path('/opt/data/insights')
++basename = 'goal-buckets-match-risk-to-time_2026-08-08'
++category = 'goal-planning'
++title = 'Goal Buckets: Match Risk to When You Need the Money'
++emoji = '💰'
++timestamp = '20260808_0200_IST'
 +
-+(repo / category).mkdir(parents=True, exist_ok=True)
-+shutil.copy2(source_html, repo / card_path)
-+shutil.copy2(source_md, repo / md_path)
-+shutil.copy2(source_html, repo / "latest.html")
++category_dir = repo / category
++category_dir.mkdir(parents=True, exist_ok=True)
++for suffix in ('.html', '.md'):
++    (category_dir / f'{basename}{suffix}').write_bytes((source / f'{basename}{suffix}').read_bytes())
++(repo / 'latest.html').write_bytes((source / f'{basename}.html').read_bytes())
 +
-+cards_path = repo / "cards.json"
-+cards = json.loads(cards_path.read_text())
-+if not isinstance(cards, list):
-+    raise TypeError("cards.json must contain an array")
-+cards = [card for card in cards if card.get("file") != card_path]
-+cards.append({"file": card_path, "category": category, "title": title, "emoji": "⚡", "timestamp": "20260802_manual"})
-+cards.sort(key=lambda card: card.get("timestamp", ""), reverse=True)
-+deduped: list[dict] = []
-+seen: set[str] = set()
-+for card in cards:
-+    file = card.get("file", "")
-+    if not file or file in seen:
-+        continue
-+    seen.add(file)
-+    deduped.append(card)
-+cards = deduped
-+cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + "\n")
++cards_path = repo / 'cards.json'
++raw = json.loads(cards_path.read_text(encoding='utf-8'))
++new_record = {
++    'file': f'{category}/{basename}.html',
++    'category': category,
++    'title': title,
++    'emoji': emoji,
++    'timestamp': timestamp,
++}
++records = [new_record]
++seen = {new_record['file']}
++for record in raw:
++    path = record.get('file', '')
++    if path and path not in seen:
++        records.append(record)
++        seen.add(path)
++cards_path.write_text(json.dumps(records, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 +
-+groups: dict[str, list[dict]] = defaultdict(list)
-+for card in cards:
-+    groups[card.get("category", "uncategorized")].append(card)
++def label(slug: str) -> str:
++    return slug.replace('-', ' ').title()
++
++def display_title(record: dict[str, str]) -> str:
++    value = record.get('title', '').strip()
++    if value:
++        return value
++    return pathlib.Path(record['file']).stem.replace('-', ' ').replace('_', ' ').title()
++
++groups: dict[str, list[dict[str, str]]] = defaultdict(list)
++for record in records:
++    groups[record.get('category', 'uncategorized')].append(record)
 +
 +sections: list[str] = []
-+for group_name in sorted(groups):
-+    label = group_name.replace("-", " ").title()
-+    group_cards: list[str] = []
-+    for card in groups[group_name]:
-+        file = str(card["file"])
-+        card_title = str(card.get("title") or Path(file).stem.replace("_", " ").replace("-", " ").title())
-+        emoji = str(card.get("emoji") or "📚")
-+        companion = str(Path(file).with_suffix(".md"))
-+        group_cards.append(
-+            f'<article class="card" data-title="{html.escape(card_title.lower(), quote=True)}" data-category="{html.escape(group_name, quote=True)}">'
-+            f'<div class="emoji">{html.escape(emoji)}</div><div class="content"><h2>{html.escape(card_title)}</h2>'
-+            f'<p>{html.escape(label)}</p><div class="links"><a href="{html.escape(file, quote=True)}">Open HTML</a>'
-+            f'<a href="{html.escape(companion, quote=True)}">Read Markdown</a></div></div></article>'
++for group_name in sorted(groups, key=lambda name: (name != category, label(name))):
++    articles: list[str] = []
++    for record in groups[group_name]:
++        path = record['file']
++        md_path = str(pathlib.PurePosixPath(path).with_suffix('.md'))
++        card_title = display_title(record)
++        search = f'{card_title} {label(group_name)} {path}'.lower()
++        md_link = ''
++        if (repo / md_path).exists():
++            md_link = f'<a href="{html.escape(md_path, quote=True)}">Markdown</a>'
++        articles.append(
++            f'<article class="card" data-search="{html.escape(search, quote=True)}">'
++            f'<div class="emoji">{html.escape(record.get("emoji", "📚"))}</div>'
++            f'<div class="content"><h2>{html.escape(card_title)}</h2>'
++            f'<p>{html.escape(label(group_name))}</p><div class="links">'
++            f'<a href="{html.escape(path, quote=True)}">Open HTML</a>{md_link}'
++            f'</div></div></article>'
 +        )
-+    sections.append(f'<section class="category"><h2>{html.escape(label)} <span>{len(group_cards)}</span></h2><div class="cards">' + "".join(group_cards) + "</div></section>")
++    sections.append(
++        f'<section class="group"><h2>{html.escape(label(group_name))} '
++        f'<span>{len(articles)}</span></h2><div class="cards">{"".join(articles)}</div></section>'
++    )
 +
 +page = f'''<!DOCTYPE html>
-+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-+<title>Personal Growth Learning Cards</title><style>
-+:root{{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:40px 20px 70px}}h1{{font-size:clamp(2rem,5vw,3.5rem);margin:0 0 8px}}.intro,.stats{{color:var(--muted)}}input{{width:100%;margin:24px 0;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);font:inherit}}.category>h2{{display:flex;gap:10px;align-items:center;margin-top:30px}}.category>h2 span{{font-size:.75rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:2px 8px}}.cards{{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}}.card{{display:flex;gap:14px;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}}.emoji{{font-size:1.6rem}}.content{{min-width:0}}.card h2{{font-size:1.05rem;margin:0 0 5px}}.card p{{color:var(--muted);margin:0 0 12px}}.links{{display:flex;gap:14px;flex-wrap:wrap}}a{{color:var(--accent);text-decoration:none}}a:hover{{text-decoration:underline}}.hidden{{display:none}}footer{{color:var(--muted);text-align:center;margin-top:42px}}
-+</style></head><body><main><h1>Personal Growth Learning Cards</h1><p class="intro">ELI5-first lessons with practical engineering detail.</p>
-+<input id="search" type="search" placeholder="Search cards or categories…" aria-label="Search cards"><div class="stats">{len(cards)} cards · {len(groups)} categories · Updated 2 Aug 2026</div>
-+<div id="catalog">{''.join(sections)}</div><footer>💫 Small steps. Every day.</footer></main><script>
-+const search=document.getElementById('search');search.addEventListener('input',()=>{{const q=search.value.toLowerCase().trim();document.querySelectorAll('.card').forEach(card=>card.classList.toggle('hidden',q&&!((card.dataset.title+' '+card.dataset.category).includes(q))));document.querySelectorAll('.category').forEach(section=>section.classList.toggle('hidden',![...section.querySelectorAll('.card')].some(card=>!card.classList.contains('hidden'))));}});
-+</script></body></html>'''
-+(repo / "index.html").write_text(page)
-+print(json.dumps({"cards": len(cards), "categories": len(groups), "new_card_entries": page.count(f'<article class="card" data-title="{title.lower()}"'), "index_bytes": len(page.encode())}))
-  ┊ 💻 $         python3 /opt/data/home/rebuild_personal_growth_index.py + 3 commands  0.2s
-  ┊ 💻 $         python3 - <<'PY' import re from pathlib import Path p=Path('/tmp/personal-growth-recovery-S7b1wj/index.html').read_text() path='energy-management/default-decisions-beat-decision-fatigue_20260802.html' articles=re.findall(r'<article class="card".*?</article>', p) print({'article_count':len(articles),'new_card_entries':sum(path in a for a in articles),'path_occurrences':p.count(path)}) assert len(articles)==22 assert sum(path in a for a in articles)==1 PY git -C /tmp/personal-growth-recovery-S7b1wj config user.email "hermes@deepu26.dev" git -C /tmp/personal-growth-recovery-S7b1wj config user.name "Hermes Agent" git -C /tmp/personal-growth-recovery-S7b1wj add cards.json index.html latest.html energy-management/default-decisions-beat-decision-fatigue_20260802.html energy-management/default-decisions-beat-decision-fatigue_20260802.md git -C /tmp/personal-growth-recovery-S7b1wj commit -m "Add default decisions insight" git -C /tmp/personal-growth-recovery-S7b1wj push origin main  1.7s
-  ┊ 💻 $         set -a; source /opt/data/.env; set +a API='https://api.github.com/repos/psdeepu26/personal-growth' REMOTE_SHA=$(git -C /tmp/personal-growth-recovery-S7b1wj ls-remote origin refs/heads/main | cut -f1) INDEX_JSON=$(curl -fsS -H "Authorization: Bearer ${GITHUB_TOKEN}" -H 'Accept: application/vnd.github+json' "$API/contents/index.html?ref=main") TREE_JSON=$(curl -fsS -H "Authorization: Bearer ${GITHUB_TOKEN}" -H 'Accept: application/vnd.github+json' "$API/git/trees/main?recursive=1") LATEST_JSON=$(curl -fsS -H "Authorization: Bearer ${GITHUB_TOKEN}" -H 'Accept: application/vnd.github+json' "$API/contents/latest.html?ref=main") export INDEX_JSON TREE_JSON LATEST_JSON REMOTE_SHA python3 -c 'import os,json,base64,re; idx=json.loads(os.environ["INDEX_JSON"]); tree=json.loads(os.environ["TREE_JSON"]); latest=json.loads(os.environ["LATEST_JSON"]); text=base64.b64decode(idx["content"]).decode(); ltext=base64.b64decode(latest["content"]).decode(); p="energy-management/default-decisions-beat-decision-fatigue_20260802.html"; paths={x["path"] for x in tree["tree"]}; arts=re.findall(r"<article class=\"card\".*?</article>",text); result={"remote_sha":os.environ["REMOTE_SHA"],"index_bytes":idx["size"],"total_card_entries":len(arts),"new_card_entries":sum(p in a for a in arts),"html_remote":p in paths,"md_remote":p.replace(".html",".md") in paths,"latest_title_ok":"<title>Default Decisions: Beat Decision Fatigue Before It Starts</title>" in ltext}; print(result); assert result["new_card_entries"]==1 and result["html_remote"] and result["md_remote"] and result["latest_title_ok"] and result["index_bytes"]<1000000'  0.1s [exit -1]
-  ┊ ✍️  write     /opt/data/home/verify_personal_growth_insight.py  0.7s
++<html lang="en">
+… omitted 28 diff line(s) across 1 additional file(s)/section(s)
+  ┊ 💻 $         set -e python3 /opt/data/insights/.rebuild_financial_index_20260808.py repo=/tmp/financial-health-20260808-lBrDe0 python3 - "$repo" <<'PY' import json, pathlib, re, sys root=pathlib.Path(sys.argv[1]) cards=json.loads((root/'cards.json').read_text()) index=(root/'index.html').read_text() new='goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html' articles=re.findall(r'<article class="card".*?</article>', index, flags=re.S) assert len(cards)==14 assert len(articles)==len(cards) assert sum(new in article for article in articles)==1 assert len({c['file'] for c in cards})==len(cards) assert (root/new).exists() assert (root/new.replace('.html','.md')).exists() assert '<title>Goal Buckets: Match Risk to When You Need the Money</title>' in (root/'latest.html').read_text() print(f'LOCAL_VERIFY cards={len(cards)} articles={len(articles)} new_entries=1 index_bytes={len(index.encode())}') PY git -C "$repo" status --short git -C "$repo" diff --stat git -C "$repo" diff --check  0.1s
+  ┊ 📋 plan      update 2/5 ✓  0.0s
+  ┊ 💻 $         set -e repo=/tmp/financial-health-20260808-lBrDe0 git -C "$repo" config user.name 'Hermes Agent' git -C "$repo" config user.email 'hermes@deepu26.dev' git -C "$repo" add cards.json index.html latest.html goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html goal-planning/goal-buckets-match-risk-to-time_2026-08-08.md git -C "$repo" commit -m 'Add goal buckets learning insight' git -C "$repo" push origin main local_sha=$(git -C "$repo" rev-parse HEAD) remote_sha=$(git -C "$repo" ls-remote origin refs/heads/main | cut -f1) printf 'LOCAL_SHA=%s\nREMOTE_SHA=%s\n' "$local_sha" "$remote_sha" test "$local_sha" = "$remote_sha"  2.7s
+  ┊ 💻 $         do key=$(printf '%s' "$item" | tr '/.' '__') curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' "$api/$item?ref=main" done python3 - <<'PY' import base64, json, pathlib, re def content(name): key=name.translate(str.maketrans('/.','__')) data=json.loads(pathlib.Path(f'/tmp/remote_{key}.json').read_text()) return base64.b64decode(data['content']).decode(), data index, index_meta=content('index.html') cards_text, _=content('cards.json') latest, _=content('latest.html') card_html, _=content('goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html') card_md, _=content('goal-planning/goal-buckets-match-risk-to-time_2026-08-08.md') cards=json.loads(cards_text) path='goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html' articles=re.findall(r'<article class="card".*?</article>', index, flags=re.S) assert len(cards)==14 and len(articles)==14 assert sum(path in article for article in articles)==1 assert sum(c.get('file')==path for c in cards)==1 record=next(c for c in cards if c.get('file')==path) assert record['title']=='Goal Buckets: Match Risk to When You Need the Money' assert record['category']=='goal-planning' and record['emoji']=='💰' assert latest==card_html assert card_html.rstrip().endswith('</html>') assert '## ⚡ Micro-action (5 minutes)' in card_md assert index_meta['size'] print(f"REMOTE_VERIFY sha={index_meta['sha']} cards={len(cards)} articles={len(articles)} new_entries=1 index_bytes={index_meta['size']} companions=2 latest=match") PY  1.9s
+  ┊ 📋 plan      update 3/5 ✓  0.0s
+  ┊ 💻 $         set -e log=/opt/data/insights/log.json tmp=$(mktemp /tmp/insight-log-XXXXXX.json) jq \ --arg date '2026-08-08' \ --arg dow 'Saturday' \ --arg topic 'Financial Health' \ --arg title 'Goal Buckets: Match Risk to When You Need the Money' \ --arg category 'goal-planning' \ --arg html 'goal-buckets-match-risk-to-time_2026-08-08.html' \ --arg md 'goal-buckets-match-risk-to-time_2026-08-08.md' \ --arg ts '20260808_0200_IST' \ --arg url 'https://github.com/psdeepu26/financial-health/blob/main/goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html' \ '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,github_url:$url,published:true,index_verified:true}] + .' \ "$log" mv "$tmp" "$log" jq -e '.[0] | .date == "2026-08-08" and .title == "Goal Buckets: Match Risk to When You Need the Money" and .published == true and .index_verified == true' "$log" >/dev/null jq '.[0]' "$log"  0.1s
+  ┊ ✍️  write     /opt/data/insights/.telegram_goal_buckets_20260808.txt  0.1s
   ┊ review diff
-a//opt/data/home/verify_personal_growth_insight.py → b//opt/data/home/verify_personal_growth_insight.py
-@@ -0,0 +1,41 @@
-+from __future__ import annotations
+a//opt/data/insights/.telegram_goal_buckets_20260808.txt → b//opt/data/insights/.telegram_goal_buckets_20260808.txt
+@@ -0,0 +1,8 @@
++💰 Goal Buckets: Match Risk to When You Need the Money
 +
-+import base64
-+import json
-+import os
-+import re
-+import subprocess
-+import urllib.request
-+from pathlib import Path
++Money needed soon should not ride a roller coaster. Match each goal's risk to its deadline, then use a glide path as that deadline approaches.
 +
-+api = "https://api.github.com/repos/psdeepu26/personal-growth"
-+token = os.environ["GITHUB_TOKEN"]
-+headers = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json", "User-Agent": "Hermes-Agent"}
++⚡ 5-minute action: Pick one goal. Write amount, due date, years remaining, and whether the date can move. Label it near, middle, or far.
 +
-+def get(path: str) -> dict:
-+    req = urllib.request.Request(api + path, headers=headers)
-+    with urllib.request.urlopen(req, timeout=30) as response:
-+        return json.load(response)
-+
-+index = get("/contents/index.html?ref=main")
-+tree = get("/git/trees/main?recursive=1")
-+latest = get("/contents/latest.html?ref=main")
-+text = base64.b64decode(index["content"]).decode()
-+latest_text = base64.b64decode(latest["content"]).decode()
-+path = "energy-management/default-decisions-beat-decision-fatigue_20260802.html"
-+paths = {item["path"] for item in tree["tree"]}
-+articles = re.findall(r'<article class="card".*?</article>', text)
-+remote_sha = subprocess.check_output(["git", "-C", "/tmp/personal-growth-recovery-S7b1wj", "ls-remote", "origin", "refs/heads/main"], text=True).split()[0]
-+result = {
-+    "remote_sha": remote_sha,
-+    "index_bytes": index["size"],
-+    "total_card_entries": len(articles),
-+    "new_card_entries": sum(path in article for article in articles),
-+    "html_remote": path in paths,
-+    "md_remote": path.replace(".html", ".md") in paths,
-+    "latest_title_ok": "<title>Default Decisions: Beat Decision Fatigue Before It Starts</title>" in latest_text,
-+}
-+print(json.dumps(result))
-+assert result["new_card_entries"] == 1
-+assert result["html_remote"] and result["md_remote"] and result["latest_title_ok"]
-+assert result["index_bytes"] < 1_000_000
-  ┊ 💻 $         python3 /opt/data/home/verify_personal_growth_insight.py  2.2s
-  ┊ 💻 $         jq --arg date "2026-08-02" --arg dow "Sunday" --arg topic "Personal Growth" --arg title "Default Decisions: Beat Decision Fatigue Before It Starts" --arg category "energy-management" --arg html "default-decisions-beat-decision-fatigue_20260802.html" --arg md "default-decisions-beat-decision-fatigue_20260802.md" --arg ts "20260802_manual" '. | [{date: $date, day_of_week: $dow, topic: $topic, title: $title, category: $category, html_file: $html, md_file: $md, timestamp: $ts, delivered: false}] + .' /opt/data/insights/log.json + 2 commands  0.1s
-  ┊ ✍️  write     /opt/data/insights/default-decisions-beat-decision-fatigue_20260802_message.txt  0.1s
-  ┊ review diff
-a//opt/data/insights/default-decisions-beat-decision-fatigue_20260802_message.txt → b//opt/data/insights/default-decisions-beat-decision-fatigue_20260802_message.txt
-@@ -0,0 +1,7 @@
-+🌱 Default Decisions: Beat Decision Fatigue Before It Starts
-+
-+Repeated low-value choices quietly drain attention. Today’s card shows how trusted defaults preserve energy for decisions that matter.
-+
-+⚡ 5-minute action: define one default, one override condition, and one review date.
-+
-+Read: https://github.com/psdeepu26/personal-growth/blob/main/energy-management/default-decisions-beat-decision-fatigue_20260802.html
-  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to "telegram:-1003983518007:7" --file /opt/data/insights/default-decisions-beat-decision-fatigue_20260802_message.txt --json  4.4s
-  ┊ 💻 $         jq 'map(if .timestamp == "20260802_manual" and .html_file == "default-decisions-beat-decision-fatigue_20260802.html" then . + {delivered: true, delivery_result: "sent", telegram_message_id: "3067"} else . end)' /opt/data/insights/log.json + 3 commands  0.1s
++Read card:
++https://github.com/psdeepu26/financial-health/blob/main/goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html
+  ┊ 📋 plan      update 4/5 ✓  0.0s
+  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to 'telegram:-1003983518007:3' --file /opt/data/insights/.telegram_goal_buckets_20260808.txt --json  4.2s
+  ┊ 💻 $         set -e log=/opt/data/insights/log.json tmp=$(mktemp /tmp/insight-log-delivery-XXXXXX.json) jq 'map(if .date == "2026-08-08" and .title == "Goal Buckets: Match Risk to When You Need the Money" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3088"} else . end)' "$log" mv "$tmp" "$log" python3 - <<'PY' import json, pathlib log=json.loads(pathlib.Path('/opt/data/insights/log.json').read_text()) e=log[0] assert e['date']=='2026-08-08' assert e['published'] and e['index_verified'] and e['delivered'] assert e['telegram_message_id']=='3088' for name in (e['html_file'],e['md_file']): assert (pathlib.Path('/opt/data/insights')/name).exists() print(f"FINAL_OK title={e['title']} published={e['published']} indexed={e['index_verified']} delivered={e['delivered']} telegram_message_id={e['telegram_message_id']}") PY git -C /tmp/financial-health-20260808-lBrDe0 status --short --branch  0.1s
+  ┊ 📋 plan      update 5/5 ✓  0.0s
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Insight generated and delivered.                                           
+     Generated today’s Financial Health insight:                                
                                                                                 
-     - Topic: Personal Growth                                                   
-     - Title: “Default Decisions: Beat Decision Fatigue Before It Starts”       
-     - Formats: HTML + Markdown                                                 
-     - GitHub:                                                                  
-     https://github.com/psdeepu26/personal-growth/blob/main/energy-manageme     
-     nt/default-decisions-beat-decision-fatigue_20260802.html                   
-     - Telegram Personal topic: sent, message 3067                              
-     - Remote verification: HTML, Markdown, index, and latest.html valid        
-     - Log: updated with delivered: true                                        
+     “Goal Buckets: Match Risk to When You Need the Money”                      
                                                                                 
-     ⚠️ File-mutation verifier: 2 file(s) were NOT modified this turn           
+     - HTML + Markdown created                                                  
+     - Published to private financial-health GitHub repo                        
+     - Search index, metadata, companions, and latest.html verified             
+     - Delivered to Telegram Financial Tasks topic                              
+     - Telegram message ID: 3088                                                
+     - Logged successfully                                                      
+                                                                                
+     Card:                                                                      
+     https://github.com/psdeepu26/financial-health/blob/main/goal-planning/     
+     goal-buckets-match-risk-to-time_2026-08-08.html                            
+                                                                                
+     ⚠️ File-mutation verifier: 1 file(s) were NOT modified this turn           
      despite any wording above that may suggest otherwise. Run git status       
      or read_file to confirm.                                                   
-       • /tmp/personal-growth-recovery-S7b1wj/rebuild_index.py —                
-     [write_file] Write denied:                                                 
-     '/tmp/personal-growth-recovery-S7b1wj/rebuild_index.py' is a protected     
-     system/credential file.                                                    
-       • /opt/hermes/rebuild_personal_growth_index.py — [write_file] Write      
-     denied: '/opt/hermes/rebuild_personal_growth_index.py' is a protected      
+       • /tmp/rebuild_financial_index_20260808.py — [write_file] Write          
+     denied: '/tmp/rebuild_financial_index_20260808.py' is a protected          
      system/credential file.                                                    
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
 Resume this session with:
-  hermes --resume 20260801_203042_8425bd
+  hermes --resume 20260807_203023_b0097a
 
-Session:        20260801_203042_8425bd
-Duration:       5m 56s
-Messages:       61 (1 user, 59 tool calls)
+Session:        20260807_203023_b0097a
+Duration:       5m 9s
+Messages:       64 (1 user, 62 tool calls)
