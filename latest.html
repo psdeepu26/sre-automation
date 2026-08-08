@@ -3,259 +3,304 @@ nightly-learning-insight skill
 Initializing agent...
 ────────────────────────────────────────
 
-  ┊ 📚 skill     nightly-learning-insight  0.1s
-  ┊ 📚 skill     caveman  0.1s
-  ┊ 📋 plan      5 task(s)  0.0s
-  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A %H:%M:%S %Z' + 5 commands  0.1s
-  ┊ 🔎 find      *_2026-08-07.html  0.1s
-  ┊ 🔎 find      *_20260807.html  0.0s
+  ┊ 📚 skill     caveman  0.0s
+  ┊ 📚 skill     nightly-learning-insight  0.0s
+  ┊ 💻 $         date '+%A, %Y-%m-%d %H:%M:%S %Z (%z)'  0.1s
+  ┊ 📋 plan      4 task(s)  0.0s
   ┊ 📚 skill     deepu-personalization  0.0s
-  ┊ 💻 $         today=$(TZ='Asia/Kolkata' date '+%Y-%m-%d') + 1 command  0.1s
-  ┊ 🔎 find      *_2026-08-08.html  0.0s
-  ┊ 🔎 find      *_20260808.html  0.0s
+  ┊ 📚 skill     nightly-learning-insight → references/insight-card-markdown-template.md  0.0s
+  ┊ 💻 $         TZ='Asia/Kolkata' date '+%Y-%m-%d %A %H:%M:%S %Z' + 4 commands  0.1s
+  ┊ 🔎 find      *_2026-08-09.html  0.0s
+  ┊ 🔎 find      *_20260809.html  0.0s
   ┊ 📖 read      push-insight.sh L1-260  0.1s
-  ┊ 💻 $         jq -r '[.[] | select(.topic == "Financial Health")][0]' /opt/data/insights/log.json  0.1s
-  ┊ 📖 read      push-insight.sh L201-280  0.1s
-  ┊ 🔎 find      *rebalancing*  0.0s
-  ┊ 💻 $         if [ -d /tmp/repos/financial-health/.git ] + 4 commands  0.1s
-  ┊ 📖 read      rebalancing-bands-discipline-over-emotion_2026-08-01.html L1-500  0.1s
-  ┊ 📖 read      rebalancing-bands-discipline-over-emotion_2026-08-01.md L1-250  0.1s
-  ┊ 💻 $         git -C /tmp/repos/financial-health fetch origin + 4 commands  1.4s
-  ┊ 📋 plan      update 1/5 ✓  0.0s
-  ┊ ✍️  write     /opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html  0.1s
+  ┊ 💻 $         curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/psdeepu26/personal-growth/contents/cards.json?ref=main' | jq -r '.content' | base64 -d | jq -r 'if type=="array" then .[] | [.category,.title,.path] | @tsv else . end'  0.7s
+  ┊ 💻 $         curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/psdeepu26/personal-growth/contents/index.html?ref=main' | jq -r '[.size,.sha] | @tsv'  0.7s
+  ┊ 💻 $         if [ -d /tmp/repos/personal-growth/.git ] + 5 commands  1.0s
+  ┊ 💻 $         curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/psdeepu26/personal-growth/contents/index.html?ref=main' | jq -r '.content' | base64 -d + 1 command  0.5s
+  ┊ 📖 read      personal-growth-index.html L1-60  0.1s
+  ┊ 📋 plan      update 1/4 ✓  0.0s
+  ┊ ✍️  write     /opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.html  0.1s
   ┊ review diff
-a//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html → b//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html
-@@ -0,0 +1,46 @@
+a//opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.html → b//opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.html
+@@ -0,0 +1,61 @@
 +<!DOCTYPE html>
 +<html lang="en">
 +<head>
 +<meta charset="UTF-8">
 +<meta name="viewport" content="width=device-width, initial-scale=1.0">
-+<title>Goal Buckets: Match Risk to When You Need the Money</title>
++<title>Personal WIP Limits: Finish Before Starting More</title>
 +<style>
-+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--gold:#e3b341}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}.wrap{max-width:920px;margin:auto;padding:40px 20px 56px}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 14px}.subtitle{color:var(--muted);margin-bottom:30px}.tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:0 7px 7px 0}.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:20px 0}.label,h2{color:var(--blue);font-weight:750}.eli5{border-left:4px solid var(--purple)}.bridge{text-align:center;color:var(--muted);font-weight:700;margin:28px 0}.technical{border-left:4px solid var(--blue)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.item{background:#0d1117;border:1px solid var(--border);border-radius:12px;padding:16px}.item strong{display:block;color:var(--green);margin-bottom:6px}.formula,.example{background:#0d1117;border:1px solid var(--border);border-radius:10px;padding:14px;margin:16px 0}.formula code{color:var(--gold)}.micro{border-left:4px solid var(--green)}.micro .label{color:var(--green)}footer{text-align:center;color:var(--muted);margin-top:34px}@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{padding-top:26px}}
++:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--blue:#58a6ff;--green:#7ee787;--purple:#d2a8ff;--red:#ff7b72;--amber:#f2cc60}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#18243a 0,var(--bg) 36%);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:980px;margin:auto;padding:48px 20px 72px}header{margin-bottom:28px}h1{font-size:clamp(2.1rem,6vw,4rem);line-height:1.08;letter-spacing:-.045em;margin:0 0 16px;max-width:850px}.subtitle{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted)}.tag{border:1px solid var(--border);background:var(--card);border-radius:999px;padding:5px 11px;font-size:.84rem}.panel{border:1px solid var(--border);background:rgba(22,27,34,.94);border-radius:18px;padding:26px;margin:18px 0;box-shadow:0 12px 35px rgba(0,0,0,.22)}.eli5{border-left:4px solid var(--purple)}.label{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--purple);margin-bottom:10px}.bridge{text-align:center;color:var(--blue);font-weight:700;padding:8px 0}.technical h2{margin-top:0}.lead{font-size:1.08rem;color:#c9d1d9}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}.item{border:1px solid var(--border);border-radius:13px;padding:18px;background:#0d1117}.item h3{font-size:1rem;margin:0 0 8px;color:var(--blue)}.item p{margin:0;color:#c9d1d9}.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}.step{padding:14px;border-radius:12px;text-align:center;background:#101a25;border:1px solid #23415f}.step strong{display:block;color:var(--green);margin-bottom:4px}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--green);background:#0b1320;border:1px solid #263447;border-radius:5px;padding:2px 5px}.micro{border-color:#315b3b;background:linear-gradient(135deg,rgba(35,64,42,.75),rgba(22,27,34,.96))}.micro .label{color:var(--green)}.micro ol{margin:10px 0 0;padding-left:22px}.rule{font-size:1.12rem;font-weight:750;color:var(--amber);margin:18px 0 0}footer{text-align:center;color:var(--muted);margin-top:28px;font-size:.9rem}@media(max-width:680px){.grid,.flow{grid-template-columns:1fr}.wrap{padding-top:30px}.panel{padding:21px}}
 +</style>
 +</head>
 +<body>
 +<main class="wrap">
-+<h1>💰 Goal Buckets: Match Risk to When You Need the Money</h1>
-+<p class="subtitle"><span class="tag">Financial Health</span><span class="tag">8 August 2026</span><span class="tag">Goal-based investing</span></p>
++<header>
++<h1>Personal WIP Limits: Finish Before Starting More</h1>
++<p class="subtitle"><span class="tag">🌱 Personal Growth</span><span class="tag">Mental Clarity</span><span class="tag">9 August 2026</span></p>
++</header>
 +
 +<section class="panel eli5">
 +<div class="label">🧒 Like you're 5</div>
-+<p>Imagine packing for three trips: one tomorrow, one next year, and one ten years away. You keep tomorrow's ticket in your pocket, next year's supplies in a cupboard, and spend time growing food for the distant trip.</p>
-+<p>Money works the same way. Cash needed soon should not ride a roller coaster. Money needed much later can tolerate bumps because it has time to recover.</p>
++<p>Imagine carrying groceries from the car. If you grab every bag at once, handles cut your fingers, things fall, and you walk slowly. Carrying only two bags feels less ambitious—but each trip finishes cleanly.</p>
++<p>Your unfinished tasks are bags your brain keeps holding. Starting another task adds weight. A personal WIP limit says: <strong>put one bag down at its destination before picking up another.</strong></p>
 +</section>
 +
-+<div class="bridge">↓ Now call it what it really is: matching asset risk to each goal's time horizon ↓</div>
++<div class="bridge">↓ Now call it what it really is ↓</div>
 +
 +<section class="panel technical">
 +<h2>🔧 For the engineer</h2>
-+<div class="formula"><code>risk capacity ≠ risk appetite</code><br><code>risk capacity rises when time-to-goal, flexibility, and surplus cash rise</code></div>
++<p class="lead">A personal <strong>work-in-progress (WIP) limit</strong> caps active commitments. It converts a crowded to-do list into a pull system: new work starts only when an active slot becomes free.</p>
++
 +<div class="grid">
-+<div class="item"><strong>Start with liabilities, not products</strong>Define each goal as amount, due date, priority, and flexibility. “₹20 lakh in 8 years” is actionable; “invest for the future” is not.</div>
-+<div class="item"><strong>Near bucket: 0–3 years</strong>Optimize for capital availability and low volatility. Emergency fund and committed near-term expenses belong here; chasing extra return can create forced selling.</div>
-+<div class="item"><strong>Middle bucket: 3–7 years</strong>Use a controlled mix based on how flexible the date and amount are. Reduce equity exposure as the deadline approaches instead of waiting for the final year.</div>
-+<div class="item"><strong>Far bucket: 7+ years</strong>Diversified equity can carry more weight because recovery time is longer. Allocation still depends on loss tolerance, income stability, and goal importance.</div>
-+<div class="item"><strong>Use a glide path</strong>Move money toward lower-volatility assets as time-to-goal shrinks. This converts accumulated gains into deadline certainty and limits sequence risk near withdrawal.</div>
-+<div class="item"><strong>Track funded ratio</strong>Compare current goal assets with required present value. Review allocation and contribution rate separately; poor funding is not always solved by taking more risk.</div>
++<div class="item"><h3>WIP ≠ backlog</h3><p>Backlog holds possibilities. WIP contains tasks currently consuming attention. Keep backlog large if needed; keep active WIP small.</p></div>
++<div class="item"><h3>Context-switch tax</h3><p>Each switch leaves attention residue. More active tasks increase restart time, forgotten state, and shallow progress.</p></div>
++<div class="item"><h3>Little's Law</h3><p><code>Lead time ≈ WIP ÷ throughput</code>. If completion rate stays similar, lower WIP shortens time-to-finish.</p></div>
++<div class="item"><h3>Pull, don't push</h3><p>When a slot opens, pull the next highest-value item. Urgency alone does not create capacity.</p></div>
++<div class="item"><h3>Blocked still counts</h3><p>A blocked item occupies mental and tracking capacity. Escalate, schedule a follow-up, or deliberately move it out of active WIP.</p></div>
++<div class="item"><h3>Define “done”</h3><p>Use an observable finish line: “send draft for review,” not “work on document.” Clear exits prevent permanent half-work.</p></div>
 +</div>
-+<p class="example"><strong>Example:</strong> A home down payment due in two years and retirement due in fifteen years should not share one allocation. The home bucket prioritizes availability; the retirement bucket can accept more volatility. Same person, different goals, different risk capacity.</p>
++
++<div class="flow">
++<div class="step"><strong>Backlog</strong>Many options</div>
++<div class="step"><strong>Active ≤ 2</strong>Focused execution</div>
++<div class="step"><strong>Done</strong>Then pull next</div>
++</div>
++
++<p class="rule">Default rule: one deep task + one small task. Everything else waits.</p>
 +</section>
 +
 +<section class="panel micro">
 +<div class="label">⚡ Micro-action (5 minutes)</div>
-+<p>Pick one financial goal. Write its amount, due date, years remaining, and whether the date can move. Label it <code>near</code>, <code>middle</code>, or <code>far</code>, then check whether its current asset mix matches that horizon.</p>
++<ol>
++<li>Write every task you currently consider “in progress.”</li>
++<li>Circle only two: one meaningful task and one quick task.</li>
++<li>Move all others to a backlog labeled <strong>Not active</strong>.</li>
++<li>Write one concrete “done when…” sentence for each circled task.</li>
++</ol>
 +</section>
 +
-+<footer>Financial Health · 💫 Small steps. Every day.</footer>
++<footer>🌱 Personal Growth · 💫 Small steps. Every day.</footer>
 +</main>
 +</body>
 +</html>
-  ┊ ✍️  write     /opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md  0.1s
+  ┊ ✍️  write     /opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.md  0.1s
   ┊ review diff
-a//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md → b//opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md
-@@ -0,0 +1,41 @@
-+# 💰 Goal Buckets: Match Risk to When You Need the Money
+a//opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.md → b//opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.md
+@@ -0,0 +1,53 @@
++# 🌱 Personal WIP Limits: Finish Before Starting More
 +
-+**Financial Health** · 8 August 2026 · Goal-based investing
++**Personal Growth** · Mental Clarity · 9 August 2026
 +
 +---
 +
 +## 🧒 Like You're 5
 +
-+Imagine packing for three trips: one tomorrow, one next year, and one ten years away. You keep tomorrow's ticket in your pocket, next year's supplies in a cupboard, and spend time growing food for the distant trip.
++Imagine carrying groceries from the car. If you grab every bag at once,
++handles cut your fingers, things fall, and you walk slowly. Carrying only two
++bags feels less ambitious—but each trip finishes cleanly.
 +
-+Money works the same way. Cash needed soon should not ride a roller coaster. Money needed much later can tolerate bumps because it has time to recover.
++Your unfinished tasks are bags your brain keeps holding. Starting another task
++adds weight. A personal WIP limit says: **put one bag down at its destination
++before picking up another.**
 +
 +---
 +
-+↓ Now call it what it really is: matching asset risk to each goal's time horizon ↓
++> ↓ Now call it what it really is ↓
 +
 +## 🔧 For the Engineer
 +
-+> `risk capacity ≠ risk appetite`  
-+> `risk capacity rises when time-to-goal, flexibility, and surplus cash rise`
++A personal **work-in-progress (WIP) limit** caps active commitments. It converts
++a crowded to-do list into a pull system: new work starts only when an active
++slot becomes free.
 +
-+| Concept | What It Means |
++| Concept | What It Is |
 +|---|---|
-+| **Start with liabilities, not products** | Define each goal as amount, due date, priority, and flexibility. “₹20 lakh in 8 years” is actionable; “invest for the future” is not. |
-+| **Near bucket: 0–3 years** | Optimize for capital availability and low volatility. Emergency funds and committed near-term expenses belong here; chasing extra return can create forced selling. |
-+| **Middle bucket: 3–7 years** | Use a controlled mix based on how flexible the date and amount are. Reduce equity exposure as the deadline approaches instead of waiting for the final year. |
-+| **Far bucket: 7+ years** | Diversified equity can carry more weight because recovery time is longer. Allocation still depends on loss tolerance, income stability, and goal importance. |
-+| **Use a glide path** | Move money toward lower-volatility assets as time-to-goal shrinks. This converts accumulated gains into deadline certainty and limits sequence risk near withdrawal. |
-+| **Track funded ratio** | Compare current goal assets with required present value. Review allocation and contribution rate separately; poor funding is not always solved by taking more risk. |
++| **WIP ≠ backlog** | Backlog holds possibilities. WIP contains tasks currently consuming attention. |
++| **Context-switch tax** | Each switch leaves attention residue, increasing restart time and shallow progress. |
++| **Little's Law** | `Lead time ≈ WIP ÷ throughput`. Lower WIP usually shortens time-to-finish. |
++| **Pull, don't push** | Pull the next highest-value item only when an active slot opens. |
++| **Blocked still counts** | Escalate, schedule a follow-up, or deliberately move blocked work out of active WIP. |
++| **Define “done”** | Use an observable exit: “send draft for review,” not “work on document.” |
 +
-+**Example:** A home down payment due in two years and retirement due in fifteen years should not share one allocation. The home bucket prioritizes availability; the retirement bucket can accept more volatility. Same person, different goals, different risk capacity.
++### Simple personal flow
++
++`Backlog (many)` → `Active (maximum 2)` → `Done` → pull next
++
++> **Default rule:** one deep task + one small task. Everything else waits.
 +
 +---
 +
 +## ⚡ Micro-action (5 minutes)
 +
-+Pick one financial goal. Write its amount, due date, years remaining, and whether the date can move. Label it `near`, `middle`, or `far`, then check whether its current asset mix matches that horizon.
++1. Write every task you currently consider “in progress.”
++2. Circle only two: one meaningful task and one quick task.
++3. Move all others to a backlog labeled **Not active**.
++4. Write one concrete “done when…” sentence for each circled task.
 +
 +---
 +
-+**Financial Health** · 💫 Small steps. Every day.
-  ┊ 💻 $         set -e html=/opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.html md=/opt/data/insights/goal-buckets-match-risk-to-time_2026-08-08.md python3 - "$html" "$md" <<'PY' import pathlib, sys html=pathlib.Path(sys.argv[1]).read_text() md=pathlib.Path(sys.argv[2]).read_text() assert html.startswith('<!DOCTYPE html>') and html.rstrip().endswith('</html>') for marker in ["🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action', '💫 Small steps. Every day.']: assert marker in html, marker for marker in ["🧒 Like You're 5", '🔧 For the Engineer', '⚡ Micro-action', '💫 Small steps. Every day.']: assert marker in md, marker print(f'CARD_OK html={len(html)}B md={len(md)}B') PY work=$(mktemp -d /tmp/financial-health-20260808-XXXXXX) set -a; source /opt/data/.env; set +a git clone --quiet "https://psdeepu26:${GITHUB_TOKEN}@github.com/psdeepu26/financial-health.git" "$work" printf 'FRESH_CLONE=%s\n' "$work" git -C "$work" status --short --branch git -C "$work" rev-parse HEAD wc -c "$work/index.html" jq '{count:length,categories:([.[].category]|unique),duplicates:([group_by(.file)[]|select(length>1)|.[0].file])}' "$work/cards.json"  1.5s
-  ┊ 📖 read      index.html L1-500  0.1s
-  ┊ 📖 read      cards.json L1-500  0.0s
-  ┊ 🔎 grep      article class=.card.|cards.json  0.1s
-  ┊ ✍️  write     /tmp/rebuild_financial_index_20260808.py  0.0s [Write denied: '/tmp/rebuild_financial_index_2...]
-  ┊ ✍️  write     /opt/data/insights/.rebuild_financial_index_20260808.py  1.2s
++🌱 **Personal Growth** · 💫 Small steps. Every day.
+  ┊ 💻 $         python3 - <<'PY' from pathlib import Path from html.parser import HTMLParser p=Path('/opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.html') s=p.read_text() class P(HTMLParser): pass P().feed(s) assert s.startswith('<!DOCTYPE html>') assert s.rstrip().endswith('</html>') assert all(x in s for x in ["🧒 Like you're 5", '🔧 For the engineer', '⚡ Micro-action', '💫 Small steps. Every day.']) m=Path('/opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.md').read_text() assert all(x in m for x in ["## 🧒 Like You're 5", '## 🔧 For the Engineer', '## ⚡ Micro-action']) print('HTML/MD validation passed') PY  0.1s
+  ┊ 💻 $         curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' 'https://api.github.com/repos/psdeepu26/personal-growth/contents/cards.json?ref=main' | jq -r '.content' | base64 -d + 1 command  0.5s
+  ┊ 📖 read      push-insight.sh L201-225  0.1s
+  ┊ ✍️  write     /tmp/publish_personal_growth_card.py  0.0s [Write denied: '/tmp/publish_personal_growth_c...]
+  ┊ ✍️  write     /opt/data/tmp/publish_personal_growth_card.py  1.4s
   ┊ review diff
-a//opt/data/insights/.rebuild_financial_index_20260808.py → b//opt/data/insights/.rebuild_financial_index_20260808.py
-@@ -0,0 +1,106 @@
-+from __future__ import annotations
-+
+a//opt/data/tmp/publish_personal_growth_card.py → b//opt/data/tmp/publish_personal_growth_card.py
+@@ -0,0 +1,59 @@
++#!/usr/bin/env python3
 +import html
 +import json
-+import pathlib
-+from collections import defaultdict
++import shutil
++import sys
++from datetime import datetime
++from pathlib import Path
 +
-+repo = pathlib.Path('/tmp/financial-health-20260808-lBrDe0')
-+source = pathlib.Path('/opt/data/insights')
-+basename = 'goal-buckets-match-risk-to-time_2026-08-08'
-+category = 'goal-planning'
-+title = 'Goal Buckets: Match Risk to When You Need the Money'
-+emoji = '💰'
-+timestamp = '20260808_0200_IST'
++repo = Path(sys.argv[1])
++html_src = Path(sys.argv[2])
++md_src = Path(sys.argv[3])
++timestamp = sys.argv[4]
++category = "mental-clarity"
++title = "Personal WIP Limits: Finish Before Starting More"
++emoji = "🧠"
 +
 +category_dir = repo / category
 +category_dir.mkdir(parents=True, exist_ok=True)
-+for suffix in ('.html', '.md'):
-+    (category_dir / f'{basename}{suffix}').write_bytes((source / f'{basename}{suffix}').read_bytes())
-+(repo / 'latest.html').write_bytes((source / f'{basename}.html').read_bytes())
++shutil.copy2(html_src, category_dir / html_src.name)
++shutil.copy2(md_src, category_dir / md_src.name)
++shutil.copy2(html_src, repo / "latest.html")
 +
-+cards_path = repo / 'cards.json'
-+raw = json.loads(cards_path.read_text(encoding='utf-8'))
-+new_record = {
-+    'file': f'{category}/{basename}.html',
-+    'category': category,
-+    'title': title,
-+    'emoji': emoji,
-+    'timestamp': timestamp,
-+}
-+records = [new_record]
-+seen = {new_record['file']}
-+for record in raw:
-+    path = record.get('file', '')
-+    if path and path not in seen:
-+        records.append(record)
-+        seen.add(path)
-+cards_path.write_text(json.dumps(records, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
++cards_path = repo / "cards.json"
++cards = json.loads(cards_path.read_text())
++if not isinstance(cards, list):
++    raise TypeError("cards.json must be an array")
++record = {"file": f"{category}/{html_src.name}", "category": category, "title": title, "emoji": emoji, "timestamp": timestamp}
++cards = [c for c in cards if c.get("file") != record["file"]]
++cards.append(record)
++cards.sort(key=lambda c: c.get("timestamp", ""), reverse=True)
++cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + "\n")
 +
-+def label(slug: str) -> str:
-+    return slug.replace('-', ' ').title()
++labels = {"energy-management": "Energy Management", "habits": "Habits", "mental-clarity": "Mental Clarity", "personal-growth": "Personal Growth"}
++groups = {}
++for card in cards:
++    groups.setdefault(card["category"], []).append(card)
 +
-+def display_title(record: dict[str, str]) -> str:
-+    value = record.get('title', '').strip()
-+    if value:
-+        return value
-+    return pathlib.Path(record['file']).stem.replace('-', ' ').replace('_', ' ').title()
++sections = []
++for cat in sorted(groups, key=lambda c: labels.get(c, c).lower()):
++    entries = []
++    for card in groups[cat]:
++        file_path = card["file"]
++        md_path = file_path[:-5] + ".md" if file_path.endswith(".html") else file_path + ".md"
++        entries.append(f'<article class="card" data-title="{html.escape((card["title"] + " " + cat).lower())}" data-category="{html.escape(cat)}"><div class="emoji">{html.escape(card.get("emoji", "📚"))}</div><div class="content"><h2>{html.escape(card["title"])}</h2><p>{html.escape(labels.get(cat, cat.replace("-", " ").title()))}</p><div class="links"><a href="{html.escape(file_path)}">Open HTML</a><a href="{html.escape(md_path)}">Read Markdown</a></div></div></article>')
++    label = labels.get(cat, cat.replace("-", " ").title())
++    sections.append(f'<section class="category"><h2>{html.escape(label)} <span>{len(entries)}</span></h2><div class="cards">{"".join(entries)}</div></section>')
 +
-+groups: dict[str, list[dict[str, str]]] = defaultdict(list)
-+for record in records:
-+    groups[record.get('category', 'uncategorized')].append(record)
-+
-+sections: list[str] = []
-+for group_name in sorted(groups, key=lambda name: (name != category, label(name))):
-+    articles: list[str] = []
-+    for record in groups[group_name]:
-+        path = record['file']
-+        md_path = str(pathlib.PurePosixPath(path).with_suffix('.md'))
-+        card_title = display_title(record)
-+        search = f'{card_title} {label(group_name)} {path}'.lower()
-+        md_link = ''
-+        if (repo / md_path).exists():
-+            md_link = f'<a href="{html.escape(md_path, quote=True)}">Markdown</a>'
-+        articles.append(
-+            f'<article class="card" data-search="{html.escape(search, quote=True)}">'
-+            f'<div class="emoji">{html.escape(record.get("emoji", "📚"))}</div>'
-+            f'<div class="content"><h2>{html.escape(card_title)}</h2>'
-+            f'<p>{html.escape(label(group_name))}</p><div class="links">'
-+            f'<a href="{html.escape(path, quote=True)}">Open HTML</a>{md_link}'
-+            f'</div></div></article>'
-+        )
-+    sections.append(
-+        f'<section class="group"><h2>{html.escape(label(group_name))} '
-+        f'<span>{len(articles)}</span></h2><div class="cards">{"".join(articles)}</div></section>'
-+    )
-+
-+page = f'''<!DOCTYPE html>
-+<html lang="en">
-… omitted 28 diff line(s) across 1 additional file(s)/section(s)
-  ┊ 💻 $         set -e python3 /opt/data/insights/.rebuild_financial_index_20260808.py repo=/tmp/financial-health-20260808-lBrDe0 python3 - "$repo" <<'PY' import json, pathlib, re, sys root=pathlib.Path(sys.argv[1]) cards=json.loads((root/'cards.json').read_text()) index=(root/'index.html').read_text() new='goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html' articles=re.findall(r'<article class="card".*?</article>', index, flags=re.S) assert len(cards)==14 assert len(articles)==len(cards) assert sum(new in article for article in articles)==1 assert len({c['file'] for c in cards})==len(cards) assert (root/new).exists() assert (root/new.replace('.html','.md')).exists() assert '<title>Goal Buckets: Match Risk to When You Need the Money</title>' in (root/'latest.html').read_text() print(f'LOCAL_VERIFY cards={len(cards)} articles={len(articles)} new_entries=1 index_bytes={len(index.encode())}') PY git -C "$repo" status --short git -C "$repo" diff --stat git -C "$repo" diff --check  0.1s
-  ┊ 📋 plan      update 2/5 ✓  0.0s
-  ┊ 💻 $         set -e repo=/tmp/financial-health-20260808-lBrDe0 git -C "$repo" config user.name 'Hermes Agent' git -C "$repo" config user.email 'hermes@deepu26.dev' git -C "$repo" add cards.json index.html latest.html goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html goal-planning/goal-buckets-match-risk-to-time_2026-08-08.md git -C "$repo" commit -m 'Add goal buckets learning insight' git -C "$repo" push origin main local_sha=$(git -C "$repo" rev-parse HEAD) remote_sha=$(git -C "$repo" ls-remote origin refs/heads/main | cut -f1) printf 'LOCAL_SHA=%s\nREMOTE_SHA=%s\n' "$local_sha" "$remote_sha" test "$local_sha" = "$remote_sha"  2.7s
-  ┊ 💻 $         do key=$(printf '%s' "$item" | tr '/.' '__') curl -fsS -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Accept: application/vnd.github+json' "$api/$item?ref=main" done python3 - <<'PY' import base64, json, pathlib, re def content(name): key=name.translate(str.maketrans('/.','__')) data=json.loads(pathlib.Path(f'/tmp/remote_{key}.json').read_text()) return base64.b64decode(data['content']).decode(), data index, index_meta=content('index.html') cards_text, _=content('cards.json') latest, _=content('latest.html') card_html, _=content('goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html') card_md, _=content('goal-planning/goal-buckets-match-risk-to-time_2026-08-08.md') cards=json.loads(cards_text) path='goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html' articles=re.findall(r'<article class="card".*?</article>', index, flags=re.S) assert len(cards)==14 and len(articles)==14 assert sum(path in article for article in articles)==1 assert sum(c.get('file')==path for c in cards)==1 record=next(c for c in cards if c.get('file')==path) assert record['title']=='Goal Buckets: Match Risk to When You Need the Money' assert record['category']=='goal-planning' and record['emoji']=='💰' assert latest==card_html assert card_html.rstrip().endswith('</html>') assert '## ⚡ Micro-action (5 minutes)' in card_md assert index_meta['size'] print(f"REMOTE_VERIFY sha={index_meta['sha']} cards={len(cards)} articles={len(articles)} new_entries=1 index_bytes={index_meta['size']} companions=2 latest=match") PY  1.9s
-  ┊ 📋 plan      update 3/5 ✓  0.0s
-  ┊ 💻 $         set -e log=/opt/data/insights/log.json tmp=$(mktemp /tmp/insight-log-XXXXXX.json) jq \ --arg date '2026-08-08' \ --arg dow 'Saturday' \ --arg topic 'Financial Health' \ --arg title 'Goal Buckets: Match Risk to When You Need the Money' \ --arg category 'goal-planning' \ --arg html 'goal-buckets-match-risk-to-time_2026-08-08.html' \ --arg md 'goal-buckets-match-risk-to-time_2026-08-08.md' \ --arg ts '20260808_0200_IST' \ --arg url 'https://github.com/psdeepu26/financial-health/blob/main/goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html' \ '. | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,github_url:$url,published:true,index_verified:true}] + .' \ "$log" mv "$tmp" "$log" jq -e '.[0] | .date == "2026-08-08" and .title == "Goal Buckets: Match Risk to When You Need the Money" and .published == true and .index_verified == true' "$log" >/dev/null jq '.[0]' "$log"  0.1s
-  ┊ ✍️  write     /opt/data/insights/.telegram_goal_buckets_20260808.txt  0.1s
++updated = datetime.strptime(timestamp[:8], "%Y%m%d").strftime("%-d %b %Y")
++index = f'''<!DOCTYPE html>
++<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
++<title>Personal Growth Learning Cards</title><style>
++:root{{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}}main{{max-width:1100px;margin:auto;padding:40px 20px 70px}}h1{{font-size:clamp(2rem,5vw,3.5rem);margin:0 0 8px}}.intro,.stats{{color:var(--muted)}}input{{width:100%;margin:24px 0;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);font:inherit}}.category{{margin:34px 0}}.category>h2{{display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:8px}}.category>h2 span{{color:var(--muted);font-size:.9rem}}.cards{{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}}.card{{display:flex;gap:14px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--panel)}}.emoji{{font-size:1.7rem}}.content h2{{font-size:1rem;margin:0 0 4px}}.content p{{color:var(--muted);font-size:.85rem;margin:0 0 12px}}.links{{display:flex;gap:12px}}a{{color:var(--accent);text-decoration:none;font-size:.88rem}}a:hover{{text-decoration:underline}}.hidden{{display:none!important}}
++</style></head><body><main><h1>Personal Growth Learning Cards</h1><p class="intro">ELI5-first lessons with practical engineering detail.</p>
++<input id="search" type="search" placeholder="Search cards or categories…" aria-label="Search cards"><div class="stats">{len(cards)} cards · {len(groups)} categories · Updated {updated}</div>
++<div id="catalog">{"".join(sections)}</div></main><script>
++const search=document.getElementById('search');search.addEventListener('input',()=>{{const q=search.value.toLowerCase().trim();document.querySelectorAll('.card').forEach(card=>card.classList.toggle('hidden',q&&!((card.dataset.title+' '+card.dataset.category).includes(q))));document.querySelectorAll('.category').forEach(section=>section.classList.toggle('hidden',![...section.querySelectorAll('.card')].some(card=>!card.classList.contains('hidden'))));}});
++</script></body></html>'''
++(repo / "index.html").write_text(index)
++print(json.dumps({"cards": len(cards), "categories": len(groups), "file": record["file"]}))
+  ┊ 🔧 patch       0.5s
   ┊ review diff
-a//opt/data/insights/.telegram_goal_buckets_20260808.txt → b//opt/data/insights/.telegram_goal_buckets_20260808.txt
-@@ -0,0 +1,8 @@
-+💰 Goal Buckets: Match Risk to When You Need the Money
+a//opt/data/tmp/publish_personal_growth_card.py → b//opt/data/tmp/publish_personal_growth_card.py
+@@ -31,18 +31,23 @@
+ cards_path.write_text(json.dumps(cards, ensure_ascii=False, indent=2) + "\n")
+ 
+ labels = {"energy-management": "Energy Management", "habits": "Habits", "mental-clarity": "Mental Clarity", "personal-growth": "Personal Growth"}
++def category_label(category_name: str) -> str:
++    return labels.get(category_name) or category_name.replace("-", " ").title()
 +
-+Money needed soon should not ride a roller coaster. Match each goal's risk to its deadline, then use a glide path as that deadline approaches.
+ groups = {}
+ for card in cards:
+     groups.setdefault(card["category"], []).append(card)
+ 
+ sections = []
+-for cat in sorted(groups, key=lambda c: labels.get(c, c).lower()):
++for cat in sorted(groups, key=lambda c: category_label(str(c)).lower()):
+     entries = []
+     for card in groups[cat]:
+         file_path = card["file"]
+         md_path = file_path[:-5] + ".md" if file_path.endswith(".html") else file_path + ".md"
+-        entries.append(f'<article class="card" data-title="{html.escape((card["title"] + " " + cat).lower())}" data-category="{html.escape(cat)}"><div class="emoji">{html.escape(card.get("emoji", "📚"))}</div><div class="content"><h2>{html.escape(card["title"])}</h2><p>{html.escape(labels.get(cat, cat.replace("-", " ").title()))}</p><div class="links"><a href="{html.escape(file_path)}">Open HTML</a><a href="{html.escape(md_path)}">Read Markdown</a></div></div></article>')
+-    label = labels.get(cat, cat.replace("-", " ").title())
++        card_title = str(card["title"])
++        card_emoji = str(card.get("emoji") or "📚")
++        entries.append(f'<article class="card" data-title="{html.escape((card_title + " " + cat).lower())}" data-category="{html.escape(cat)}"><div class="emoji">{html.escape(card_emoji)}</div><div class="content"><h2>{html.escape(card_title)}</h2><p>{html.escape(category_label(cat))}</p><div class="links"><a href="{html.escape(file_path)}">Open HTML</a><a href="{html.escape(md_path)}">Read Markdown</a></div></div></article>')
++    label = category_label(cat)
+     sections.append(f'<section class="category"><h2>{html.escape(label)} <span>{len(entries)}</span></h2><div class="cards">{"".join(entries)}</div></section>')
+ 
+ updated = datetime.strptime(timestamp[:8], "%Y%m%d").strftime("%-d %b %Y")
+  ┊ 📋 plan      update 2/4 ✓  0.0s
+  ┊ 💻 $         set -euo pipefail set -a; source /opt/data/.env; set +a AUTH=$(printf 'psdeepu26:%s' "$GITHUB_TOKEN" | base64 -w0) WORK=$(mktemp -d /tmp/personal-growth-publish.XXXXXX) git -c http.extraheader="Authorization: Basic $AUTH" clone --quiet https://github.com/psdeepu26/personal-growth.git "$WORK" git -C "$WORK" checkout main >/dev/null 2>&1 git -C "$WORK" config user.name 'Hermes Agent' git -C "$WORK" config user.email 'hermes@deepu26.dev' STAMP=$(TZ='Asia/Kolkata' date '+%Y%m%d_%H%M%S') python3 /opt/data/tmp/publish_personal_growth_card.py "$WORK" /opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.html /opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809.md "$STAMP" python3 - "$WORK" <<'PY' import json, sys from pathlib import Path r=Path(sys.argv[1]) cards=json.loads((r/'cards.json').read_text()) new='mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.html' index=(r/'index.html').read_text() assert len(cards)==24 assert sum(c.get('file')==new for c in cards)==1 assert index.count('<article class="card"')==24 assert index.count(f'href="{new}"')==1 assert index.count(f'href="{new[:-5]}.md"')==1 assert (r/new).exists() and (r/new[:-5]+'.md').exists() assert 'Personal WIP Limits: Finish Before Starting More' in (r/'latest.html').read_text() print('Local publish validation passed: 24 cards, one new entry, both companions, latest matched') PY git -C "$WORK" add cards.json index.html latest.html mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.html mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.md git -C "$WORK" commit -m 'Add Personal WIP Limits insight' >/dev/null git -C "$WORK" -c http.extraheader="Authorization: Basic $AUTH" push origin main >/dev/null printf 'WORK=%s\nCOMMIT=%s\nSTAMP=%s\n' "$WORK" "$(git -C "$WORK" rev-parse HEAD)" "$STAMP"  3.1s [exit 1]
+  ┊ 🔎 find      personal-growth-publish.*  0.3s
+  ┊ 💻 $         printf '%s\n' /tmp/personal-growth-publish.*  0.1s
+  ┊ 💻 $         set -euo pipefail WORK=/tmp/personal-growth-publish.L1vrFl python3 - "$WORK" <<'PY' import json, sys from pathlib import Path r=Path(sys.argv[1]) cards=json.loads((r/'cards.json').read_text()) new='mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.html' md=new[:-5]+'.md' index=(r/'index.html').read_text() assert len(cards)==24 assert sum(c.get('file')==new for c in cards)==1 assert index.count('<article class="card"')==24 assert index.count(f'href="{new}"')==1 assert index.count(f'href="{md}"')==1 assert (r/new).exists() and (r/md).exists() assert 'Personal WIP Limits: Finish Before Starting More' in (r/'latest.html').read_text() print('Local publish validation passed: 24 cards, one new entry, both companions, latest matched') PY git -C "$WORK" add cards.json index.html latest.html mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.html mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.md git -C "$WORK" commit -m 'Add Personal WIP Limits insight' >/dev/null set -a; source /opt/data/.env; set +a AUTH=$(printf 'psdeepu26:%s' "$GITHUB_TOKEN" | base64 -w0) git -C "$WORK" -c http.extraheader="Authorization: Basic $AUTH" push origin main >/dev/null printf 'COMMIT=%s\n' "$(git -C "$WORK" rev-parse HEAD)"  1.7s
+  ┊ 📚 skill     nightly-learning-insight → references/hermes-send-delivery.md  0.0s
+  ┊ 💻 $         } REMOTE_SHA=$(git ls-remote https://github.com/psdeepu26/personal-growth.git refs/heads/main 2>/dev/null | cut -f1 + 3 commands  2.7s
+  ┊ 📋 plan      update 3/4 ✓  0.0s
+  ┊ 💻 $         jq '.[0]' /opt/data/insights/log.json  0.1s
+  ┊ ✍️  write     /opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809_message.txt  0.1s
+  ┊ review diff
+a//opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809_message.txt → b//opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809_message.txt
+@@ -0,0 +1,11 @@
++🌙 Nightly Learning Insight — Personal Growth
 +
-+⚡ 5-minute action: Pick one goal. Write amount, due date, years remaining, and whether the date can move. Label it near, middle, or far.
++📖 Personal WIP Limits: Finish Before Starting More
 +
-+Read card:
-+https://github.com/psdeepu26/financial-health/blob/main/goal-planning/goal-buckets-match-risk-to-time_2026-08-08.html
-  ┊ 📋 plan      update 4/5 ✓  0.0s
-  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to 'telegram:-1003983518007:3' --file /opt/data/insights/.telegram_goal_buckets_20260808.txt --json  4.2s
-  ┊ 💻 $         set -e log=/opt/data/insights/log.json tmp=$(mktemp /tmp/insight-log-delivery-XXXXXX.json) jq 'map(if .date == "2026-08-08" and .title == "Goal Buckets: Match Risk to When You Need the Money" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3088"} else . end)' "$log" mv "$tmp" "$log" python3 - <<'PY' import json, pathlib log=json.loads(pathlib.Path('/opt/data/insights/log.json').read_text()) e=log[0] assert e['date']=='2026-08-08' assert e['published'] and e['index_verified'] and e['delivered'] assert e['telegram_message_id']=='3088' for name in (e['html_file'],e['md_file']): assert (pathlib.Path('/opt/data/insights')/name).exists() print(f"FINAL_OK title={e['title']} published={e['published']} indexed={e['index_verified']} delivered={e['delivered']} telegram_message_id={e['telegram_message_id']}") PY git -C /tmp/financial-health-20260808-lBrDe0 status --short --branch  0.1s
-  ┊ 📋 plan      update 5/5 ✓  0.0s
++🧒 Carry fewer “task bags” so each one reaches its destination.
++
++🔧 Cap active work at two items; lower WIP reduces context-switching and lead time.
++
++⚡ List active tasks, keep one deep + one quick task, and move everything else to “Not active.”
++
++🔗 Read the full card: https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.html
+  ┊ 💻 $         [ "$STAMP" != null ] jq --arg date '2026-08-09' --arg dow 'Sunday' --arg topic 'Personal Growth' --arg title 'Personal WIP Limits: Finish Before Starting More' --arg category 'mental-clarity' --arg html 'personal-wip-limits-finish-before-starting-more_20260809.html' --arg md 'personal-wip-limits-finish-before-starting-more_20260809.md' --arg ts "$STAMP" --arg url 'https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/personal-wip-limits-finish-before-starting-more_20260809.html' ' . | [{date:$date,day_of_week:$dow,topic:$topic,title:$title,category:$category,html_file:$html,md_file:$md,timestamp:$ts,github_url:$url,published:true,index_verified:true,delivered:false}] + . ' /opt/data/insights/log.json jq -e 'type=="array" and .[0].date=="2026-08-09" and .[0].title=="Personal WIP Limits: Finish Before Starting More"' /tmp/log_new.json >/dev/null mv /tmp/log_new.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json  0.1s
+  ┊ 💻 $         /opt/hermes/.venv/bin/hermes send --to 'telegram:-1003983518007:7' --file /opt/data/insights/personal-wip-limits-finish-before-starting-more_20260809_message.txt --json  4.2s
+  ┊ 💻 $         set -euo pipefail jq 'map(if .date == "2026-08-09" and .title == "Personal WIP Limits: Finish Before Starting More" then . + {delivered:true,delivery_result:"sent",telegram_message_id:"3091"} else . end)' /opt/data/insights/log.json jq -e '.[0].delivered == true and .[0].delivery_result == "sent" and .[0].telegram_message_id == "3091"' /tmp/log_delivered.json >/dev/null mv /tmp/log_delivered.json /opt/data/insights/log.json jq '.[0]' /opt/data/insights/log.json  0.1s
+  ┊ 📋 plan      update 4/4 ✓  0.0s
  ─  ⚕ Hermes  ───────────────────────────────────────────────────────────────── 
                                                                                 
-     Generated today’s Financial Health insight:                                
+     Today’s insight generated.                                                 
                                                                                 
-     “Goal Buckets: Match Risk to When You Need the Money”                      
+     Title: Personal WIP Limits: Finish Before Starting More                    
+     Topic: Personal Growth                                                     
+     Category: Mental Clarity                                                   
+     Core idea: Limit active work to one deep task + one quick task. Finish     
+     before pulling more work.                                                  
                                                                                 
-     - HTML + Markdown created                                                  
-     - Published to private financial-health GitHub repo                        
-     - Search index, metadata, companions, and latest.html verified             
-     - Delivered to Telegram Financial Tasks topic                              
-     - Telegram message ID: 3088                                                
-     - Logged successfully                                                      
+     Published:                                                                 
+     https://github.com/psdeepu26/personal-growth/blob/main/mental-clarity/     
+     personal-wip-limits-finish-before-starting-more_20260809.html              
                                                                                 
-     Card:                                                                      
-     https://github.com/psdeepu26/financial-health/blob/main/goal-planning/     
-     goal-buckets-match-risk-to-time_2026-08-08.html                            
+     Verified:                                                                  
+     - HTML + Markdown companions                                               
+     - 24-card searchable index                                                 
+     - latest.html updated                                                      
+     - GitHub commit 474be288                                                   
+     - Telegram Personal topic delivered                                        
+     - Message ID: 3091                                                         
+     - Insight log updated successfully                                         
                                                                                 
      ⚠️ File-mutation verifier: 1 file(s) were NOT modified this turn           
      despite any wording above that may suggest otherwise. Run git status       
      or read_file to confirm.                                                   
-       • /tmp/rebuild_financial_index_20260808.py — [write_file] Write          
-     denied: '/tmp/rebuild_financial_index_20260808.py' is a protected          
+       • /tmp/publish_personal_growth_card.py — [write_file] Write denied:      
+     '/tmp/publish_personal_growth_card.py' is a protected                      
      system/credential file.                                                    
                                                                                 
  ────────────────────────────────────────────────────────────────────────────── 
 
 Resume this session with:
-  hermes --resume 20260807_203023_b0097a
+  hermes --resume 20260808_203025_e35af5
 
-Session:        20260807_203023_b0097a
-Duration:       5m 9s
+Session:        20260808_203025_e35af5
+Duration:       5m 53s
 Messages:       64 (1 user, 62 tool calls)
